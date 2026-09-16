@@ -1,0 +1,54 @@
+{
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "macro_f1": 1.0,
+  "weighted_f1": 1.0,
+  "test_samples": 4489,
+  "num_classes": 23,
+  "strongest_intents": [
+    {
+      "intent": "academic_regulations",
+      "f1": 1.0
+    },
+    {
+      "intent": "branch_subjects",
+      "f1": 1.0
+    },
+    {
+      "intent": "course_code",
+      "f1": 1.0
+    },
+    {
+      "intent": "course_objectives",
+      "f1": 1.0
+    },
+    {
+      "intent": "course_outcome",
+      "f1": 1.0
+    }
+  ],
+  "weakest_intents": [
+    {
+      "intent": "subject_comparison",
+      "f1": 1.0
+    },
+    {
+      "intent": "syllabus",
+      "f1": 1.0
+    },
+    {
+      "intent": "thanks",
+      "f1": 1.0
+    },
+    {
+      "intent": "unit_topics",
+      "f1": 1.0
+    },
+    {
+      "intent": "units",
+      "f1": 1.0
+    }
+  ],
+  "top_confused_pairs": []
+}

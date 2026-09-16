@@ -1,0 +1,40 @@
+ACADEMIC NLP PROJECT - INTENT CLASSIFICATION EVALUATION REPORT
+Model Architecture: TF-IDF (1,2-grams, sublinear) + Logistic Regression (C=2.5)
+===============================================================================
+Test Set Size: 4489 samples
+Accuracy:    1.0000
+Precision:   1.0000
+Recall:      1.0000
+Macro F1:    1.0000
+Weighted F1: 1.0000
+===============================================================================
+
+                         precision    recall  f1-score   support
+
+   academic_regulations     1.0000    1.0000    1.0000       138
+        branch_subjects     1.0000    1.0000    1.0000       138
+            course_code     1.0000    1.0000    1.0000       267
+      course_objectives     1.0000    1.0000    1.0000       265
+         course_outcome     1.0000    1.0000    1.0000       334
+        course_overview     1.0000    1.0000    1.0000       333
+       course_structure     1.0000    1.0000    1.0000       138
+                credits     1.0000    1.0000    1.0000       265
+      curriculum_search     1.0000    1.0000    1.0000       138
+   elective_information     1.0000    1.0000    1.0000        55
+examination_information     1.0000    1.0000    1.0000       138
+    faculty_information     1.0000    1.0000    1.0000       138
+               fallback     1.0000    1.0000    1.0000       142
+               greeting     1.0000    1.0000    1.0000       138
+                   help     1.0000    1.0000    1.0000       138
+        lab_information     1.0000    1.0000    1.0000       138
+          prerequisites     1.0000    1.0000    1.0000       288
+      semester_subjects     1.0000    1.0000    1.0000       144
+     subject_comparison     1.0000    1.0000    1.0000       138
+               syllabus     1.0000    1.0000    1.0000       333
+                 thanks     1.0000    1.0000    1.0000       138
+            unit_topics     1.0000    1.0000    1.0000       346
+                  units     1.0000    1.0000    1.0000       199
+
+               accuracy                         1.0000      4489
+              macro avg     1.0000    1.0000    1.0000      4489
+           weighted avg     1.0000    1.0000    1.0000      4489

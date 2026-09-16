@@ -1,0 +1,41 @@
+{
+  "total_samples": 29921,
+  "unique_questions": 29921,
+  "duplicate_count": 0,
+  "unique_percentage": 100.0,
+  "number_of_intents": 23,
+  "samples_per_intent": {
+    "unit_topics": 2302,
+    "course_outcome": 2223,
+    "syllabus": 2221,
+    "course_overview": 2215,
+    "prerequisites": 1916,
+    "course_code": 1777,
+    "credits": 1770,
+    "course_objectives": 1768,
+    "units": 1328,
+    "semester_subjects": 960,
+    "fallback": 950,
+    "course_structure": 920,
+    "greeting": 920,
+    "academic_regulations": 920,
+    "lab_information": 920,
+    "curriculum_search": 920,
+    "subject_comparison": 920,
+    "faculty_information": 920,
+    "examination_information": 920,
+    "branch_subjects": 920,
+    "thanks": 920,
+    "help": 920,
+    "elective_information": 371
+  },
+  "train_count": 20944,
+  "validation_count": 4488,
+  "test_count": 4489,
+  "split_ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "random_seed": 42
+}

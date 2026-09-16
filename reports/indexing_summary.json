@@ -1,0 +1,25 @@
+{
+  "status": "SUCCESS",
+  "total_documents_processed": 2,
+  "total_chunks_created": 82,
+  "total_qdrant_points": 82,
+  "average_chunk_characters": 393.27,
+  "min_chunk_characters": 141,
+  "max_chunk_characters": 1339,
+  "vector_dimension": 1024,
+  "embedding_model": "nvidia/nv-embedqa-e5-v5",
+  "qdrant_collection": "curriculum_chunks",
+  "processing_time_seconds": 0.32,
+  "documents": [
+    {
+      "filename": "Academic_Regulations_2025.pdf",
+      "pages": 0,
+      "chunks_created": 0
+    },
+    {
+      "filename": "CSE_Curriculum_2025.pdf",
+      "pages": 0,
+      "chunks_created": 0
+    }
+  ]
+}

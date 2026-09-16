@@ -1,0 +1,27 @@
+{
+  "status": "PASSED",
+  "total_samples": 29921,
+  "unique_questions": 29921,
+  "uniqueness_percentage": 100.0,
+  "target_met_gte_95_percent": true,
+  "duplicate_count": 0,
+  "null_questions": 0,
+  "null_intents": 0,
+  "expected_intent_count": 23,
+  "present_intent_count": 23,
+  "invalid_labels": [],
+  "missing_intents": [],
+  "short_questions_lt_3_chars": 2,
+  "long_questions_gt_300_chars": 0,
+  "class_balance": {
+    "min_samples_per_class": 371,
+    "max_samples_per_class": 2302,
+    "imbalance_ratio": 6.2
+  },
+  "data_leakage_audit": {
+    "train_val_overlap_count": 0,
+    "train_test_overlap_count": 0,
+    "val_test_overlap_count": 0,
+    "leakage_detected": false
+  }
+}
