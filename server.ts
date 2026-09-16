@@ -8,12 +8,14 @@ const PORT = 3000;
 const FASTAPI_PORT = 8001;
 const FASTAPI_URL = `http://127.0.0.1:${FASTAPI_PORT}`;
 
+const pythonCmd = process.env.PYTHON_PATH || (process.platform === "win32" ? "python" : "python3");
+
 let pyProcess: ChildProcess | null = null;
 
 function startFastAPI(): Promise<void> {
   return new Promise((resolve) => {
-    console.log(`[Server] Starting FastAPI backend on port ${FASTAPI_PORT}...`);
-    pyProcess = spawn("python3", ["-m", "uvicorn", "backend.main:app", "--host", "127.0.0.1", "--port", String(FASTAPI_PORT)], {
+    console.log(`[Server] Starting FastAPI backend with '${pythonCmd}' on port ${FASTAPI_PORT}...`);
+    pyProcess = spawn(pythonCmd, ["-m", "uvicorn", "backend.main:app", "--host", "127.0.0.1", "--port", String(FASTAPI_PORT)], {
       stdio: "inherit",
       env: { ...process.env },
     });

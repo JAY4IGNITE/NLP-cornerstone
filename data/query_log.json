@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "2026-09-16T01:18:06.418456",
+    "query": "What are the course objectives and prerequisites of CS201 Data Structures?",
+    "intent": "fallback",
+    "intent_confidence": 0.433,
+    "is_grounded": false,
+    "overall_confidence": 0.2,
+    "latency_ms": 5.34
+  },
+  {
+    "timestamp": "2026-09-16T01:18:30.970661",
+    "query": "What are the course objectives and prerequisites of CS201 Data Structures?",
+    "intent": "curriculum_search",
+    "intent_confidence": 0.9,
+    "is_grounded": true,
+    "overall_confidence": 0.9408,
+    "latency_ms": 14.95
+  },
+  {
+    "timestamp": "2026-09-16T01:19:14.547191",
+    "query": "What are the course objectives and prerequisites of CS201 Data Structures?",
+    "intent": "curriculum_search",
+    "intent_confidence": 0.9,
+    "is_grounded": true,
+    "overall_confidence": 0.9408,
+    "latency_ms": 6.49
+  },
+  {
+    "timestamp": "2026-09-16T01:19:59.966320",
+    "query": "What is the syllabus of Operating Systems CS302?",
+    "intent": "curriculum_search",
+    "intent_confidence": 0.9,
+    "is_grounded": true,
+    "overall_confidence": 0.9295,
+    "latency_ms": 3325.3
+  },
+  {
+    "timestamp": "2026-09-16T01:28:55.825455",
+    "query": "What are the course objectives and prerequisites of CS201 Data Structures?",
+    "intent": "curriculum_syllabi_and_regulations",
+    "intent_confidence": 0.9541,
+    "is_grounded": true,
+    "overall_confidence": 0.9517,
+    "latency_ms": 3.85
+  },
+  {
+    "timestamp": "2026-09-16T01:29:18.828753",
+    "query": "Can you explain the syllabus and topics for Database Systems CS301?",
+    "intent": "curriculum_search",
+    "intent_confidence": 0.9,
+    "is_grounded": true,
+    "overall_confidence": 0.9354,
+    "latency_ms": 1927.55
+  },
+  {
+    "timestamp": "2026-09-16T01:29:29.277638",
+    "query": "Where is the student dining hall and hostel mess located?",
+    "intent": "campus_services",
+    "intent_confidence": 0.96,
+    "is_grounded": true,
+    "overall_confidence": 0.82,
+    "latency_ms": 6.95
+  },
+  {
+    "timestamp": "2026-09-16T01:29:31.321762",
+    "query": "What are the attendance requirements and passing marks in academic regulations?",
+    "intent": "academic_regulations",
+    "intent_confidence": 0.96,
+    "is_grounded": true,
+    "overall_confidence": 0.9547,
+    "latency_ms": 12.66
+  },
+  {
+    "timestamp": "2026-09-16T01:29:33.369387",
+    "query": "Tell me about scholarship and fee concession opportunities",
+    "intent": "scholarships",
+    "intent_confidence": 0.95,
+    "is_grounded": false,
+    "overall_confidence": 0.25,
+    "latency_ms": 10.78
+  },
+  {
+    "timestamp": "2026-09-16T01:44:00.237014",
+    "query": "What are the course objectives and prerequisites of CS201 Data Structures?",
+    "intent": "curriculum_search",
+    "intent_confidence": 0.9,
+    "is_grounded": true,
+    "overall_confidence": 0.9408,
+    "latency_ms": 4.19
+  }
+]

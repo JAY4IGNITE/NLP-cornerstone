@@ -119,15 +119,15 @@ class CloudflareVectorStore:
 
         valid_vectors = []
         self._id_to_meta = {}
-        for idx, item in enumerate(self._local_vectors):
+        for item in self._local_vectors:
             vals = item.get("values")
             if vals and len(vals) > 0:
                 v = np.array(vals, dtype=np.float32)
                 norm = np.linalg.norm(v)
                 if norm > 0:
                     v = v / norm
+                self._id_to_meta[len(valid_vectors)] = item
                 valid_vectors.append(v)
-                self._id_to_meta[idx] = item
 
         if valid_vectors:
             self._vector_matrix = np.vstack(valid_vectors)
@@ -318,7 +318,9 @@ class CloudflareVectorStore:
 
         results = []
         for matrix_idx, score in top_candidates:
-            item = self._id_to_meta[matrix_idx]
+            item = self._id_to_meta.get(matrix_idx)
+            if not item:
+                continue
             meta = item.get("metadata", {})
             results.append({
                 "chunk_id": item.get("id"),

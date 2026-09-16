@@ -1,40 +1,25 @@
 ACADEMIC NLP PROJECT - INTENT CLASSIFICATION EVALUATION REPORT
+Dataset: 1,000,000 Real Samples from Hugging Face (community-datasets/yahoo_answers_topics)
 Model Architecture: TF-IDF (1,2-grams, sublinear) + Logistic Regression (C=2.5)
 ===============================================================================
-Test Set Size: 4489 samples
-Accuracy:    1.0000
-Precision:   1.0000
-Recall:      1.0000
-Macro F1:    1.0000
-Weighted F1: 1.0000
+Test Set Size: 7947 samples
+Accuracy:    0.8664
+Precision:   0.8672
+Recall:      0.8664
+Macro F1:    0.8503
+Weighted F1: 0.8653
 ===============================================================================
 
-                         precision    recall  f1-score   support
+                                    precision    recall  f1-score   support
 
-   academic_regulations     1.0000    1.0000    1.0000       138
-        branch_subjects     1.0000    1.0000    1.0000       138
-            course_code     1.0000    1.0000    1.0000       267
-      course_objectives     1.0000    1.0000    1.0000       265
-         course_outcome     1.0000    1.0000    1.0000       334
-        course_overview     1.0000    1.0000    1.0000       333
-       course_structure     1.0000    1.0000    1.0000       138
-                credits     1.0000    1.0000    1.0000       265
-      curriculum_search     1.0000    1.0000    1.0000       138
-   elective_information     1.0000    1.0000    1.0000        55
-examination_information     1.0000    1.0000    1.0000       138
-    faculty_information     1.0000    1.0000    1.0000       138
-               fallback     1.0000    1.0000    1.0000       142
-               greeting     1.0000    1.0000    1.0000       138
-                   help     1.0000    1.0000    1.0000       138
-        lab_information     1.0000    1.0000    1.0000       138
-          prerequisites     1.0000    1.0000    1.0000       288
-      semester_subjects     1.0000    1.0000    1.0000       144
-     subject_comparison     1.0000    1.0000    1.0000       138
-               syllabus     1.0000    1.0000    1.0000       333
-                 thanks     1.0000    1.0000    1.0000       138
-            unit_topics     1.0000    1.0000    1.0000       346
-                  units     1.0000    1.0000    1.0000       199
+  campus_life_and_student_services     0.9355    0.6277    0.7513       231
+       chemistry_and_life_sciences     0.8801    0.8853    0.8827      1500
+  college_academics_and_admissions     0.8878    0.9653    0.9249      1500
+  computer_science_and_engineering     0.8467    0.8433    0.8450      1500
+curriculum_syllabi_and_regulations     0.9651    0.7685    0.8557       216
+          mathematics_and_calculus     0.8359    0.8320    0.8339      1500
+  physics_and_engineering_sciences     0.8607    0.8567    0.8587      1500
 
-               accuracy                         1.0000      4489
-              macro avg     1.0000    1.0000    1.0000      4489
-           weighted avg     1.0000    1.0000    1.0000      4489
+                          accuracy                         0.8664      7947
+                         macro avg     0.8874    0.8256    0.8503      7947
+                      weighted avg     0.8672    0.8664    0.8653      7947

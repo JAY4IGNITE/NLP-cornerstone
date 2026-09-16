@@ -57,6 +57,15 @@ class StudentChatbotPipeline:
         # 2. Entity Extraction
         entities = entity_extractor.extract(query)
 
+        # Entity-guided intent routing: if query explicitly mentions an accredited course code/name,
+        # ensure it is routed to curriculum retrieval even if raw classifier was uncertain
+        if intent in {"fallback", "out_of_scope", "general_inquiry"} and (entities.get("course_code") or entities.get("canonical_course_name")):
+            intent = "curriculum_search"
+            confidence = max(confidence, 0.90)
+            intent_result["intent"] = intent
+            intent_result["confidence"] = confidence
+            intent_result["is_fallback"] = False
+
         # 3. Hybrid Retrieval (Dense Qdrant + Sparse BM25 with entity filtering)
         retrieved_chunks = []
         reranked_chunks = []

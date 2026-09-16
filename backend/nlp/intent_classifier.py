@@ -1,5 +1,6 @@
 """Production Intent Classifier using TF-IDF + Logistic Regression."""
 import os
+import re
 from pathlib import Path
 from typing import Dict, Any, Optional
 import joblib
@@ -89,37 +90,40 @@ class IntentClassifier:
         study_keywords = ["cheat sheet", "quick revision", "formula", "complexity table", "summary notes", "time complexity"]
         regulation_keywords = ["revaluation", "supplementary", "malpractice", "cheating", "arrear", "condonation", "detention", "passing marks", "grading system", "sgpa", "cgpa", "credits required"]
 
-        if any(k in lower_q for k in campus_keywords):
+        def has_word(kw: str) -> bool:
+            return bool(re.search(rf"\b{re.escape(kw)}\b", lower_q))
+
+        if any(has_word(k) for k in campus_keywords):
             raw_intent = "campus_services"
             confidence = 0.96
             is_fallback = False
             final_intent = "campus_services"
-        elif any(k in lower_q for k in library_keywords):
+        elif any(has_word(k) for k in library_keywords):
             raw_intent = "library_services"
             confidence = 0.95
             is_fallback = False
             final_intent = "library_services"
-        elif any(k in lower_q for k in scholarship_keywords):
+        elif any(has_word(k) for k in scholarship_keywords):
             raw_intent = "scholarships"
             confidence = 0.95
             is_fallback = False
             final_intent = "scholarships"
-        elif any(k in lower_q for k in placement_keywords):
+        elif any(has_word(k) for k in placement_keywords):
             raw_intent = "placements"
             confidence = 0.95
             is_fallback = False
             final_intent = "placements"
-        elif any(k in lower_q for k in calendar_keywords):
+        elif any(has_word(k) for k in calendar_keywords):
             raw_intent = "academic_calendar"
             confidence = 0.95
             is_fallback = False
             final_intent = "academic_calendar"
-        elif any(k in lower_q for k in study_keywords):
+        elif any(has_word(k) for k in study_keywords):
             raw_intent = "study_guides"
             confidence = 0.95
             is_fallback = False
             final_intent = "study_guides"
-        elif any(k in lower_q for k in regulation_keywords):
+        elif any(has_word(k) for k in regulation_keywords):
             raw_intent = "academic_regulations"
             confidence = 0.96
             is_fallback = False

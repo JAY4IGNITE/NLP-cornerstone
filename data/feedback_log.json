@@ -6,5 +6,45 @@
     "intent": "prerequisites",
     "feedback": "thumbs_up",
     "comments": "Very accurate citation"
+  },
+  {
+    "timestamp": "2026-09-16T01:18:06.425691",
+    "query": "What is CS201?",
+    "answer": "I specialize strictly in official university curriculum and academic regulations for B.Tech Computer",
+    "intent": "fallback",
+    "feedback": "thumbs_up",
+    "comments": "Excellent grounded answer from curriculum!"
+  },
+  {
+    "timestamp": "2026-09-16T01:18:30.983131",
+    "query": "What is CS201?",
+    "answer": "### Official Curriculum Information: Data Structures and Algorithms (CS201)\n\n**From Course Overview ",
+    "intent": "curriculum_search",
+    "feedback": "thumbs_up",
+    "comments": "Excellent grounded answer from curriculum!"
+  },
+  {
+    "timestamp": "2026-09-16T01:19:14.554262",
+    "query": "What is CS201?",
+    "answer": "### Official Curriculum Information: Data Structures and Algorithms (CS201)\n\n**From Course Overview ",
+    "intent": "curriculum_search",
+    "feedback": "thumbs_up",
+    "comments": "Excellent grounded answer from curriculum!"
+  },
+  {
+    "timestamp": "2026-09-16T01:28:55.832208",
+    "query": "What is CS201?",
+    "answer": "### Official Curriculum Information: Data Structures and Algorithms (CS201)\n\n**From Course Overview ",
+    "intent": "curriculum_syllabi_and_regulations",
+    "feedback": "thumbs_up",
+    "comments": "Excellent grounded answer from curriculum!"
+  },
+  {
+    "timestamp": "2026-09-16T01:44:00.252111",
+    "query": "What is CS201?",
+    "answer": "### Official Curriculum Information: Data Structures and Algorithms (CS201)\n\n**From Course Overview ",
+    "intent": "curriculum_search",
+    "feedback": "thumbs_up",
+    "comments": "Excellent grounded answer from curriculum!"
   }
 ]

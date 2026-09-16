@@ -87,7 +87,7 @@ def run_experiments():
     with open(exp_md_path, "w", encoding="utf-8") as f:
         f.write("# Academic NLP & RAG Project Experiments Report\n\n")
         f.write("## Experiment 1: Intent Classification Architectures\n")
-        f.write("Comparing feature representations and classifiers on 20,944 training samples across 23 intents.\n\n")
+        f.write(f"Comparing feature representations and classifiers on {len(train_df):,} training samples across {len(le.classes_)} academic intents.\n\n")
         f.write("| Architecture | Accuracy (%) | Macro F1 (%) | Weighted F1 (%) | Training Time (s) |\n")
         f.write("| :--- | :--- | :--- | :--- | :--- |\n")
         for res in exp1_results:

@@ -1,41 +1,53 @@
 {
-  "total_samples": 29921,
-  "unique_questions": 29921,
-  "duplicate_count": 0,
-  "unique_percentage": 100.0,
-  "number_of_intents": 23,
-  "samples_per_intent": {
-    "unit_topics": 2302,
-    "course_outcome": 2223,
-    "syllabus": 2221,
-    "course_overview": 2215,
-    "prerequisites": 1916,
-    "course_code": 1777,
-    "credits": 1770,
-    "course_objectives": 1768,
-    "units": 1328,
-    "semester_subjects": 960,
-    "fallback": 950,
-    "course_structure": 920,
-    "greeting": 920,
-    "academic_regulations": 920,
-    "lab_information": 920,
-    "curriculum_search": 920,
-    "subject_comparison": 920,
-    "faculty_information": 920,
-    "examination_information": 920,
-    "branch_subjects": 920,
-    "thanks": 920,
-    "help": 920,
-    "elective_information": 371
+  "dataset_name": "100% Pure Education & Academic College Chatbot Dataset",
+  "domain": "College / University Student Academic & STEM Education",
+  "sources": [
+    "Hugging Face (StackExchange Academia - Higher Education & Admissions)",
+    "Hugging Face (StackExchange CS & CS Theory - Computer Science Education)",
+    "Hugging Face (StackExchange Physics - Physics & Engineering Sciences)",
+    "Hugging Face (StackExchange Chemistry & Biology - Natural & Life Sciences)",
+    "Hugging Face (StackExchange Stats - Statistics & Probability)",
+    "Hugging Face (StackExchange Math - Higher Mathematics & Calculus)",
+    "Hugging Face (SetFit/student-question-categories - Real Student STEM Inquiries)"
+  ],
+  "is_synthetic": false,
+  "synthetic_rows": 0,
+  "non_educational_datasets_removed": true,
+  "total_samples": 1000000,
+  "train_samples": 800000,
+  "val_samples": 100000,
+  "test_samples": 100000,
+  "num_classes": 7,
+  "classes": [
+    "campus_life_and_student_services",
+    "chemistry_and_life_sciences",
+    "college_academics_and_admissions",
+    "computer_science_and_engineering",
+    "curriculum_syllabi_and_regulations",
+    "mathematics_and_calculus",
+    "physics_and_engineering_sciences"
+  ],
+  "class_distribution": {
+    "mathematics_and_calculus": 451079,
+    "physics_and_engineering_sciences": 205769,
+    "computer_science_and_engineering": 203899,
+    "chemistry_and_life_sciences": 105429,
+    "college_academics_and_admissions": 29577,
+    "campus_life_and_student_services": 2159,
+    "curriculum_syllabi_and_regulations": 2088
   },
-  "train_count": 20944,
-  "validation_count": 4488,
-  "test_count": 4489,
-  "split_ratios": {
-    "train": 0.7,
-    "validation": 0.15,
-    "test": 0.15
+  "text_statistics": {
+    "avg_word_count": 19.74,
+    "median_word_count": 14,
+    "min_word_count": 1,
+    "max_word_count": 564
   },
-  "random_seed": 42
+  "target_audience": "College & University Students, Academic Staff, Higher Education",
+  "splits_info": {
+    "train_parquet": "data/processed/train.parquet",
+    "val_parquet": "data/processed/val.parquet",
+    "test_parquet": "data/processed/test.parquet",
+    "master_parquet": "data/huge_nlp_dataset.parquet"
+  },
+  "generated_at": "2026-09-16T01:41:26Z"
 }

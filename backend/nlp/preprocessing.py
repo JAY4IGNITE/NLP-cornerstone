@@ -20,11 +20,33 @@ PROTECTED_ENTITIES: Set[str] = {
 }
 
 # Domain-specific stop words (excluding interrogatives like 'what', 'which', 'how' if they determine intent)
-STOP_WORDS: Set[str] = set(stopwords.words("english")) - {
+try:
+    raw_stopwords = set(stopwords.words("english"))
+except Exception:
+    try:
+        nltk.download("stopwords", quiet=True)
+        raw_stopwords = set(stopwords.words("english"))
+    except Exception:
+        raw_stopwords = {
+            "i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your",
+            "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she",
+            "her", "hers", "herself", "it", "its", "itself", "they", "them", "their",
+            "theirs", "themselves", "is", "am", "are", "was", "were", "be", "been",
+            "being", "have", "has", "had", "having", "do", "does", "did", "doing",
+            "a", "an", "the", "and", "but", "if", "or", "because", "as", "until",
+            "while", "of", "at", "by", "for", "with", "about", "against", "into",
+            "through", "during", "to", "from", "up", "down", "in", "out", "on", "off",
+            "over", "under", "again", "further", "then", "once", "here", "there"
+        }
+
+STOP_WORDS: Set[str] = raw_stopwords - {
     "what", "which", "how", "who", "where", "why", "before", "after", "not", "all", "between"
 }
 
-lemmatizer = WordNetLemmatizer()
+try:
+    lemmatizer = WordNetLemmatizer()
+except Exception:
+    lemmatizer = None
 
 class TextPreprocessor:
     def __init__(self, remove_stopwords: bool = False, lemmatize: bool = True):
@@ -67,9 +89,12 @@ class TextPreprocessor:
                 continue
 
             # Lemmatization
-            if self.lemmatize:
+            if self.lemmatize and lemmatizer is not None:
                 # NLTK lemmatizer works best for nouns/verbs
-                lemma = lemmatizer.lemmatize(token)
+                try:
+                    lemma = lemmatizer.lemmatize(token)
+                except Exception:
+                    lemma = token
                 processed_tokens.append(lemma)
             else:
                 processed_tokens.append(token)
