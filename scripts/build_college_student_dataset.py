@@ -245,39 +245,20 @@ def load_math_corpus(needed_samples: int) -> pd.DataFrame:
 def build_dataset():
     t0 = time.time()
     print("=" * 70)
-    print("BUILDING 1,000,000 DATASET STRICTLY FROM PURE EDUCATION DATASETS")
+    print("BUILDING STRICT STUDENT AND COLLEGE DATASET")
     print("=" * 70)
 
     academia_df = load_academia_corpus()
-    cs_df = load_cs_corpus()
-    physics_df = load_physics_corpus()
-    chem_bio_df = load_chemistry_biology_corpus()
-    stats_df = load_stats_corpus()
-    student_df = load_student_stem_questions()
 
-    base_dfs = [academia_df, cs_df, physics_df, chem_bio_df, stats_df, student_df]
-    base_df = pd.concat([d for d in base_dfs if len(d) > 0], ignore_index=True)
-    base_df["_clean"] = base_df["question"].str.strip().str.lower()
-    base_df = base_df.drop_duplicates(subset=["_clean"]).drop(columns=["_clean"]).reset_index(drop=True)
-    print(f"\n[Dataset] Unique education questions before math fill: {len(base_df):,}")
-
-    needed_math = max(0, TARGET_ROWS - len(base_df))
-    print(f"[Dataset] Fetching {needed_math:,} College Math queries to reach exactly {TARGET_ROWS:,} rows...")
-    math_df = load_math_corpus(needed_math)
-
-    full_df = pd.concat([base_df, math_df], ignore_index=True)
-    full_df["_clean"] = full_df["question"].str.strip().str.lower()
-    full_df = full_df.drop_duplicates(subset=["_clean"]).drop(columns=["_clean"]).reset_index(drop=True)
-
-    if len(full_df) > TARGET_ROWS:
-        print(f"[Dataset] Stratified trimming down to exactly {TARGET_ROWS:,} rows...")
-        full_df = full_df.groupby("intent", group_keys=False).apply(
-            lambda x: x.sample(n=min(len(x), int(TARGET_ROWS * (len(x) / len(full_df)) + 100)), random_state=42),
-            include_groups=True
-        ).sample(n=TARGET_ROWS, random_state=42).reset_index(drop=True)
-
+    base_df = academia_df.copy()
+    if len(base_df) > 0:
+        base_df["_clean"] = base_df["question"].str.strip().str.lower()
+        base_df = base_df.drop_duplicates(subset=["_clean"]).drop(columns=["_clean"]).reset_index(drop=True)
+    
+    full_df = base_df
     full_df["id"] = range(1, len(full_df) + 1)
-    print(f"\n[Dataset] Final Pure Education Dataset Size: {len(full_df):,} rows")
+    
+    print(f"\n[Dataset] Final Pure Student/College Dataset Size: {len(full_df):,} rows")
     print("[Dataset] Category Breakdown for Student AI Chatbot:")
     dist = full_df["intent"].value_counts().to_dict()
     for intent, count in sorted(dist.items(), key=lambda x: -x[1]):
@@ -288,7 +269,8 @@ def build_dataset():
     master_parquet = DATA_DIR / "huge_nlp_dataset.parquet"
     print(f"\n[Dataset] Saving master college dataset to {master_parquet}...")
     full_df.to_parquet(master_parquet, index=False, compression="snappy")
-    print(f"  Saved master dataset ({master_parquet.stat().st_size / (1024*1024):.1f} MB)")
+    if master_parquet.exists():
+        print(f"  Saved master dataset ({master_parquet.stat().st_size / (1024*1024):.1f} MB)")
 
     # Generate Train (80%) / Val (10%) / Test (10%) splits
     shuffled = full_df.sample(frac=1.0, random_state=42).reset_index(drop=True)
@@ -309,41 +291,38 @@ def build_dataset():
     sample_train = train_df.groupby("intent", group_keys=False).apply(
         lambda x: x.sample(n=min(len(x), 4000), random_state=42),
         include_groups=True
-    )
+    ) if not train_df.empty else train_df
+    
     sample_val = val_df.groupby("intent", group_keys=False).apply(
         lambda x: x.sample(n=min(len(x), 500), random_state=42),
         include_groups=True
-    )
+    ) if not val_df.empty else val_df
+    
     sample_test = test_df.groupby("intent", group_keys=False).apply(
         lambda x: x.sample(n=min(len(x), 500), random_state=42),
         include_groups=True
-    )
+    ) if not test_df.empty else test_df
 
     sample_train.to_csv(PROCESSED_DIR / "train.csv", index=False)
     sample_val.to_csv(PROCESSED_DIR / "val.csv", index=False)
     sample_test.to_csv(PROCESSED_DIR / "test.csv", index=False)
 
-    intents_export = sample_train[["id", "question", "intent"]].copy()
-    intents_export["course"] = ""
-    intents_export["course_code"] = ""
-    intents_export["branch"] = ""
-    intents_export["semester"] = ""
-    intents_export["unit"] = ""
-    intents_export.to_csv(DATA_DIR / "intents.csv", index=False)
-    print(f"  Exported {len(intents_export):,} sample rows to {DATA_DIR / 'intents.csv'}")
+    if not sample_train.empty:
+        intents_export = sample_train[["id", "question", "intent"]].copy()
+        intents_export["course"] = ""
+        intents_export["course_code"] = ""
+        intents_export["branch"] = ""
+        intents_export["semester"] = ""
+        intents_export["unit"] = ""
+        intents_export.to_csv(DATA_DIR / "intents.csv", index=False)
+        print(f"  Exported {len(intents_export):,} sample rows to {DATA_DIR / 'intents.csv'}")
 
     lengths = full_df["question"].str.split().str.len()
     stats = {
-        "dataset_name": "100% Pure Education & Academic College Chatbot Dataset",
+        "dataset_name": "Strictly College & Student Chatbot Dataset",
         "domain": "College / University Student Academic & STEM Education",
         "sources": [
-            "Hugging Face (StackExchange Academia - Higher Education & Admissions)",
-            "Hugging Face (StackExchange CS & CS Theory - Computer Science Education)",
-            "Hugging Face (StackExchange Physics - Physics & Engineering Sciences)",
-            "Hugging Face (StackExchange Chemistry & Biology - Natural & Life Sciences)",
-            "Hugging Face (StackExchange Stats - Statistics & Probability)",
-            "Hugging Face (StackExchange Math - Higher Mathematics & Calculus)",
-            "Hugging Face (SetFit/student-question-categories - Real Student STEM Inquiries)"
+            "Hugging Face (StackExchange Academia - Higher Education & Admissions)"
         ],
         "is_synthetic": False,
         "synthetic_rows": 0,
@@ -356,10 +335,10 @@ def build_dataset():
         "classes": sorted(list(dist.keys())),
         "class_distribution": dist,
         "text_statistics": {
-            "avg_word_count": round(float(lengths.mean()), 2),
-            "median_word_count": int(lengths.median()),
-            "min_word_count": int(lengths.min()),
-            "max_word_count": int(lengths.max())
+            "avg_word_count": round(float(lengths.mean()), 2) if not lengths.empty else 0,
+            "median_word_count": int(lengths.median()) if not lengths.empty else 0,
+            "min_word_count": int(lengths.min()) if not lengths.empty else 0,
+            "max_word_count": int(lengths.max()) if not lengths.empty else 0
         },
         "target_audience": "College & University Students, Academic Staff, Higher Education",
         "splits_info": {
@@ -377,7 +356,7 @@ def build_dataset():
 
     print(f"[Dataset] Saved pure education dataset statistics to {stats_file}")
     print("=" * 70)
-    print("SUCCESS: 1,000,000 PURE EDUCATION DATASET BUILT & INDEXED")
+    print("SUCCESS: STRICT STUDENT/COLLEGE DATASET BUILT & INDEXED")
     print(f"Time elapsed: {time.time() - t0:.1f}s")
     print("=" * 70 + "\n")
 

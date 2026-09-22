@@ -1,46 +1,32 @@
 {
-  "dataset_name": "100% Pure Education & Academic College Chatbot Dataset",
+  "dataset_name": "Strictly College & Student Chatbot Dataset",
   "domain": "College / University Student Academic & STEM Education",
   "sources": [
-    "Hugging Face (StackExchange Academia - Higher Education & Admissions)",
-    "Hugging Face (StackExchange CS & CS Theory - Computer Science Education)",
-    "Hugging Face (StackExchange Physics - Physics & Engineering Sciences)",
-    "Hugging Face (StackExchange Chemistry & Biology - Natural & Life Sciences)",
-    "Hugging Face (StackExchange Stats - Statistics & Probability)",
-    "Hugging Face (StackExchange Math - Higher Mathematics & Calculus)",
-    "Hugging Face (SetFit/student-question-categories - Real Student STEM Inquiries)"
+    "Hugging Face (StackExchange Academia - Higher Education & Admissions)"
   ],
   "is_synthetic": false,
   "synthetic_rows": 0,
   "non_educational_datasets_removed": true,
-  "total_samples": 1000000,
-  "train_samples": 800000,
-  "val_samples": 100000,
-  "test_samples": 100000,
-  "num_classes": 7,
+  "total_samples": 34330,
+  "train_samples": 27464,
+  "val_samples": 3433,
+  "test_samples": 3433,
+  "num_classes": 3,
   "classes": [
     "campus_life_and_student_services",
-    "chemistry_and_life_sciences",
     "college_academics_and_admissions",
-    "computer_science_and_engineering",
-    "curriculum_syllabi_and_regulations",
-    "mathematics_and_calculus",
-    "physics_and_engineering_sciences"
+    "curriculum_syllabi_and_regulations"
   ],
   "class_distribution": {
-    "mathematics_and_calculus": 451079,
-    "physics_and_engineering_sciences": 205769,
-    "computer_science_and_engineering": 203899,
-    "chemistry_and_life_sciences": 105429,
-    "college_academics_and_admissions": 29577,
+    "college_academics_and_admissions": 30083,
     "campus_life_and_student_services": 2159,
     "curriculum_syllabi_and_regulations": 2088
   },
   "text_statistics": {
-    "avg_word_count": 19.74,
-    "median_word_count": 14,
-    "min_word_count": 1,
-    "max_word_count": 564
+    "avg_word_count": 16.08,
+    "median_word_count": 13,
+    "min_word_count": 4,
+    "max_word_count": 44
   },
   "target_audience": "College & University Students, Academic Staff, Higher Education",
   "splits_info": {
@@ -49,5 +35,5 @@
     "test_parquet": "data/processed/test.parquet",
     "master_parquet": "data/huge_nlp_dataset.parquet"
   },
-  "generated_at": "2026-09-16T01:41:26Z"
+  "generated_at": "2026-09-22T15:07:39Z"
 }

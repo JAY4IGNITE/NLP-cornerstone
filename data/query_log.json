@@ -88,5 +88,32 @@
     "is_grounded": true,
     "overall_confidence": 0.9408,
     "latency_ms": 4.19
+  },
+  {
+    "timestamp": "2026-09-22T15:09:12.886468",
+    "query": "hi",
+    "intent": "fallback",
+    "intent_confidence": 0.4323,
+    "is_grounded": false,
+    "overall_confidence": 0.2,
+    "latency_ms": 4016.99
+  },
+  {
+    "timestamp": "2026-09-22T15:09:30.253723",
+    "query": "when in mid exam?",
+    "intent": "curriculum_syllabi_and_regulations",
+    "intent_confidence": 0.9095,
+    "is_grounded": false,
+    "overall_confidence": 0.25,
+    "latency_ms": 23.88
+  },
+  {
+    "timestamp": "2026-09-22T15:09:40.836158",
+    "query": "Provide an executive summary of B.Tech CSE Core Curriculum & Syllabi and what key regulations students should know.",
+    "intent": "curriculum_syllabi_and_regulations",
+    "intent_confidence": 0.8448,
+    "is_grounded": true,
+    "overall_confidence": 0.8187,
+    "latency_ms": 24.49
   }
 ]
