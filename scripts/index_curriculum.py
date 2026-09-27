@@ -65,7 +65,7 @@ def index_curriculum():
     print(f"Completed embeddings in {emb_time}s. Dimension verified: {len(embeddings[0]) if embeddings else 0}")
 
     # Insert into Qdrant
-    print(f"Upserting chunks into Qdrant collection '{vector_store.collection_name}'...")
+    print(f"Upserting chunks into Cloudflare Vectorize collection '{vector_store.index_name}'...")
     inserted_count = vector_store.insert_chunks(all_chunks, embeddings)
 
     # Save chunks index locally for sparse BM25 retrieval
@@ -87,7 +87,7 @@ def index_curriculum():
         "max_chunk_characters": max_len,
         "vector_dimension": EMBEDDING_DIM,
         "embedding_model": embedding_service.model,
-        "qdrant_collection": vector_store.collection_name,
+        "qdrant_collection": vector_store.index_name,
         "processing_time_seconds": total_time,
         "documents": doc_stats
     }

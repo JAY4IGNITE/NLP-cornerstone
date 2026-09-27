@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Header } from "./components/Header";
+import { Sidebar } from "./components/Sidebar";
+import Aurora from './reactbits/Aurora';
+import { AnimatedContent } from "./reactbits/AnimatedContent";
 import { ChatArea } from "./components/ChatArea";
 import { CurriculumCatalog } from "./components/CurriculumCatalog";
 import { RegulationsView } from "./components/RegulationsView";
@@ -120,13 +122,21 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white">
-      {/* Header */}
-      <Header activeTab={activeTab} onSelectTab={setActiveTab} health={health} />
+    <div className="flex h-screen bg-[#05060f] font-sans text-zinc-100 antialiased selection:bg-white/30 selection:text-white overflow-hidden relative">
+      <div className="absolute inset-0 z-0">
+        <Aurora colorStops={["#3A29FF", "#FF94B4", "#FF3232"]} amplitude={1.2} />
+      </div>
 
-      {/* Main Tab Content */}
-      <main className="flex-1 flex flex-col relative overflow-hidden">
-        {activeTab === "chat" && (
+      <Sidebar activeTab={activeTab} onSelectTab={setActiveTab} health={health} />
+
+      <main className="flex-1 flex flex-col relative z-10 overflow-hidden bg-black/40 backdrop-blur-3xl m-2 rounded-2xl border border-white/5 shadow-2xl">
+        <AnimatedContent
+          distance={20}
+          direction="vertical"
+          reverse={false}
+          className="h-full flex flex-col"
+        >
+          {activeTab === "chat" && (
           <ChatArea
             messages={messages}
             isLoading={isLoading}
@@ -149,6 +159,8 @@ export default function App() {
         )}
 
         {activeTab === "metrics" && <MetricsDashboard />}
+
+        </AnimatedContent>
 
         {/* Slide-out RAG Inspector Drawer */}
         {inspectedMessage && (

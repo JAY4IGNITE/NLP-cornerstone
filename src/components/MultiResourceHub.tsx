@@ -12,14 +12,13 @@ import {
   Layers,
   ArrowRight,
   CheckCircle2,
-  ExternalLink,
   PlusCircle,
   FileCode,
-  ShieldCheck,
   Zap,
-  Info
 } from "lucide-react";
 import { ResourcesCatalogResponse, CloudflareStatusResponse } from "../types";
+import { SpotlightCard } from "../reactbits/SpotlightCard";
+import { AnimatedContent } from "../reactbits/AnimatedContent";
 
 interface MultiResourceHubProps {
   onAskResource: (prompt: string) => void;
@@ -124,18 +123,12 @@ export const MultiResourceHub: React.FC<MultiResourceHubProps> = ({ onAskResourc
 
   const getCategoryIcon = (cat: string) => {
     switch (cat) {
-      case "curriculum":
-        return <BookOpen className="w-5 h-5 text-indigo-600" />;
-      case "regulations":
-        return <FileText className="w-5 h-5 text-amber-600" />;
-      case "campus_services":
-        return <Building2 className="w-5 h-5 text-emerald-600" />;
-      case "study_guides":
-        return <Bookmark className="w-5 h-5 text-purple-600" />;
-      case "academic_calendar":
-        return <Calendar className="w-5 h-5 text-rose-600" />;
-      default:
-        return <Layers className="w-5 h-5 text-slate-600" />;
+      case "curriculum": return <BookOpen className="w-5 h-5 text-zinc-300" />;
+      case "regulations": return <FileText className="w-5 h-5 text-zinc-300" />;
+      case "campus_services": return <Building2 className="w-5 h-5 text-zinc-300" />;
+      case "study_guides": return <Bookmark className="w-5 h-5 text-zinc-300" />;
+      case "academic_calendar": return <Calendar className="w-5 h-5 text-zinc-300" />;
+      default: return <Layers className="w-5 h-5 text-zinc-400" />;
     }
   };
 
@@ -172,384 +165,398 @@ export const MultiResourceHub: React.FC<MultiResourceHubProps> = ({ onAskResourc
   ) || [];
 
   return (
-    <div className="flex-1 overflow-y-auto bg-slate-50 p-4 sm:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="flex-1 overflow-y-auto bg-transparent p-4 sm:p-6 lg:p-8">
+      <div className="max-w-7xl mx-auto space-y-8">
+        
         {/* Header & Cloudflare Vectorize Status Banner */}
-        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-6 text-white shadow-md border border-slate-800">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-            <div className="space-y-2">
-              <div className="flex items-center space-x-3">
-                <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                  <Cloud className="w-3.5 h-3.5" />
-                  <span>Cloudflare Vectorize Active</span>
-                </span>
-                <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  <Zap className="w-3.5 h-3.5" />
-                  <span>Edge Vector Acceleration</span>
-                </span>
-              </div>
-              <h1 className="text-2xl font-bold tracking-tight">
-                Multi-Resource Academic Knowledge Hub
-              </h1>
-              <p className="text-sm text-slate-300 max-w-2xl">
-                Integrated across 5 university datasets: Curriculum Handbook, Academic Regulations,
-                Campus Student Services, Technical Revision Cheat Sheets, and the Official Academic Calendar.
-              </p>
-            </div>
-
-            {/* Cloudflare Vector Store Telemetry */}
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="bg-white/10 backdrop-blur-xs rounded-xl p-3 border border-white/10 text-center min-w-[110px]">
-                <p className="text-xs text-slate-300">Total Vectors</p>
-                <p className="text-xl font-bold text-white">
-                  {cfStatus ? cfStatus.total_vectors : "131+"}
+        <AnimatedContent distance={20} direction="vertical" reverse={false}>
+          <div className="bg-black/40 backdrop-blur-md rounded-3xl p-8 text-white shadow-2xl border border-white/10 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5 pointer-events-none" />
+            
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative z-10">
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-[11px] uppercase tracking-widest font-semibold bg-white/10 text-zinc-300 border border-white/20">
+                    <Cloud className="w-3.5 h-3.5" />
+                    <span>Cloudflare Vectorize Active</span>
+                  </span>
+                  <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-[11px] uppercase tracking-widest font-semibold bg-white/10 text-zinc-300 border border-white/20">
+                    <Zap className="w-3.5 h-3.5" />
+                    <span>Edge Vector Acceleration</span>
+                  </span>
+                </div>
+                <h1 className="text-3xl font-bold tracking-tight">
+                  Multi-Resource Academic Knowledge Hub
+                </h1>
+                <p className="text-sm text-zinc-400 max-w-2xl leading-relaxed">
+                  Integrated across 5 university resources: Curriculum Handbook, Academic Regulations,
+                  Campus Student Services, Technical Revision Cheat Sheets, and the Official Academic Calendar.
                 </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-xs rounded-xl p-3 border border-white/10 text-center min-w-[110px]">
-                <p className="text-xs text-slate-300">Dimensions</p>
-                <p className="text-xl font-bold text-indigo-300">1024-d</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-xs rounded-xl p-3 border border-white/10 text-center min-w-[110px]">
-                <p className="text-xs text-slate-300">Distance Metric</p>
-                <p className="text-xl font-bold text-emerald-300">Cosine</p>
-              </div>
 
-              <div className="flex flex-col gap-2">
-                <button
-                  id="sync-resources-btn"
-                  onClick={handleSyncAll}
-                  disabled={isSyncing}
-                  className="inline-flex items-center justify-center space-x-2 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs shadow-sm transition-colors disabled:opacity-50"
-                >
-                  <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? "animate-spin" : ""}`} />
-                  <span>{isSyncing ? "Syncing..." : "Sync All Data"}</span>
-                </button>
-                <button
-                  id="add-custom-snippet-btn"
-                  onClick={() => setShowAddModal(true)}
-                  className="inline-flex items-center justify-center space-x-1.5 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium text-xs border border-white/20 transition-colors"
-                >
-                  <PlusCircle className="w-3.5 h-3.5" />
-                  <span>Contribute Note</span>
-                </button>
+              {/* Cloudflare Vector Store Telemetry */}
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 text-center min-w-[120px] shadow-inner">
+                  <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-semibold mb-1">Total Vectors</p>
+                  <p className="text-2xl font-bold text-white">
+                    {cfStatus ? cfStatus.total_vectors : "131+"}
+                  </p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 text-center min-w-[120px] shadow-inner">
+                  <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-semibold mb-1">Dimensions</p>
+                  <p className="text-2xl font-bold text-zinc-300">1024-d</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 text-center min-w-[120px] shadow-inner">
+                  <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-semibold mb-1">Distance Metric</p>
+                  <p className="text-2xl font-bold text-zinc-300">Cosine</p>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <button
+                    id="sync-resources-btn"
+                    onClick={handleSyncAll}
+                    disabled={isSyncing}
+                    className="inline-flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl bg-zinc-700 hover:bg-zinc-600 text-white font-semibold text-xs transition-all disabled:opacity-50 shadow-[0_0_15px_rgba(255,255,255,0.15)] border border-white/20"
+                  >
+                    <RefreshCw className={`w-4 h-4 ${isSyncing ? "animate-spin" : ""}`} />
+                    <span>{isSyncing ? "Syncing..." : "Sync All Data"}</span>
+                  </button>
+                  <button
+                    id="add-custom-snippet-btn"
+                    onClick={() => setShowAddModal(true)}
+                    className="inline-flex items-center justify-center space-x-1.5 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-xs border border-white/10 transition-all shadow-inner"
+                  >
+                    <PlusCircle className="w-4 h-4" />
+                    <span>Contribute Note</span>
+                  </button>
+                </div>
               </div>
             </div>
+
+            {syncMessage && (
+              <div className="mt-6 p-3 rounded-xl bg-white/10 text-zinc-300 border border-white/20 text-xs flex items-center space-x-2 font-medium">
+                <CheckCircle2 className="w-4 h-4" />
+                <span>{syncMessage}</span>
+              </div>
+            )}
           </div>
-
-          {syncMessage && (
-            <div className="mt-4 p-2.5 rounded-lg bg-emerald-500/20 text-emerald-200 border border-emerald-500/30 text-xs flex items-center space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>{syncMessage}</span>
-            </div>
-          )}
-        </div>
+        </AnimatedContent>
 
         {/* Search & Category Filter Navigation */}
-        <div className="bg-white rounded-xl p-4 shadow-xs border border-slate-200 space-y-4">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setActiveCategory("all")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  activeCategory === "all"
-                    ? "bg-slate-900 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                }`}
-              >
-                All Resources ({catalog?.total_indexed_chunks || 49})
-              </button>
-              <button
-                onClick={() => setActiveCategory("curriculum")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  activeCategory === "curriculum"
-                    ? "bg-indigo-600 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                }`}
-              >
-                Curriculum ({catalog?.category_breakdown?.curriculum || 26})
-              </button>
-              <button
-                onClick={() => setActiveCategory("regulations")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  activeCategory === "regulations"
-                    ? "bg-amber-600 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                }`}
-              >
-                Regulations ({catalog?.category_breakdown?.regulations || 9})
-              </button>
-              <button
-                onClick={() => setActiveCategory("campus_services")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  activeCategory === "campus_services"
-                    ? "bg-emerald-600 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                }`}
-              >
-                Campus Life & Hostel ({catalog?.category_breakdown?.campus_services || 8})
-              </button>
-              <button
-                onClick={() => setActiveCategory("study_guides")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  activeCategory === "study_guides"
-                    ? "bg-purple-600 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                }`}
-              >
-                Revision Guides ({catalog?.category_breakdown?.study_guides || 5})
-              </button>
-              <button
-                onClick={() => setActiveCategory("academic_calendar")}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  activeCategory === "academic_calendar"
-                    ? "bg-rose-600 text-white shadow-xs"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                }`}
-              >
-                Calendar ({catalog?.category_breakdown?.academic_calendar || 1})
-              </button>
-            </div>
-
-            {/* Direct Vector Search Input */}
-            <form onSubmit={handleLiveSearch} className="flex items-center space-x-2">
-              <div className="relative w-full sm:w-64">
-                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Vector search chunks..."
-                  className="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:bg-white"
-                />
+        <AnimatedContent distance={20} direction="vertical" reverse={false}>
+          <div className="bg-black/40 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-white/10 space-y-5">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
+              {/* Category Filter Pills */}
+              <div className="flex flex-wrap gap-2.5">
+                <button
+                  onClick={() => setActiveCategory("all")}
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    activeCategory === "all"
+                      ? "bg-zinc-700 text-white shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                      : "bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/5"
+                  }`}
+                >
+                  All Resources ({catalog?.total_indexed_chunks || 49})
+                </button>
+                <button
+                  onClick={() => setActiveCategory("curriculum")}
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    activeCategory === "curriculum"
+                      ? "bg-zinc-700 text-white shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                      : "bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/5"
+                  }`}
+                >
+                  Curriculum ({catalog?.category_breakdown?.curriculum || 26})
+                </button>
+                <button
+                  onClick={() => setActiveCategory("regulations")}
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    activeCategory === "regulations"
+                      ? "bg-zinc-700 text-white shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                      : "bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/5"
+                  }`}
+                >
+                  Regulations ({catalog?.category_breakdown?.regulations || 9})
+                </button>
+                <button
+                  onClick={() => setActiveCategory("campus_services")}
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    activeCategory === "campus_services"
+                      ? "bg-zinc-700 text-white shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                      : "bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/5"
+                  }`}
+                >
+                  Campus Life ({catalog?.category_breakdown?.campus_services || 8})
+                </button>
+                <button
+                  onClick={() => setActiveCategory("study_guides")}
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    activeCategory === "study_guides"
+                      ? "bg-zinc-700 text-white shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                      : "bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/5"
+                  }`}
+                >
+                  Revision Guides ({catalog?.category_breakdown?.study_guides || 5})
+                </button>
+                <button
+                  onClick={() => setActiveCategory("academic_calendar")}
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                    activeCategory === "academic_calendar"
+                      ? "bg-zinc-700 text-white shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                      : "bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/5"
+                  }`}
+                >
+                  Calendar ({catalog?.category_breakdown?.academic_calendar || 1})
+                </button>
               </div>
-              <button
-                type="submit"
-                disabled={isSearching}
-                className="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium rounded-lg transition-colors shadow-xs"
-              >
-                {isSearching ? "Searching..." : "Search"}
-              </button>
-            </form>
+
+              {/* Direct Vector Search Input */}
+              <form onSubmit={handleLiveSearch} className="flex items-center space-x-3 w-full md:w-auto">
+                <div className="relative w-full sm:w-72">
+                  <Search className="w-4 h-4 text-zinc-400 absolute left-4 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Vector search chunks..."
+                    className="w-full pl-10 pr-4 py-2.5 text-sm bg-black/40 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/30 text-white shadow-inner transition-all"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={isSearching}
+                  className="px-4 py-2.5 bg-zinc-700 hover:bg-zinc-600 text-white text-sm font-semibold rounded-xl transition-all shadow-[0_0_15px_rgba(255,255,255,0.15)] shrink-0 border border-white/20"
+                >
+                  {isSearching ? "..." : "Search"}
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
+        </AnimatedContent>
 
         {/* Live Vector Search Results if Active */}
         {searchResults.length > 0 && (
-          <div className="bg-white rounded-xl p-5 shadow-xs border border-indigo-200 space-y-3">
-            <div className="flex items-center justify-between">
-              <h2 className="text-sm font-semibold text-slate-900 flex items-center space-x-2">
-                <Search className="w-4 h-4 text-indigo-600" />
-                <span>Cloudflare Vectorize Matches for "{searchQuery}" ({searchResults.length})</span>
-              </h2>
-              <button
-                onClick={() => setSearchResults([])}
-                className="text-xs text-slate-500 hover:text-slate-800"
-              >
-                Clear Results
-              </button>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {searchResults.map((r, i) => (
-                <div key={i} className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 space-y-2">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="font-semibold text-indigo-700 uppercase">
-                      {r.metadata?.course_code || r.metadata?.category}
-                    </span>
-                    <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-mono text-[11px] border border-emerald-200">
-                      Score: {r.score?.toFixed(4)}
-                    </span>
+          <AnimatedContent distance={30} direction="vertical" reverse={false}>
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-white/20 space-y-5">
+              <div className="flex items-center justify-between">
+                <h2 className="text-sm font-bold text-zinc-200 flex items-center space-x-2 uppercase tracking-wider">
+                  <Search className="w-4 h-4" />
+                  <span>Vector Matches for "{searchQuery}" ({searchResults.length})</span>
+                </h2>
+                <button
+                  onClick={() => setSearchResults([])}
+                  className="text-xs font-semibold text-zinc-400 hover:text-white transition-colors bg-white/5 px-3 py-1.5 rounded-lg border border-white/10"
+                >
+                  Clear Results
+                </button>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {searchResults.map((r, i) => (
+                  <div key={i} className="p-5 bg-black/40 rounded-2xl border border-white/5 space-y-3 shadow-inner">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="font-bold text-zinc-300 uppercase tracking-wider bg-white/10 px-2 py-1 rounded-md">
+                        {r.metadata?.course_code || r.metadata?.category}
+                      </span>
+                      <span className="text-zinc-300 bg-white/10 px-2.5 py-1 rounded-md font-mono text-[10px] font-bold border border-white/20">
+                        Score: {r.score?.toFixed(4)}
+                      </span>
+                    </div>
+                    <p className="text-sm font-bold text-white line-clamp-1">
+                      {r.metadata?.section_heading || r.metadata?.course_name}
+                    </p>
+                    <p className="text-xs text-zinc-400 line-clamp-3 bg-white/5 p-3 rounded-xl border border-white/5 leading-relaxed">
+                      {r.metadata?.text}
+                    </p>
+                    <div className="flex items-center justify-between text-[11px] text-zinc-500 pt-2 font-medium">
+                      <span>{r.metadata?.source_document} (p.{r.metadata?.page_number})</span>
+                      <button
+                        onClick={() => onAskResource(`Explain the official regulations or syllabus for: ${r.metadata?.section_heading || r.metadata?.course_name}`)}
+                        className="text-zinc-300 hover:text-zinc-200 font-bold flex items-center space-x-1.5 transition-colors bg-white/10 px-2.5 py-1.5 rounded-lg border border-white/20"
+                      >
+                        <span>Ask AI</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
                   </div>
-                  <p className="text-xs font-medium text-slate-800 line-clamp-1">
-                    {r.metadata?.section_heading || r.metadata?.course_name}
-                  </p>
-                  <p className="text-xs text-slate-600 line-clamp-3 bg-white p-2 rounded border border-slate-100">
-                    {r.metadata?.text}
-                  </p>
-                  <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">
-                    <span>{r.metadata?.source_document} (p.{r.metadata?.page_number})</span>
-                    <button
-                      onClick={() => onAskResource(`Explain the official regulations or syllabus for: ${r.metadata?.section_heading || r.metadata?.course_name}`)}
-                      className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center space-x-1"
-                    >
-                      <span>Ask AI</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </button>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          </AnimatedContent>
         )}
 
         {/* Resources Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredResources.map((res) => (
-            <div
-              key={res.id}
-              className="bg-white rounded-xl p-6 shadow-xs border border-slate-200 hover:border-indigo-300 transition-all flex flex-col justify-between space-y-4"
-            >
-              <div className="space-y-3">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className="p-2.5 rounded-xl bg-slate-100 border border-slate-200">
-                      {getCategoryIcon(res.category)}
+        <AnimatedContent distance={40} direction="vertical" reverse={false}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {filteredResources.map((res) => (
+              <SpotlightCard
+                key={res.id}
+                className="p-7 flex flex-col justify-between h-full space-y-6"
+                spotlightColor="rgba(255, 255, 255, 0.15)"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center space-x-4">
+                      <div className="p-3 rounded-2xl bg-white/5 border border-white/10 shadow-inner">
+                        {getCategoryIcon(res.category)}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-white text-lg">{res.name}</h3>
+                        <p className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mt-1">{res.type}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-slate-900 text-base">{res.name}</h3>
-                      <p className="text-xs text-slate-500">{res.type}</p>
+                    <span className="text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-lg font-bold bg-white/10 text-zinc-300 border border-white/20">
+                      {res.total_chunks} Chunks
+                    </span>
+                  </div>
+
+                  <p className="text-sm text-zinc-400 leading-relaxed font-medium">
+                    {res.description}
+                  </p>
+
+                  {/* Source PDFs */}
+                  <div className="space-y-2 pt-3">
+                    <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                      Source Documents:
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {res.source_documents.map((doc, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-[11px] font-mono font-semibold bg-black/40 text-zinc-300 border border-white/10 shadow-inner"
+                        >
+                          <FileCode className="w-3.5 h-3.5 text-zinc-500" />
+                          <span>{doc}</span>
+                        </span>
+                      ))}
                     </div>
                   </div>
-                  <span className="text-xs px-2.5 py-1 rounded-full font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
-                    {res.total_chunks} Chunks
+
+                  {/* Sample Inquiries */}
+                  <div className="space-y-2 pt-3">
+                    <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                      Suggested Inquiries for Chatbot:
+                    </p>
+                    <div className="space-y-2">
+                      {(sampleQuestions[res.category] || []).map((q, qIdx) => (
+                        <button
+                          key={qIdx}
+                          onClick={() => onAskResource(q)}
+                          className="w-full text-left text-xs text-zinc-300 hover:text-white bg-white/5 hover:bg-white/10 p-3 rounded-xl border border-white/5 hover:border-white/30 transition-all flex items-center justify-between group shadow-inner"
+                        >
+                          <span className="truncate pr-3 font-medium">{q}</span>
+                          <ArrowRight className="w-4 h-4 text-zinc-600 group-hover:text-zinc-200 transition-colors shrink-0" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-5 border-t border-white/10 flex items-center justify-between text-xs font-semibold">
+                  <span className="inline-flex items-center space-x-1.5 text-zinc-300 bg-white/10 px-3 py-1.5 rounded-lg border border-white/20">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Indexed in Vectorize</span>
                   </span>
+                  <button
+                    onClick={() => onAskResource(`Provide an executive summary of ${res.name} and what key regulations students should know.`)}
+                    className="text-zinc-300 hover:text-zinc-200 flex items-center space-x-1.5 transition-colors bg-white/10 px-3 py-1.5 rounded-lg border border-white/20"
+                  >
+                    <span>Query Resource</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
-
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {res.description}
-                </p>
-
-                {/* Source PDFs */}
-                <div className="space-y-1.5 pt-2">
-                  <p className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                    Source Documents:
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {res.source_documents.map((doc, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-md text-xs font-mono bg-slate-100 text-slate-700 border border-slate-200"
-                      >
-                        <FileCode className="w-3 h-3 text-slate-500" />
-                        <span>{doc}</span>
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Sample Inquiries */}
-                <div className="space-y-1.5 pt-2">
-                  <p className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
-                    Suggested Inquiries for Chatbot:
-                  </p>
-                  <div className="space-y-1.5">
-                    {(sampleQuestions[res.category] || []).map((q, qIdx) => (
-                      <button
-                        key={qIdx}
-                        onClick={() => onAskResource(q)}
-                        className="w-full text-left text-xs text-slate-700 hover:text-indigo-700 bg-slate-50 hover:bg-indigo-50/50 p-2 rounded-lg border border-slate-200/80 transition-colors flex items-center justify-between group"
-                      >
-                        <span className="truncate pr-2">{q}</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-indigo-600 shrink-0" />
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span className="inline-flex items-center space-x-1 text-emerald-700 font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>Indexed in Vectorize</span>
-                </span>
-                <button
-                  onClick={() => onAskResource(`Provide an executive summary of ${res.name} and what key regulations students should know.`)}
-                  className="font-semibold text-indigo-600 hover:text-indigo-800 flex items-center space-x-1"
-                >
-                  <span>Query Dataset</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+              </SpotlightCard>
+            ))}
+          </div>
+        </AnimatedContent>
 
         {/* Contributing Modal */}
         {showAddModal && (
-          <div className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-xl border border-slate-200 space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-200">
-                <h3 className="font-bold text-slate-900 text-base">
-                  Contribute Knowledge Chunk to Cloudflare Vectorize
-                </h3>
-                <button
-                  onClick={() => setShowAddModal(false)}
-                  className="text-slate-400 hover:text-slate-600 text-sm font-semibold"
-                >
-                  ✕
-                </button>
-              </div>
-
-              <form onSubmit={handleAddCustomSnippet} className="space-y-4 text-xs">
-                <div>
-                  <label className="block font-semibold text-slate-700 mb-1">Title / Section</label>
-                  <input
-                    type="text"
-                    required
-                    value={customTitle}
-                    onChange={(e) => setCustomTitle(e.target.value)}
-                    placeholder="e.g. Hostels Wi-Fi Access Point Reset Procedure"
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs"
-                  />
+          <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4">
+            <AnimatedContent distance={0} direction="vertical" reverse={false} className="max-w-lg w-full">
+              <div className="bg-[#0b0f1e] rounded-3xl w-full p-8 shadow-2xl border border-white/10 space-y-6">
+                <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                  <h3 className="font-bold text-white text-lg">
+                    Contribute Knowledge Chunk
+                  </h3>
+                  <button
+                    onClick={() => setShowAddModal(false)}
+                    className="p-2 text-zinc-500 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
+                  >
+                    ✕
+                  </button>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <form onSubmit={handleAddCustomSnippet} className="space-y-5 text-sm">
                   <div>
-                    <label className="block font-semibold text-slate-700 mb-1">Category</label>
-                    <select
-                      value={customCategory}
-                      onChange={(e) => setCustomCategory(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs"
-                    >
-                      <option value="campus_services">Campus Services & Facilities</option>
-                      <option value="curriculum">Curriculum & Course Notes</option>
-                      <option value="regulations">Academic Regulations</option>
-                      <option value="study_guides">Technical Study Guides</option>
-                      <option value="academic_calendar">Academic Calendar</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block font-semibold text-slate-700 mb-1">Course Code (Optional)</label>
+                    <label className="block font-bold text-zinc-300 mb-2 text-xs uppercase tracking-widest">Title / Section</label>
                     <input
                       type="text"
-                      value={customCourse}
-                      onChange={(e) => setCustomCourse(e.target.value)}
-                      placeholder="e.g. CS303 or blank"
-                      className="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs"
+                      required
+                      value={customTitle}
+                      onChange={(e) => setCustomTitle(e.target.value)}
+                      placeholder="e.g. Hostels Wi-Fi Access Point Reset Procedure"
+                      className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/30 text-white shadow-inner transition-all"
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label className="block font-semibold text-slate-700 mb-1">Snippet Content</label>
-                  <textarea
-                    required
-                    rows={4}
-                    value={customContent}
-                    onChange={(e) => setCustomContent(e.target.value)}
-                    placeholder="Enter the official text, instructions, or formula guidelines..."
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs"
-                  />
-                </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-bold text-zinc-300 mb-2 text-xs uppercase tracking-widest">Category</label>
+                      <select
+                        value={customCategory}
+                        onChange={(e) => setCustomCategory(e.target.value)}
+                        className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/30 text-white shadow-inner transition-all appearance-none"
+                      >
+                        <option value="campus_services">Campus Services & Facilities</option>
+                        <option value="curriculum">Curriculum & Course Notes</option>
+                        <option value="regulations">Academic Regulations</option>
+                        <option value="study_guides">Technical Study Guides</option>
+                        <option value="academic_calendar">Academic Calendar</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block font-bold text-zinc-300 mb-2 text-xs uppercase tracking-widest">Course Code</label>
+                      <input
+                        type="text"
+                        value={customCourse}
+                        onChange={(e) => setCustomCourse(e.target.value)}
+                        placeholder="e.g. CS303 or blank"
+                        className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/30 text-white shadow-inner transition-all"
+                      />
+                    </div>
+                  </div>
 
-                <div className="flex items-center justify-end space-x-2 pt-2 border-t border-slate-200">
-                  <button
-                    type="button"
-                    onClick={() => setShowAddModal(false)}
-                    className="px-4 py-2 border border-slate-300 rounded-lg font-medium text-slate-700 hover:bg-slate-100"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    disabled={isSubmittingCustom}
-                    className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium shadow-xs"
-                  >
-                    {isSubmittingCustom ? "Indexing..." : "Index into Vectorize"}
-                  </button>
-                </div>
-              </form>
-            </div>
+                  <div>
+                    <label className="block font-bold text-zinc-300 mb-2 text-xs uppercase tracking-widest">Snippet Content</label>
+                    <textarea
+                      required
+                      rows={5}
+                      value={customContent}
+                      onChange={(e) => setCustomContent(e.target.value)}
+                      placeholder="Enter the official text, instructions, or formula guidelines..."
+                      className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/30 text-white shadow-inner transition-all"
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-end space-x-3 pt-4 border-t border-white/10">
+                    <button
+                      type="button"
+                      onClick={() => setShowAddModal(false)}
+                      className="px-5 py-2.5 border border-white/10 rounded-xl font-semibold text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={isSubmittingCustom}
+                      className="px-5 py-2.5 bg-zinc-700 hover:bg-zinc-600 text-white rounded-xl font-semibold shadow-[0_0_15px_rgba(255,255,255,0.15)] transition-all disabled:opacity-50 border border-white/20"
+                    >
+                      {isSubmittingCustom ? "Indexing..." : "Index into Vectorize"}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </AnimatedContent>
           </div>
         )}
       </div>

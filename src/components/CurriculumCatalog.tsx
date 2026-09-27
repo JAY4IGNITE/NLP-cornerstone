@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Search, BookOpen, Layers, CheckCircle2, ChevronRight, X, MessageSquare, Award } from "lucide-react";
+import { Search, BookOpen, Layers, ChevronRight, X, MessageSquare, Award } from "lucide-react";
 import { CourseSummary, CourseDetail } from "../types";
+import { SpotlightCard } from "../reactbits/SpotlightCard";
+import { AnimatedContent } from "../reactbits/AnimatedContent";
 
 interface CurriculumCatalogProps {
   onAskCourse: (query: string) => void;
@@ -61,183 +63,192 @@ export const CurriculumCatalog: React.FC<CurriculumCatalogProps> = ({ onAskCours
   });
 
   return (
-    <div className="flex-1 overflow-y-auto bg-slate-50 p-4 sm:p-6 lg:p-8">
-      <div className="max-w-6xl mx-auto space-y-6">
+    <div className="flex-1 overflow-y-auto bg-transparent p-4 sm:p-6 lg:p-8">
+      <div className="max-w-6xl mx-auto space-y-8">
         {/* Title and Controls */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs">
-          <div>
-            <h2 className="text-xl font-bold text-slate-900 tracking-tight flex items-center space-x-2">
-              <BookOpen className="w-5 h-5 text-indigo-600" />
-              <span>Official B.Tech CSE Curriculum Catalog</span>
-            </h2>
-            <p className="text-xs text-slate-500 mt-1">
-              Accredited courses, credits, unit syllabi, prerequisites, and learning outcomes
-            </p>
-          </div>
-
-          {/* Search & Semester Filters */}
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="relative">
-              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
-              <input
-                id="catalog-search-input"
-                type="text"
-                placeholder="Search course or code..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-9 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-indigo-500 text-slate-800"
-              />
+        <AnimatedContent distance={20} direction="vertical" reverse={false}>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white/5 p-6 rounded-3xl border border-white/10 shadow-2xl backdrop-blur-md">
+            <div>
+              <h2 className="text-xl font-bold text-white tracking-tight flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-zinc-300 border border-white/20">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <span>Official B.Tech CSE Curriculum</span>
+              </h2>
+              <p className="text-sm text-zinc-400 mt-2 max-w-lg">
+                Accredited courses, credits, unit syllabi, prerequisites, and learning outcomes
+              </p>
             </div>
 
-            <div className="flex items-center space-x-1">
-              <button
-                id="sem-filter-all"
-                onClick={() => setSelectedSemester(null)}
-                className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
-                  selectedSemester === null
-                    ? "bg-indigo-600 text-white"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                }`}
-              >
-                All
-              </button>
-              {[3, 5, 6, 7, 8].map((sem) => (
+            {/* Search & Semester Filters */}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="relative">
+                <Search className="w-4 h-4 text-zinc-400 absolute left-3.5 top-3" />
+                <input
+                  id="catalog-search-input"
+                  type="text"
+                  placeholder="Search course or code..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10 pr-4 py-2.5 text-sm bg-black/40 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-white/30 focus:bg-white/10 text-white transition-all w-64 shadow-inner"
+                />
+              </div>
+
+              <div className="flex items-center space-x-1.5 p-1.5 bg-black/40 border border-white/10 rounded-xl shadow-inner">
                 <button
-                  key={sem}
-                  id={`sem-filter-${sem}`}
-                  onClick={() => setSelectedSemester(sem)}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors ${
-                    selectedSemester === sem
-                      ? "bg-indigo-600 text-white"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  id="sem-filter-all"
+                  onClick={() => setSelectedSemester(null)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    selectedSemester === null
+                      ? "bg-zinc-700 text-white shadow-[0_0_10px_rgba(255,255,255,0.15)]"
+                      : "text-zinc-400 hover:text-white hover:bg-white/10"
                   }`}
                 >
-                  Sem {sem}
+                  All
                 </button>
-              ))}
+                {[3, 5, 6, 7, 8].map((sem) => (
+                  <button
+                    key={sem}
+                    id={`sem-filter-${sem}`}
+                    onClick={() => setSelectedSemester(sem)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      selectedSemester === sem
+                        ? "bg-zinc-700 text-white shadow-[0_0_10px_rgba(255,255,255,0.15)]"
+                        : "text-zinc-400 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    Sem {sem}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </AnimatedContent>
 
         {/* Courses Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredCourses.map((c) => (
-            <div
-              key={c.course_code}
-              className="bg-white rounded-2xl border border-slate-200 p-5 shadow-2xs hover:shadow-xs hover:border-indigo-300 transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-mono font-bold text-xs px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
-                    {c.course_code}
-                  </span>
-                  <span className="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full">
-                    Semester {c.semester}
-                  </span>
+        <AnimatedContent distance={30} direction="vertical" reverse={false}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {filteredCourses.map((c) => (
+              <SpotlightCard
+                key={c.course_code}
+                className="p-6 flex flex-col justify-between"
+                spotlightColor="rgba(255, 255, 255, 0.15)"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono font-bold text-xs px-2.5 py-1 rounded-md bg-white/10 text-zinc-200 border border-white/20">
+                      {c.course_code}
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-md">
+                      Semester {c.semester}
+                    </span>
+                  </div>
+
+                  <h3 className="font-bold text-white text-base leading-snug mt-2 mb-3">
+                    {c.course_name}
+                  </h3>
+
+                  <div className="flex items-center space-x-4 text-xs text-zinc-400 mt-4 pt-4 border-t border-white/10">
+                    <span className="flex items-center font-medium">
+                      <Layers className="w-4 h-4 mr-1.5 text-zinc-500" />
+                      5 Units
+                    </span>
+                    <span className="flex items-center font-medium">
+                      <Award className="w-4 h-4 mr-1.5 text-zinc-500" />
+                      4.0 Credits
+                    </span>
+                  </div>
                 </div>
 
-                <h3 className="font-bold text-slate-900 text-sm leading-snug mt-1 mb-2">
-                  {c.course_name}
-                </h3>
-
-                <div className="flex items-center space-x-4 text-xs text-slate-500 mt-3 pt-3 border-t border-slate-100">
-                  <span className="flex items-center">
-                    <Layers className="w-3.5 h-3.5 mr-1 text-slate-400" />
-                    5 Curricular Units
-                  </span>
-                  <span className="flex items-center">
-                    <Award className="w-3.5 h-3.5 mr-1 text-slate-400" />
-                    4.0 Credits
-                  </span>
+                <div className="flex items-center space-x-3 mt-6 pt-4 border-t border-white/10">
+                  <button
+                    id={`view-detail-${c.course_code}`}
+                    onClick={() => handleOpenDetail(c.course_code)}
+                    className="flex-1 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-xl text-xs font-semibold transition-all flex items-center justify-center space-x-1.5 cursor-pointer"
+                  >
+                    <span>Syllabus & Units</span>
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
+                  <button
+                    id={`ask-about-${c.course_code}`}
+                    onClick={() => onAskCourse(`What are the prerequisites and unit topics for ${c.course_name}?`)}
+                    className="p-2 bg-white/10 hover:bg-white/10 border border-white/20 text-zinc-300 rounded-xl transition-all cursor-pointer shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                    title="Ask assistant about this course"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                  </button>
                 </div>
-              </div>
-
-              <div className="flex items-center space-x-2 mt-4 pt-3 border-t border-slate-100">
-                <button
-                  id={`view-detail-${c.course_code}`}
-                  onClick={() => handleOpenDetail(c.course_code)}
-                  className="flex-1 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-medium transition-colors flex items-center justify-center space-x-1 cursor-pointer"
-                >
-                  <span>Syllabus & Units</span>
-                  <ChevronRight className="w-3.5 h-3.5" />
-                </button>
-                <button
-                  id={`ask-about-${c.course_code}`}
-                  onClick={() => onAskCourse(`What are the prerequisites and unit topics for ${c.course_name}?`)}
-                  className="p-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-lg transition-colors cursor-pointer"
-                  title="Ask assistant about this course"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+              </SpotlightCard>
+            ))}
+          </div>
+        </AnimatedContent>
       </div>
 
       {/* Course Detail Modal */}
       {selectedCourse && (
-        <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            {/* Modal Header */}
-            <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-              <div>
-                <div className="flex items-center space-x-2">
-                  <span className="font-mono font-bold text-xs px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800">
-                    {selectedCourse.course_code}
-                  </span>
-                  <span className="text-xs text-slate-500 font-medium">
-                    Semester {selectedCourse.semester} • B.Tech {selectedCourse.branch}
-                  </span>
-                </div>
-                <h3 className="font-bold text-slate-900 text-base mt-1">
-                  {selectedCourse.course_name}
-                </h3>
-              </div>
-              <button
-                onClick={() => setSelectedCourse(null)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-200/50"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Modal Content */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-5 text-xs text-slate-700">
-              {selectedCourse.chunks.map((chunk, idx) => (
-                <div key={idx} className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-1.5">
-                  <div className="flex items-center justify-between text-indigo-900 font-semibold border-b border-slate-200 pb-1.5">
-                    <span>{chunk.section}</span>
-                    <span className="text-[10px] text-slate-400 font-normal">
-                      Page {chunk.page}
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <AnimatedContent distance={0} direction="vertical" reverse={false} className="max-w-2xl w-full">
+            <div className="bg-[#0b0f1e] rounded-3xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-white/10 overflow-hidden">
+              {/* Modal Header */}
+              <div className="px-8 py-5 border-b border-white/10 flex items-center justify-between bg-white/5 backdrop-blur-md">
+                <div>
+                  <div className="flex items-center space-x-3 mb-1.5">
+                    <span className="font-mono font-bold text-xs px-2.5 py-1 rounded-md bg-white/10 text-zinc-200 border border-white/20">
+                      {selectedCourse.course_code}
+                    </span>
+                    <span className="text-xs text-zinc-400 font-medium">
+                      Semester {selectedCourse.semester} • B.Tech {selectedCourse.branch}
                     </span>
                   </div>
-                  <p className="whitespace-pre-wrap leading-relaxed text-slate-800 font-mono text-[11px] pt-1">
-                    {chunk.text}
-                  </p>
+                  <h3 className="font-bold text-white text-xl">
+                    {selectedCourse.course_name}
+                  </h3>
                 </div>
-              ))}
-            </div>
+                <button
+                  onClick={() => setSelectedCourse(null)}
+                  className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
 
-            {/* Modal Footer */}
-            <div className="px-6 py-3 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
-              <span className="text-xs text-slate-500">
-                Source: {selectedCourse.document_name}
-              </span>
-              <button
-                id="modal-ask-btn"
-                onClick={() => {
-                  const query = `Provide a full breakdown of prerequisites and syllabus for ${selectedCourse.course_name} (${selectedCourse.course_code})`;
-                  setSelectedCourse(null);
-                  onAskCourse(query);
-                }}
-                className="px-4 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-medium transition-colors flex items-center space-x-1.5 cursor-pointer"
-              >
-                <MessageSquare className="w-3.5 h-3.5" />
-                <span>Ask Assistant About This</span>
-              </button>
+              {/* Modal Content */}
+              <div className="flex-1 overflow-y-auto p-8 space-y-6 text-sm text-zinc-300 bg-black/20 custom-scrollbar">
+                {selectedCourse.chunks.map((chunk, idx) => (
+                  <div key={idx} className="border border-white/10 rounded-2xl p-5 bg-white/5 space-y-3 shadow-inner">
+                    <div className="flex items-center justify-between text-zinc-200 font-semibold border-b border-white/10 pb-2">
+                      <span>{chunk.section}</span>
+                      <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-semibold bg-black/30 px-2 py-1 rounded-md">
+                        Page {chunk.page}
+                      </span>
+                    </div>
+                    <p className="whitespace-pre-wrap leading-relaxed font-mono text-[11.5px] pt-1 text-zinc-400">
+                      {chunk.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Modal Footer */}
+              <div className="px-8 py-5 border-t border-white/10 bg-white/5 backdrop-blur-md flex items-center justify-between">
+                <span className="text-xs text-zinc-500 font-medium">
+                  Source: <span className="text-zinc-400">{selectedCourse.document_name}</span>
+                </span>
+                <button
+                  id="modal-ask-btn"
+                  onClick={() => {
+                    const query = `Provide a full breakdown of prerequisites and syllabus for ${selectedCourse.course_name} (${selectedCourse.course_code})`;
+                    setSelectedCourse(null);
+                    onAskCourse(query);
+                  }}
+                  className="px-5 py-2.5 bg-zinc-700 hover:bg-zinc-600 text-white rounded-xl text-xs font-semibold transition-all flex items-center space-x-2 cursor-pointer shadow-[0_0_20px_rgba(255,255,255,0.15)] border border-white/20"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Ask Assistant About This</span>
+                </button>
+              </div>
             </div>
-          </div>
+          </AnimatedContent>
         </div>
       )}
     </div>

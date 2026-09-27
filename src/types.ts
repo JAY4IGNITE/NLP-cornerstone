@@ -154,10 +154,6 @@ export interface EvaluationMetrics {
       inference_speed: string;
     }>;
   };
-  dataset: {
-    total_queries: number;
-    intents: number;
-  };
   runtime_metrics: {
     total_queries_served: number;
     average_latency_ms: number;

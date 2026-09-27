@@ -279,27 +279,6 @@ def get_evaluation_metrics():
             except Exception:
                 pass
 
-    # Read dataset metadata from dataset_statistics.json or dataset.json
-    stats_file = DATA_DIR / "dataset_statistics.json"
-    dataset_summary = {
-        "total_queries": 1000000,
-        "intents": 10,
-        "is_synthetic": False,
-        "source": "Hugging Face (community-datasets/yahoo_answers_topics)"
-    }
-    if stats_file.exists():
-        try:
-            with open(stats_file, "r", encoding="utf-8") as f:
-                s = json.load(f)
-                dataset_summary["total_queries"] = s.get("total_samples", 1000000)
-                dataset_summary["intents"] = s.get("num_classes", 10)
-                dataset_summary["is_synthetic"] = s.get("is_synthetic", False)
-                dataset_summary["source"] = s.get("source", "Hugging Face")
-                dataset_summary["class_distribution"] = s.get("class_distribution", {})
-                dataset_summary["text_statistics"] = s.get("text_statistics", {})
-        except Exception:
-            pass
-
     # Read query log metrics
     query_logs = []
     if QUERY_LOG_FILE.exists():
@@ -317,12 +296,11 @@ def get_evaluation_metrics():
     classes = (
         intent_classifier.label_encoder.classes_.tolist()
         if (intent_classifier.label_encoder is not None and hasattr(intent_classifier.label_encoder, "classes_"))
-        else list(dataset_summary.get("class_distribution", {}).keys())
+        else []
     )
 
     return {
         "evaluation": eval_data,
-        "dataset": dataset_summary,
         "runtime_metrics": {
             "total_queries_served": len(query_logs),
             "average_latency_ms": avg_latency,
@@ -354,7 +332,7 @@ def get_feedback():
         return {"feedback": json.load(f)}
 
 # -------------------------------------------------------------
-# CLOUDFLARE VECTORIZE & MULTI-RESOURCE DATASET ENDPOINTS
+# CLOUDFLARE VECTORIZE & MULTI-RESOURCE ENDPOINTS
 # -------------------------------------------------------------
 
 class CustomSnippetRequest(BaseModel):
@@ -470,7 +448,7 @@ def search_resources(
     category: Optional[str] = Query(None, description="Filter by category"),
     top_k: int = Query(6, ge=1, le=20)
 ):
-    """Search specifically across all multi-resource datasets."""
+    """Search specifically across all multi-resource sources."""
     # Compute vector embedding and search Cloudflare Vectorize
     query_vec = embedding_service.get_query_embedding(q)
     results = cloudflare_vector_store.search(
@@ -487,7 +465,7 @@ def search_resources(
 
 @app.post("/api/resources/sync")
 def sync_all_resources():
-    """Trigger re-indexing and synchronization of all multi-resource datasets into Cloudflare Vectorize."""
+    """Trigger re-indexing and synchronization of all multi-resource sources into Cloudflare Vectorize."""
     summary = build_and_index_all_resources()
     hybrid_retriever.bm25.load_index()
     return {

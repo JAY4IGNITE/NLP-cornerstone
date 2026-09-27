@@ -1,109 +1,68 @@
 {
   "dataset_source": "Hugging Face (community-datasets/yahoo_answers_topics - 1M Real Samples)",
-  "accuracy": 0.8664,
-  "precision": 0.8672,
-  "recall": 0.8664,
-  "macro_f1": 0.8503,
-  "weighted_f1": 0.8653,
-  "test_samples": 7947,
-  "train_samples": 43380,
+  "accuracy": 0.9476,
+  "precision": 0.9468,
+  "recall": 0.9476,
+  "macro_f1": 0.8217,
+  "weighted_f1": 0.9425,
+  "test_samples": 3433,
+  "train_samples": 27464,
   "total_dataset_rows": 1000000,
-  "num_classes": 7,
+  "num_classes": 3,
   "strongest_intents": [
     {
       "intent": "college_academics_and_admissions",
-      "f1": 0.9249
-    },
-    {
-      "intent": "chemistry_and_life_sciences",
-      "f1": 0.8827
-    },
-    {
-      "intent": "physics_and_engineering_sciences",
-      "f1": 0.8587
+      "f1": 0.9713
     },
     {
       "intent": "curriculum_syllabi_and_regulations",
-      "f1": 0.8557
+      "f1": 0.8089
     },
     {
-      "intent": "computer_science_and_engineering",
-      "f1": 0.845
+      "intent": "campus_life_and_student_services",
+      "f1": 0.6849
     }
   ],
   "weakest_intents": [
     {
-      "intent": "physics_and_engineering_sciences",
-      "f1": 0.8587
+      "intent": "college_academics_and_admissions",
+      "f1": 0.9713
     },
     {
       "intent": "curriculum_syllabi_and_regulations",
-      "f1": 0.8557
-    },
-    {
-      "intent": "computer_science_and_engineering",
-      "f1": 0.845
-    },
-    {
-      "intent": "mathematics_and_calculus",
-      "f1": 0.8339
+      "f1": 0.8089
     },
     {
       "intent": "campus_life_and_student_services",
-      "f1": 0.7513
+      "f1": 0.6849
     }
   ],
   "top_confused_pairs": [
     {
-      "actual": "mathematics_and_calculus",
-      "predicted": "computer_science_and_engineering",
-      "count": 151
-    },
-    {
-      "actual": "computer_science_and_engineering",
-      "predicted": "mathematics_and_calculus",
-      "count": 150
-    },
-    {
-      "actual": "physics_and_engineering_sciences",
-      "predicted": "chemistry_and_life_sciences",
-      "count": 111
-    },
-    {
-      "actual": "chemistry_and_life_sciences",
-      "predicted": "physics_and_engineering_sciences",
-      "count": 101
-    },
-    {
       "actual": "campus_life_and_student_services",
       "predicted": "college_academics_and_admissions",
-      "count": 79
-    },
-    {
-      "actual": "mathematics_and_calculus",
-      "predicted": "physics_and_engineering_sciences",
-      "count": 66
-    },
-    {
-      "actual": "physics_and_engineering_sciences",
-      "predicted": "mathematics_and_calculus",
-      "count": 64
+      "count": 100
     },
     {
       "actual": "curriculum_syllabi_and_regulations",
       "predicted": "college_academics_and_admissions",
-      "count": 43
+      "count": 62
     },
     {
-      "actual": "physics_and_engineering_sciences",
-      "predicted": "computer_science_and_engineering",
-      "count": 32
+      "actual": "college_academics_and_admissions",
+      "predicted": "campus_life_and_student_services",
+      "count": 11
     },
     {
-      "actual": "chemistry_and_life_sciences",
-      "predicted": "computer_science_and_engineering",
-      "count": 29
+      "actual": "curriculum_syllabi_and_regulations",
+      "predicted": "campus_life_and_student_services",
+      "count": 4
+    },
+    {
+      "actual": "college_academics_and_admissions",
+      "predicted": "curriculum_syllabi_and_regulations",
+      "count": 3
     }
   ],
-  "training_time_seconds": 16.94
+  "training_time_seconds": 4.31
 }

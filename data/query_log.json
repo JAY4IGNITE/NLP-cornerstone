@@ -115,5 +115,50 @@
     "is_grounded": true,
     "overall_confidence": 0.8187,
     "latency_ms": 24.49
+  },
+  {
+    "timestamp": "2026-09-22T16:26:35.828246",
+    "query": "What is the passing criteria, attendance rule, and 10-point grading scale?",
+    "intent": "fallback",
+    "intent_confidence": 0.2761,
+    "is_grounded": false,
+    "overall_confidence": 0.2,
+    "latency_ms": 7071.87
+  },
+  {
+    "timestamp": "2026-09-22T16:26:54.354727",
+    "query": "what is the full form of cse",
+    "intent": "fallback",
+    "intent_confidence": 0.5144,
+    "is_grounded": false,
+    "overall_confidence": 0.2,
+    "latency_ms": 9.55
+  },
+  {
+    "timestamp": "2026-09-22T16:28:05.674868",
+    "query": "What are the prerequisites for Compiler Design (CS304)?",
+    "intent": "curriculum_syllabi_and_regulations",
+    "intent_confidence": 0.6412,
+    "is_grounded": true,
+    "overall_confidence": 0.8878,
+    "latency_ms": 41.85
+  },
+  {
+    "timestamp": "2026-09-22T16:28:26.714513",
+    "query": "Provide an executive summary of Official Academic Calendar & Milestones and what key regulations students should know.",
+    "intent": "academic_calendar",
+    "intent_confidence": 0.95,
+    "is_grounded": true,
+    "overall_confidence": 0.8474,
+    "latency_ms": 32.74
+  },
+  {
+    "timestamp": "2026-09-22T16:36:27.977681",
+    "query": "What are the prerequisites for DBMS?",
+    "intent": "curriculum_syllabi_and_regulations",
+    "intent_confidence": 0.769,
+    "is_grounded": true,
+    "overall_confidence": 0.8033,
+    "latency_ms": 11.35
   }
 ]
