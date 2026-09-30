@@ -1,0 +1,23 @@
+{
+  "embedding_mode": "sentence-transformers",
+  "index_source": "persisted",
+  "in_scope_scored": 1144,
+  "recall_at_k": {
+    "1": 0.2802,
+    "3": 0.5328,
+    "5": 0.6429
+  },
+  "hit_at_k": {
+    "1": 0.549,
+    "3": 0.7788,
+    "5": 0.8593
+  },
+  "mrr": 0.6699,
+  "ndcg_at_5": 0.5774,
+  "out_of_scope": {
+    "total": 50,
+    "silent": 0,
+    "silence_rate": 0.0
+  },
+  "note": "qrels are linker-derived (DEMO_ONLY); not human relevance judgements"
+}

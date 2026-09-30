@@ -1,0 +1,45 @@
+{
+  "total_records": 50000,
+  "intents": {
+    "course_objectives": 2084,
+    "course_outcomes": 2084,
+    "course_code_lookup": 2084,
+    "semester_subjects": 2084,
+    "course_subject_info": 2084,
+    "course_prerequisite": 2084,
+    "course_credits": 2084,
+    "semester_credits": 2084,
+    "student_services": 2083,
+    "unsupported_or_unknown": 2083,
+    "exam_rules": 2083,
+    "project_information": 2083,
+    "promotion_rules": 2083,
+    "exam_schedule": 2083,
+    "grading_rules": 2083,
+    "elective_information": 2083,
+    "laboratory_information": 2083,
+    "faculty_department_info": 2083,
+    "attendance_rules": 2083,
+    "document_location": 2083,
+    "curriculum_structure": 2083,
+    "academic_calendar": 2083,
+    "office_contact_info": 2083,
+    "academic_process": 2083
+  },
+  "splits": {
+    "train": 40000,
+    "val": 5000,
+    "test": 5000
+  },
+  "answerable": {
+    "True": 47917,
+    "False": 2083
+  },
+  "difficulty": {
+    "easy": 16680,
+    "medium": 16664,
+    "hard": 16656
+  },
+  "avg_query_len": 6.41134,
+  "avg_resp_len": 12.76172
+}

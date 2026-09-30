@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "errors": [],
+  "total_errors": 0,
+  "stats": {
+    "total_records": 49984,
+    "intents": [
+      "semester_subjects",
+      "promotion_rules",
+      "academic_process",
+      "semester_credits",
+      "curriculum_structure",
+      "course_outcomes",
+      "exam_rules",
+      "course_subject_info",
+      "course_credits",
+      "elective_information",
+      "office_contact_info",
+      "course_code_lookup",
+      "laboratory_information",
+      "project_information",
+      "attendance_rules",
+      "course_objectives",
+      "academic_calendar",
+      "grading_rules",
+      "unsupported_or_unknown",
+      "course_prerequisite",
+      "faculty_department_info",
+      "student_services",
+      "document_location",
+      "exam_schedule"
+    ],
+    "splits": {
+      "train": 39984,
+      "val": 5000,
+      "test": 5000
+    },
+    "answerable_with_evidence": 47932,
+    "unsupported_without_evidence": 2052
+  }
+}

@@ -1,0 +1,1163 @@
+{"text": "What are the objectives of CSE101?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "How are grade points handled?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "When are the end-semester exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What are the promotion rules?", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "Which semester has the major project?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "What ID is required for the exam?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "Can you predict my GPA?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "Where can I find student service information?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "How many credits are in semester 1?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "How many credits is the curriculum?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What should I complete before Cloud Computing?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What is the major project requirement?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "What are the exam hall rules?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "Are electives included in ECE?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "How much attendance is required?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "What is the full name of ME?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What does the curriculum say about labs?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "What is CSE101?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "How many credits are assigned to CSE203?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "Give me the examination dates.", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "Where can I find the CSE curriculum?", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "What should I complete before Operating Systems?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Where are laboratory courses listed?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE303?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What are the academic calendar dates?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What is the admission cutoff?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "Give me the course details for CSE201.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Tell me the examination conduct rules.", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "Tell me about Major Project II. please?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "do i need anything before taking operating systems?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Show the main academic dates.", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "When are odd semester exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "Which document contains the academic regulations?", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "What is the total credit load for sem 2?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "How many credits is the major project?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Is attendance calculated course-wise?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "Tell me the course outcomes for ECE101.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me about the ME department.", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "How many credits does semester 8 have?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "What determines academic promotion?", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "How is the B.Tech curriculum organized?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What are the promotion rules? according to the official document", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "Which directory contains office contacts?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "How is the curriculum structured?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What is the full name of CSE?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Where is the official curriculum document?", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "Where are laboratory courses listed please?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "What is the goal of Machine Learning?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "give me the semester 2 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What learning outcome is listed for Power Systems I?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What grades are used please?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "Where can I find the academic office contact?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "how are academic record requests handled?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "Can I carry electronic devices to the exam?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "What does the curriculum contain besides theory?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What is the goal of Object Oriented Programming?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What does CSE401 focus on?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What is the attendance requirement?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "When does the odd semester begin?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "When does the academic year start?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What is the password for the student portal?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "Give me the code of Electronic Devices.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "How do I find official office contact details?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "How do I submit an academic request?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "Which subject is required before Data Structures?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What are the outcomes of CSE203?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which courses are offered in semester 7?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What should I complete before Cloud Computing?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What does CSE202 focus on?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Tell me the subject name for ME201.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Give me the code of Compiler Design.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "How is the B.Tech curriculum organized? according to the official document", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "When does the even semester begin?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What do we learn in Compiler Design?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Tell me about Major Project I.", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "What is the academic request process? according to the official document", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "What components are included in the curriculum?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "Are laboratory components included for ECE? according to the official document", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "Tell me about elective courses.", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "Tell me the semester 3 credit total.", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Where are elective slots mentioned?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "Explain the semester-wise curriculum structure.", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "Which teacher will give me higher marks?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "Explain the grading scheme.", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "What is the full name of ECE?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What is the academic request process?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "Tell me the subject name for ECE101.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What grades are used?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "pls Tell me about Major Project II.", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Can you access my attendance record?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "What is the credit value of CSE303?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "How are grade points handled please?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "How many credits does semester 8 have? according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Do I need anything before taking Major Project II?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Tell me about Major Project II.", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Which subject is required before Database Management Systems?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "How does grading work?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "Tell me about progression requirements.", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "What student services are described?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "What are the outcomes of CSE401?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "what does the curriculum say about electives?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "Which code belongs to Digital Signal Processing?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls When does the odd semester begin?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "How many credits are assigned to CSE402?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What is the total credit load for sem 6?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls What does the curriculum say about labs?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE102. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Thermodynamics?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What is the major project requirement?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Are laboratory components included for ECE?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "When are odd semester exams please? according to the official document", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "Tell me about the lab courses.", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "What support services are available?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "How many credits is the curriculum? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What does EEE201 focus on please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "what does the me department stand for?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE102?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "How many credits does semester 4 have?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "How many credits are in sem 5?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE402?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Which subject is CSE102 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What should I complete before Compiler Design?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "what subjects are in semester 2?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "How many credits are in semester 5?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Which semester contains Major Project II?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What learning outcome is listed for Programming Fundamentals?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What does the EEE department stand for?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What subjects are in semester 6?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the exam window?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "how many credits are in sem 1?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Can you give me a student's phone number?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "find the course code for operating systems.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Give me the examination dates. please?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What does the ECE department stand for?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What is CSE302 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Who is the current principal?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "What do we learn in Electronic Devices?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Show the main academic dates. according to the official document", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "List the subjects for sem 6.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is ECE201?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is the placement package this year?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "Tell me the subject name for CSE401.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "how many credits are assigned to me201?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What are the outcomes of CSE301?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the outcomes of EEE201?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What does the regulation say about attendance?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "Which subject is required before Major Project I please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Find the course code for Thermodynamics.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What do we learn in Data Structures?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Do I need anything before taking Object Oriented Programming? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls Which sem has the major project?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "pls What are the exam hall rules?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "What is the total credit load for sem 2? according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls Where are elective slots mentioned?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE303.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is Major Project I in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What learning outcome is listed for Compiler Design?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Give me the semester 1 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the full name of EEE?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What learning outcome is listed for Cloud Computing?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What components are included in the curriculum?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What learning outcome is listed for Digital Signal Processing?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE301.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is CSE402?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which subject is CSE303?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which semester contains Data Structures?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Find the course code for Major Project I.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What should I complete before Object Oriented Programming?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "How many credits does CSE101 have?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls What is the credit value of CSE303?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What is the credit value of CSE201?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "How many credits is the major project please?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "pls Where can I find the CSE curriculum?", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "Do I need anything before taking Cloud Computing?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Computer Networks?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Give me the semester 6 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "When does the odd sem begin?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "pls How is the B.Tech curriculum organized?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "pls How is the curriculum structured?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "Which code belongs to Object Oriented Programming?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Give me the code of Data Structures.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls How many credits are in semester 5?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Which semester contains Power Systems I?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE102.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "When are odd semester exams please?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "Do I need anything before taking Object Oriented Programming?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE402 please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What should I complete before Major Project II?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What are the objectives of CSE403?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Which courses are offered in semester 3?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the outcomes of CSE201?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "I forgot the code for Database Management Systems; what is it?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "How does grading work? according to the official document", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "How many credits does CSE301 have?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "When are even semester exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What does the regulation say about attendance? according to the official document", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "What is the hostel fee?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "What is the course code for Programming Fundamentals?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Find the course code for Thermodynamics. please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Which semester contains Machine Learning?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Tell me about the lab courses. according to the official document", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "Which subject is CSE102?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What grades are used?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "What subjects are in semester 7?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "I forgot the code for Cloud Computing; what is it?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "List the subjects for sem 7.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me the credits for the curriculum.", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "Do I need anything before taking Compiler Design?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What is Digital Signal Processing in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is today's cafeteria menu?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "Tell me the semester 7 credit total.", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Give me the examination dates. according to the official document", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What does EEE201 focus on?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Tell me about the CSE department.", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Tell me about the ECE department.", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What should I be able to do after Operating Systems?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is Database Management Systems in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Give me the course details for ME201.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "I forgot the code for Power Systems I; what is it?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What do I study in semester 5?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Find the course code for Major Project I. please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "How many credits are assigned to ME201 please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls How does grading work?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "What are the outcomes of ECE201 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which courses are offered in semester 8?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the objectives of CSE301?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What is the goal of Digital Signal Processing?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Object Oriented Programming?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Operating Systems?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the course code for Major Project II?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Where are elective slots mentioned please?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE101. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the subject name for CSE301.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which subject is EEE201?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE201.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls how do i submit an academic request please? according to the official document", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "How many credits does sem 8 have?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "How is the B.Tech curriculum organized please?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What is the credit value of ECE201?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "List the subjects for sem 2.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Give me the course details for ECE101.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the exam hall rules please?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "What are the course objectives for Major Project I?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What are the course objectives for Operating Systems?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Which courses are offered in semester 6?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What subjects are in semester 3?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which subject is required before Machine Learning?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "How do I submit an academic request please?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "pls What student services are described?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "When are the end-sem exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "Tell me the subject name for CSE201.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the outcomes of ECE201?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the examination conduct rules. according to the official document", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "List the subjects for sem 4.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What should I complete before Operating Systems?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Which subject is required before Major Project I?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What does the CSE department stand for?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What should I be able to do after Major Project II?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "what are the outcomes of cse402?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE301?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Which semester contains Operating Systems?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls what is the admission cutoff?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "How much attendance is required? according to the official document", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "Tell me about the EEE department.", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls Where can I find student service information?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "Where can I find the CSE curriculum? according to the official document", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "tell me the course outcomes for me201.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What are the promotion rules?", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "When does the even sem begin?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "pls How do I find official office contact details?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "What should I be able to do after Compiler Design?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What should I be able to do after Programming Fundamentals?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls How many credits does semester 8 have?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Are laboratory components included for ECE please?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "What should I be able to do after Computer Networks?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which subject is CSE403?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Give me the semester 5 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which subject is CSE203?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What learning outcome is listed for Database Management Systems?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What subjects are in sem 1?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE202?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What subjects are in semester 8?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "How much attendance is required please?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "What are the outcomes of CSE202?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "what learning outcome is listed for computer networks?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Major Project II?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which subject is required before Computer Networks?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls What is Database Management Systems in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Which semester has the major project?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "pls tell me about progression requirements.", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "Explain the grading scheme. according to the official document", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "What learning outcome is listed for Object Oriented Programming?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Explain the semester-wise curriculum structure. please?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What are the academic calendar dates please?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "How many credits are in semester 1 please?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "When does the even semester begin? according to the official document", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "how many credits does cse403 have?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls What are the course objectives for Operating Systems?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What does CSE401 focus on? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Which code belongs to Machine Learning?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls what are the academic calendar dates?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What learning outcome is listed for Data Structures?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the course code for Computer Networks?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "List the subjects for sem 5.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What subjects are in semester 4?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the exam hall rules? according to the official document", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "Tell me the course outcomes for ECE101. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the objectives of CSE301? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What should I complete before Cloud Computing please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What student services are described? according to the official document", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "Which sem contains Major Project II?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is Compiler Design in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What subjects are in sem 5?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "How is the curriculum structured please?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What is Programming Fundamentals in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the course objectives for Thermodynamics?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE202.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What does the regulation say about attendance?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "pls Tell me about the lab courses.", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "pls What does EEE201 focus on?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Where can I find the CSE curriculum please?", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "List the subjects for sem 2. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me about the CSE department. please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "List the subjects for sem 8.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me about the lab courses. please?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "Where are elective slots mentioned? according to the official document", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "pls What are the outcomes of CSE301?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What do I study in semester 4?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What subjects are in semester 1?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What learning outcome is listed for Electronic Devices?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What is the password for the student portal?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "What is the goal of Machine Learning? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What are the outcomes of ME201?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "tell me the semester 3 credit total. according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "what id is required for the exam please?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "pls What are the outcomes of CSE203?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the semester 3 credit total. please?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Give me the course details for CSE301.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What do I study in semester 2?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What does the curriculum contain besides theory please?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE302.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which sem has the major project?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "pls Can you access my attendance record?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls where is the official curriculum document?", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "Where can I find the academic office contact? according to the official document", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "What should I be able to do after Major Project I?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "When are odd sem exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls Explain the grading scheme.", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "What is the academic request process please?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "What is CSE302?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "List the subjects for sem 1.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What does the ME department stand for? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "How many credits does sem 4 have?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls What ID is required for the exam?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "pls Which document contains the academic regulations?", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "which courses are offered in sem 4?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "How many credits does CSE403 have please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls Tell me the subject name for ECE101.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "How does grading work please?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "how do i submit an academic request? according to the official document", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "pls What is the total credit load for sem 6?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "What do I study in semester 7?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Where can I find student service information? according to the official document", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "give me the code of data structures. according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls How many credits is the curriculum?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "When does the academic year start please?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What are the outcomes of CSE203? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the outcomes of CSE101?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Do I need anything before taking Major Project II?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What learning outcome is listed for Major Project I?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls How many credits does CSE101 have?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls Tell me about the ECE department. please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Tell me the credits for the curriculum. please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What do I study in semester 1?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Explain the sem-wise curriculum structure.", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What do I study in semester 8?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "How do I find official office contact details? according to the official document", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "pls What do we learn in Compiler Design?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls Which directory contains office contacts?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "When are even sem exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls What should I be able to do after Power Systems I?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What do we learn in Electronic Devices please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What is the password for the student portal please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "Which subject is CSE102? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE402? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "When does the odd semester begin please?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What learning outcome is listed for Machine Learning?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What is the prerequisite for CSE402?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What is the attendance requirement please?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "Show the main academic dates. please?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "pls Give me the course details for ME201.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is the goal of Machine Learning please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls Can I carry electronic devices to the exam?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "What should I be able to do after Database Management Systems?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What is the goal of Object Oriented Programming?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls Which subject is required before Data Structures?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "When are the end-semester exams? according to the official document", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls when are even semester exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What do I study in semester 6?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the exam window? according to the official document", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls Where can I find the academic office contact?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "What is the full name of CSE? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Which subject is CSE303 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Where is the official curriculum document? according to the official document", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "pls How do I submit an academic request?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "What are the objectives of CSE101 please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls Find the course code for Major Project I.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What are the outcomes of CSE303?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What ID is required for the exam? according to the official document", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "How are academic record requests handled please?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE401.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is CSE202?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Tell me the course outcomes for ECE201.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "When are the end-semester exams please?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "Which courses are offered in semester 2?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "How are academic record requests handled? according to the official document", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "pls What does the curriculum contain besides theory? according to the official document", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "list the subjects for sem 3. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which directory contains office contacts? according to the official document", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "Tell me the course outcomes for EEE201.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the full name of ME please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls are electives included in ece?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "pls When are even sem exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "Can I carry electronic devices to the exam? according to the official document", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "pls What does the curriculum say about electives?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "What support services are available? according to the official document", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "What does the curriculum say about labs please?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "pls What is the full name of EEE?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What should I be able to do after Cloud Computing?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which courses are offered in semester 1?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the outcomes of CSE302?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Where can I find student service information please?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "What is the course code for Programming Fundamentals please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "can you predict my gpa please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "What grades are used? according to the official document", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "pls I forgot the code for Database Management Systems; what is it?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls What are the objectives of CSE101?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Tell me about the ME department. please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for CSE303.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the full name of EEE please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls How much attendance is required?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "pls How many credits does semester 4 have?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE402.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What should I be able to do after Machine Learning?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the objectives of CSE301 please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Which sem contains Operating Systems?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which semester has the major project? according to the official document", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "pls how many credits are in sem 1 please? according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE403.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "How are grade points handled? according to the official document", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "pls what are the objectives of cse403?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Give me the course details for CSE201. according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is the credit value of CSE303? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "give me the semester 8 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "what subjects are in semester 5?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What should I be able to do after Electronic Devices?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What support services are available please?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "Which courses are offered in semester 5?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "List the subjects for sem 4. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What do I study in semester 3?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the outcomes of CSE301 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What are the outcomes of CSE201?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me about elective courses. according to the official document", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "pls Tell me the examination conduct rules.", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "Give me the semester 4 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the total credit load for sem 6 please?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "What are the outcomes of ECE101?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "When are odd semester exams? according to the official document", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What is the major project requirement please?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Which courses are offered in semester 4?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What should I be able to do after Power Systems I?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is ECE201 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What should I complete before Operating Systems? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What are the outcomes of CSE403?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Are laboratory components included for ECE? according to the official document", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "pls Show the main academic dates.", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "pls Where are laboratory courses listed?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "pls what subjects are in semester 6?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Tell me about Major Project I.", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Give me the semester 3 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the outcomes of CSE301? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the goal of Object Oriented Programming? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Tell me about progression requirements. according to the official document", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "What are the outcomes of CSE102?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Which code belongs to Object Oriented Programming?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What should I be able to do after Digital Signal Processing?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is CSE302? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What is the attendance requirement?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "pls Tell me about the CSE department.", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls What support services are available?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "Which courses are offered in sem 2? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Tell me about the ECE department.", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Tell me the sem 7 credit total.", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls What subjects are in semester 3?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me about elective courses. please?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "Which courses are offered in sem 3?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which directory contains office contacts please?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "What are the objectives of CSE403? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "How many credits does CSE301 have please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls What is the prerequisite for CSE202?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What are the course objectives for Thermodynamics please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "what is the exam window please?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE203.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What does the regulation say about attendance please?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "give me the semester 7 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Are laboratory components included for ECE?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "pls I forgot the code for Cloud Computing; what is it?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "tell me the examination conduct rules. please?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "What is the goal of Object Oriented Programming please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What should I complete before Compiler Design? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What is the credit value of ECE201? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "Which sem contains Machine Learning?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What should I be able to do after Machine Learning? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the credit value of CSE201? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What do I study in sem 7?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What determines academic promotion please?", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "Tell me the subject name for ME201. according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which courses are offered in semester 8 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What subjects are in semester 2 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE101.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What do I study in sem 4?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "List the subjects for sem 3.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Tell me about elective courses.", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE303. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What does the ECE department stand for? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for ECE201.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Give me the code of Compiler Design. please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "do i need anything before taking operating systems? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Explain the grading scheme. please?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "pls What subjects are in semester 2?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What components are included in the curriculum? according to the official document", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What does the curriculum contain besides theory? according to the official document", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What should I be able to do after Power Systems I please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the credits for the curriculum. according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "Tell me about progression requirements. please?", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "What subjects are in sem 7?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which subject is required before Computer Networks please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls Is attendance calculated course-wise?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "Which subject is required before Major Project I? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls When are odd semester exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls What do we learn in Electronic Devices?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Are electives included in ECE please?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "Give me the semester 2 subjects. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls How many credits is the major project?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Tell me about Major Project I. please?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "What subjects are in sem 3?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Find the course code for Thermodynamics. according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "How much attendance is required please? according to the official document", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "pls When are the end-semester exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls What does the ECE department stand for?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "give me the course details for cse401.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is the hostel fee please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls What determines academic promotion?", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "Which code belongs to Machine Learning? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Which code belongs to Digital Signal Processing? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What is Programming Fundamentals in the curriculum? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls tell me the subject name for cse401.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What is the goal of Digital Signal Processing?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Is attendance calculated course-wise please?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "pls Which teacher will give me higher marks?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls Which teacher will give me higher marks please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls When does the academic year start?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What should I be able to do after Object Oriented Programming?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "When are even semester exams please?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What is the attendance requirement? according to the official document", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "pls what are the outcomes of cse401?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What subjects are in semester 5?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me about Major Project I. according to the official document", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Give me the semester 7 subjects. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls List the subjects for sem 2.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the promotion rules please?", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "How is the curriculum structured? according to the official document", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "pls How many credits are in semester 1?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "What do I study in sem 2?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "I forgot the code for Database Management Systems; what is it? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls Which code belongs to Machine Learning?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Do I need anything before taking Object Oriented Programming please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Give me the sem 8 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Give me the sem 5 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What do I study in semester 8 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Where are laboratory courses listed? according to the official document", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "pls What is the course code for Computer Networks?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Do I need anything before taking Operating Systems please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls What is the academic request process?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "pls When does the even semester begin?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "pls Tell me the credits for the curriculum.", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "List the subjects for sem 8. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "How many credits does semester 8 have please?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "What is the total credit load for sem 6 please? according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls What is today's cafeteria menu?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "What do I study in sem 8?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the placement package this year please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "Give me the sem 3 subjects. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Explain the semester-wise curriculum structure. according to the official document", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What subjects are in semester 8? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which courses are offered in sem 1?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What does the EEE department stand for?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What should I be able to do after Data Structures?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What should I be able to do after Thermodynamics?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "what are the course objectives for operating systems please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls What does the curriculum contain besides theory?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "pls List the subjects for sem 5.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which sem contains Power Systems I?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Tell me the subject name for ME201. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Tell me about the EEE department.", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What should I be able to do after Major Project II? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "How many credits are in semester 1? according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "What does the curriculum say about electives please?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "How many credits are assigned to CSE402? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls How are grade points handled?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "pls Can I carry electronic devices to the exam please?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "pls Give me the examination dates.", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "List the subjects for sem 3. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me the course outcomes for ECE201. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "When are even semester exams? according to the official document", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What does the curriculum say about labs? according to the official document", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "pls what is the hostel fee please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls Do I need anything before taking Object Oriented Programming?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls What is the full name of ECE? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "How do I find official office contact details please?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "pls list the subjects for sem 4.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Which semester contains Machine Learning?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What subjects are in sem 6?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Give me the course details for CSE301. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is the admission cutoff please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "What do we learn in Compiler Design please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "When are even sem exams please?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls What are the outcomes of CSE101?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Do I need anything before taking Operating Systems?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "When does the even semester begin please?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "pls What is the credit value of ECE201?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What determines academic promotion? according to the official document", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "I forgot the code for Database Management Systems; what is it please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "How many credits does CSE301 have? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What are the course objectives for Major Project I please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls What is the goal of Machine Learning?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Can you give me a student's phone number please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "What subjects are in semester 1? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls How are academic record requests handled?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "pls Tell me the semester 3 credit total.", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls Who is the current principal?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls What is the course code for Major Project II?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What should I complete before Object Oriented Programming? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Tell me about Major Project II. according to the official document", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Is attendance calculated course-wise? according to the official document", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "What are the outcomes of CSE401? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is CSE402? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is Compiler Design in the curriculum? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the outcomes of CSE302? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What do I study in semester 1? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me the semester 7 credit total. please?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Tell me the course outcomes for EEE201. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE301 please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Give me the semester 1 subjects. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Are electives included in ECE? according to the official document", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "pls Tell me the subject name for CSE301.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Which code belongs to Digital Signal Processing?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "How many credits are in semester 5? according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls What do I study in semester 8?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me about the CSE department. according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls What should I complete before Compiler Design?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What is the course code for Computer Networks? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls What is the total credit load for sem 2 please?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Tell me about Major Project II. please? according to the official document", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "pls Which subject is CSE303?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What are the outcomes of ME201?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Programming Fundamentals? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Which semester contains Data Structures?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "How many credits is the major project? according to the official document", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "What do we learn in Data Structures? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls What is the course code for Programming Fundamentals?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls Which document contains the academic regulations? according to the official document", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "pls What are the outcomes of CSE302?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What student services are described please?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "pls What is the placement package this year?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls Tell me the semester 7 credit total.", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "List the subjects for sem 7. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which courses are offered in sem 2?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE301? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "How many credits is the curriculum please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "Tell me about the ECE department. please? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Which courses are offered in semester 7 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What does the ECE department stand for please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "How many credits does CSE101 have? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls What should I be able to do after Thermodynamics?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Can you access my attendance record please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls What are the course objectives for Major Project I?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls Explain the semester-wise curriculum structure.", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "pls Can you predict my GPA?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "which semester contains operating systems please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which code belongs to Machine Learning please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE202 please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What do I study in sem 5?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls give me the code of compiler design.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What do we learn in Compiler Design? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What are the course objectives for Major Project I? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What are the outcomes of CSE401 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls How many credits does CSE301 have?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What is the major project requirement? according to the official document", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Tell me the semester 7 credit total. according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "What are the objectives of CSE403 please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "How many credits does semester 4 have please?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Which semester has the major project please?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "pls which subject is required before computer networks?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What is the course code for Major Project II? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What should I be able to do after Major Project II please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the sem 3 credit total. according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls How many credits are assigned to ME201?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "List the subjects for sem 1. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is CSE202? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What does CSE202 focus on? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Tell me about the ECE department. according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls which semester contains operating systems?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What is the prerequisite for CSE102?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "I forgot the code for Power Systems I; what is it? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE102? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Which subject is required before Database Management Systems please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Can I carry electronic devices to the exam please? according to the official document", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "How many credits are assigned to ME201? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "Give me the code of Compiler Design. according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "List the subjects for sem 6. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Where can I find the academic office contact please?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "pls What are the outcomes of CSE403?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the objectives of CSE101? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls Give me the examination dates. according to the official document", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls Find the course code for Thermodynamics.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Which semester contains Operating Systems? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What is CSE101?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which courses are offered in semester 1 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the full name of CSE please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Give me the course details for CSE201. please? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "what are the academic calendar dates? according to the official document", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "pls What is the hostel fee?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "Which document contains the academic regulations? according to the official document", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "pls When does the even semester begin please?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "Which subject is required before Data Structures please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Tell me the sem 3 credit total.", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Do I need anything before taking Compiler Design? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls What is the total credit load for sem 2?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Where can I find student service information please? according to the official document", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE203. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls which courses are offered in semester 2?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Major Project I?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls what are the promotion rules please? according to the official document", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "What is the full name of EEE? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls What is the full name of CSE?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "When are odd sem exams? according to the official document", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What is the goal of Digital Signal Processing? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Tell me about the ME department. according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls Which subject is CSE203?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is the course code for Major Project II please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls How many credits are in sem 5?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls What do I study in semester 5?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE303 please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls Give me the course details for CSE201.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which courses are offered in semester 5? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls How many credits does CSE403 have?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls Which subject is CSE403?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which subject is CSE303? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What are the outcomes of ECE101?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which subject is CSE203 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which subject is required before Data Structures? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What does the EEE department stand for please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Who is the current principal please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls What are the course objectives for Operating Systems? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls What is the full name of ME?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Can I carry electronic devices to the exam please?", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "pls Tell me about the ME department.", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls what are the outcomes of cse101 please? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What is the full name of ECE?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "which document contains the academic regulations please?", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "Which code belongs to Digital Signal Processing please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls What do we learn in Data Structures?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Which subject is required before Machine Learning please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Which courses are offered in sem 7?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What should I be able to do after Digital Signal Processing?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the course objectives for Thermodynamics? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What does EEE201 focus on? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What do I study in sem 6?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What is the exam window?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "List the subjects for sem 5. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What does the curriculum say about electives? according to the official document", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "pls Find the course code for Operating Systems.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What are the outcomes of CSE303 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Which courses are offered in semester 3?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What subjects are in sem 2?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the outcomes of CSE403? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which subject is required before Computer Networks? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "How many credits are in semester 5 please?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "I forgot the code for Cloud Computing; what is it? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls What is the total credit load for sem 6? according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "How many credits does semester 4 have? according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls Which semester contains Power Systems I?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which teacher will give me higher marks please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls Which subject is EEE201?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Where is the official curriculum document please?", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "When does the odd sem begin please?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for ECE101.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the full name of ME? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls what student services are described please? according to the official document", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "pls How much attendance is required please?", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "What does the CSE department stand for? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Tell me about the EEE department. according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls What is CSE202?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is today's cafeteria menu please?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "pls Which subject is required before Database Management Systems?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What do we learn in Data Structures please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Which courses are offered in sem 5?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls How is the B.Tech curriculum organized please?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "Give me the semester 4 subjects. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What is the prerequisite for CSE303?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls Give me the semester 7 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "List the subjects for sem 7. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Do I need anything before taking Cloud Computing?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls What should I be able to do after Electronic Devices?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Give me the code of Electronic Devices. please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Which semester contains Major Project II? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for CSE402.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Find the course code for Operating Systems. please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "tell me the course outcomes for cse402. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which sem contains Power Systems I please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What does the EEE department stand for? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls what is the prerequisite for cse102 please? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Give me the semester 8 subjects. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Give me the course details for CSE301.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Give me the code of Electronic Devices.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What should I be able to do after Thermodynamics? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which courses are offered in semester 6 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls When does the even sem begin?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What should I be able to do after Compiler Design? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What do we learn in Electronic Devices? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls How do I find official office contact details? according to the official document", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "pls Which subject is CSE203? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What should I be able to do after Compiler Design?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What do I study in semester 6?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Give me the semester 2 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for CSE203.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Give me the code of Electronic Devices. according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What subjects are in sem 4?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What do I study in semester 5? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Which courses are offered in semester 7?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "I forgot the code for Power Systems I; what is it please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Electronic Devices?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What do I study in semester 1 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What do I study in semester 7?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Which courses are offered in semester 1?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the goal of Digital Signal Processing please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls What do I study in semester 2 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the outcomes of EEE201? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Give me the sem 4 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Give me the course details for ECE101.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Tell me the subject name for CSE301. according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls what should i complete before object oriented programming?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What is the credit value of CSE303 please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What components are included in the curriculum please?", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What is Database Management Systems in the curriculum? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "How many credits does CSE101 have please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "List the subjects for sem 1. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Give me the course details for ECE101. according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for ME201.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE102 please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Tell me about the EEE department. please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "I forgot the code for Cloud Computing; what is it please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Give me the sem 3 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What should I complete before Cloud Computing? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls How many credits are assigned to CSE203?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "what is the full name of ece please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls What does the ME department stand for?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "what is database management systems in the curriculum please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What does the CSE department stand for?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "How many credits are assigned to CSE402 please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls What is Digital Signal Processing in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls how is the curriculum structured please? according to the official document", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Power Systems I?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the subject name for CSE401. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which code belongs to Object Oriented Programming please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE201. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for CSE401.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "give me the semester 5 subjects. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which semester contains Power Systems I please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the outcomes of CSE201 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls When are odd sem exams?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "What learning outcome is listed for Digital Signal Processing please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the subject name for ECE101. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is the credit value of ECE201 please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What should I be able to do after Data Structures? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What subjects are in semester 4? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What is CSE402?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What should I be able to do after Machine Learning please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What should I be able to do after Machine Learning?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "what is the total credit load for sem 2 please?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "pls what is the credit value of cse201?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls What is Programming Fundamentals in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What are the outcomes of CSE402?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What do I study in semester 7 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What are the course objectives for Thermodynamics?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls what does the curriculum say about electives please? according to the official document", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "pls Give me the semester 6 subjects. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What learning outcome is listed for Major Project I please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls what is the course code for programming fundamentals please? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE403. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Which courses are offered in semester 4?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "How many credits does CSE403 have? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "Give me the course details for ECE101. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What should I be able to do after Database Management Systems?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Give me the code of Data Structures. please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "pls Do I need anything before taking Compiler Design?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Which subject is EEE201? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What should I be able to do after Database Management Systems? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the total credit load for sem 6? according to the official document", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "What are the outcomes of CSE202? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Which subject is required before Machine Learning?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Give me the sem 2 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What determines academic promotion? according to the official document", "label_id": 17, "intent": "promotion_rules", "out_of_scope": false}
+{"text": "pls How many credits are assigned to CSE402?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls What subjects are in semester 1?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which semester contains Power Systems I? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which code belongs to Object Oriented Programming? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What is CSE101 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What are the outcomes of CSE202?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls List the subjects for sem 3.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What does CSE401 focus on?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What should I complete before Compiler Design please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "When does the odd semester begin? according to the official document", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "Give me the semester 4 subjects. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Give me the semester 2 subjects. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What subjects are in semester 7 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What subjects are in semester 6? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What does the CSE department stand for please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Give me the semester 5 subjects. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "List the subjects for sem 8. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What is Major Project I in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Tell me the subject name for ME201.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls How are academic record requests handled please?", "label_id": 21, "intent": "academic_process", "out_of_scope": false}
+{"text": "When does the odd semester begin please? according to the official document", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "pls Which directory contains office contacts please?", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "What learning outcome is listed for Computer Networks please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What do I study in sem 3 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Give me the code of Data Structures.", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Which subject is CSE403? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What should I complete before Major Project II please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Which semester contains Major Project II please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What are the outcomes of EEE201?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Which subject is required before Major Project I?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Which subject is CSE403 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Do I need anything before taking Compiler Design please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls Give me the semester 4 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls List the subjects for sem 8.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What does the ME department stand for please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "Which courses are offered in sem 8 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What do I study in semester 2? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which sem has the major project please?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "pls Give me the semester 3 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which semester contains Data Structures please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Give me the course details for CSE201. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Find the course code for Major Project I. according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What should I complete before Object Oriented Programming please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for CSE202.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What subjects are in semester 3? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE301. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls how many credits does cse101 have please? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls What are the objectives of CSE301?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Give me the semester 7 subjects. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which courses are offered in semester 4 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Which courses are offered in semester 8?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Do I need anything before taking Major Project II? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls what should i be able to do after object oriented programming?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls I forgot the code for Power Systems I; what is it?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What do I study in semester 6 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Give me the sem 8 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls How many credits is the major project? according to the official document", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "Give me the semester 3 subjects. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Are laboratory components included for ECE please?", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "Which semester contains Machine Learning? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Give me the sem 1 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls List the subjects for sem 7.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "tell me the subject name for cse201. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What subjects are in semester 2? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What does CSE202 focus on?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls What should I be able to do after Cloud Computing please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What subjects are in semester 7? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Can you give me a student's phone number?", "label_id": 23, "intent": "unsupported_or_unknown", "out_of_scope": false}
+{"text": "What subjects are in semester 3 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Are electives included in ECE please? according to the official document", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "What is CSE202 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Which subject is required before Database Management Systems? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls what is the attendance requirement please? according to the official document", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "What should I be able to do after Database Management Systems please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Power Systems I please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Which semester has the major project please?", "label_id": 11, "intent": "project_information", "out_of_scope": false}
+{"text": "pls Which subject is CSE102?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the outcomes of ECE201? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which directory contains office contacts please? according to the official document", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE102. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which courses are offered in semester 8? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "which courses are offered in semester 3 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "When does the academic year start? according to the official document", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What do I study in sem 3?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for CSE102.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls when are the end-sem exams please? according to the official document", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls I forgot the code for Cloud Computing; what is it please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What subjects are in semester 6 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which courses are offered in semester 5 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Do I need anything before taking Major Project II please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls Tell me the credits for the curriculum. please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls Give me the semester 6 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls tell me the course outcomes for cse302.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Compiler Design please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me about the ECE department. please?", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "What is Compiler Design in the curriculum please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What is Compiler Design in the curriculum?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What do I study in semester 1?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Data Structures?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which code belongs to Object Oriented Programming please? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What is the course code for Computer Networks please?", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "How many credits are assigned to CSE203? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "What subjects are in sem 8?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What do I study in semester 4? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me the course outcomes for ECE101. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is the course code for Programming Fundamentals? according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Which semester contains Machine Learning please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "what should i complete before major project ii? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What learning outcome is listed for Machine Learning please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What are the outcomes of ECE201?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is Digital Signal Processing in the curriculum please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "List the subjects for sem 4. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls when does the academic year start please? according to the official document", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "tell me the course outcomes for cse202. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "what do i study in semester 6? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is the full name of ECE? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls Give me the course details for CSE401.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Find the course code for Operating Systems. according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "Tell me the subject name for CSE201. according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What is ECE201?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Tell me the course outcomes for ECE201. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "how many credits are assigned to cse203 please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE401. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What is the prerequisite for CSE301?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What is ECE201? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What subjects are in semester 8 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "give me the course details for cse401. according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Can I carry electronic devices to the exam? according to the official document", "label_id": 14, "intent": "exam_rules", "out_of_scope": false}
+{"text": "Do I need anything before taking Cloud Computing? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls Explain the sem-wise curriculum structure.", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "What components are included in the curriculum please? according to the official document", "label_id": 8, "intent": "curriculum_structure", "out_of_scope": false}
+{"text": "pls What subjects are in semester 4?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What should I be able to do after Digital Signal Processing please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the outcomes of ECE101? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which courses are offered in semester 1? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for CSE201.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What do I study in sem 1?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me the subject name for ECE101. according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "what is the credit value of cse201 please?", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls When are even semester exams please?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls Tell me the subject name for CSE201.", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What subjects are in semester 8?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What are the outcomes of CSE402? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What do I study in semester 4?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for CSE301.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls what does the cse department stand for please? according to the official document", "label_id": 18, "intent": "faculty_department_info", "out_of_scope": false}
+{"text": "pls When does the odd sem begin?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "What are the outcomes of CSE302 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What should I be able to do after Object Oriented Programming please? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls How many credits does sem 8 have?", "label_id": 7, "intent": "semester_credits", "out_of_scope": false}
+{"text": "Which subject is required before Machine Learning? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Which courses are offered in sem 6?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What should I be able to do after Programming Fundamentals please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is Digital Signal Processing in the curriculum? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Find the course code for Operating Systems. according to the official document", "label_id": 1, "intent": "course_code_lookup", "out_of_scope": false}
+{"text": "What is the credit value of CSE201 please? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Compiler Design?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE303. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the course outcomes for EEE201. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What should I complete before Major Project II?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls What should I be able to do after Computer Networks?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Programming Fundamentals?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE302. please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which courses are offered in semester 3? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE403. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls List the subjects for sem 1.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What learning outcome is listed for Digital Signal Processing? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Database Management Systems? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls where can i find the cse curriculum please? according to the official document", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Cloud Computing?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What is CSE302?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the outcomes of ME201? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is CSE101? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the outcomes of CSE402 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls what should i be able to do after major project ii?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the course objectives for Operating Systems? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "What grades are used please? according to the official document", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "what do i study in semester 4 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "When are odd sem exams please?", "label_id": 13, "intent": "exam_schedule", "out_of_scope": false}
+{"text": "pls List the subjects for sem 6.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls Where can I find student service information please?", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "pls Give me the course details for CSE401. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Give me the sem 7 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What does CSE202 focus on please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls What should I be able to do after Programming Fundamentals?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Programming Fundamentals please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE101. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What subjects are in semester 1 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What should I be able to do after Data Structures?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What grades are used? according to the official document", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "Tell me the subject name for CSE301. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls How many credits are assigned to CSE203? according to the official document", "label_id": 2, "intent": "course_credits", "out_of_scope": false}
+{"text": "pls what is cse101 please? according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Do I need anything before taking Cloud Computing please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What learning outcome is listed for Computer Networks? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE201. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Major Project II? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the outcomes of EEE201 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Database Management Systems please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What is CSE402 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What learning outcome is listed for Machine Learning? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What does CSE401 focus on please?", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "pls Tell me the course outcomes for CSE101.", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls What grades are used please?", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "What subjects are in semester 4 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What is Programming Fundamentals in the curriculum please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls What subjects are in semester 7?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What should I be able to do after Computer Networks? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which sem contains Data Structures?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the outcomes of CSE403 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Give me the course details for ME201. please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "pls Do I need anything before taking Operating Systems please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "When does the odd sem begin? according to the official document", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "give me the semester 8 subjects. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "When does the even sem begin please?", "label_id": 12, "intent": "academic_calendar", "out_of_scope": false}
+{"text": "Do I need anything before taking Major Project II? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Tell me the subject name for CSE401. according to the official document", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "Tell me the course outcomes for CSE202. according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What subjects are in semester 5? according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Give me the sem 6 subjects. please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What support services are available? according to the official document", "label_id": 20, "intent": "student_services", "out_of_scope": false}
+{"text": "pls Are electives included in ECE please?", "label_id": 9, "intent": "elective_information", "out_of_scope": false}
+{"text": "What is the goal of Object Oriented Programming please? according to the official document", "label_id": 4, "intent": "course_objectives", "out_of_scope": false}
+{"text": "Which courses are offered in sem 8?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Which courses are offered in semester 2 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "Do I need anything before taking Cloud Computing please? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "Are laboratory components included for ECE please? according to the official document", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "pls how does grading work please? according to the official document", "label_id": 16, "intent": "grading_rules", "out_of_scope": false}
+{"text": "pls What are the outcomes of CSE303?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Which subject is EEE201 please?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What is the prerequisite for CSE202? according to the official document", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "pls Give me the semester 1 subjects.", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "What do I study in semester 5 please?", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls What learning outcome is listed for Machine Learning?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Thermodynamics? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Compiler Design? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Where is the official curriculum document please? according to the official document", "label_id": 22, "intent": "document_location", "out_of_scope": false}
+{"text": "pls How much attendance is required? according to the official document", "label_id": 15, "intent": "attendance_rules", "out_of_scope": false}
+{"text": "what should i complete before operating systems please?", "label_id": 3, "intent": "course_prerequisite", "out_of_scope": false}
+{"text": "What should I be able to do after Computer Networks please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls Which semester contains Major Project II?", "label_id": 0, "intent": "course_subject_info", "out_of_scope": false}
+{"text": "What are the outcomes of CSE102 please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What are the outcomes of CSE303? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "What learning outcome is listed for Operating Systems? according to the official document", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "what learning outcome is listed for object oriented programming please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "Give me the semester 1 subjects. according to the official document", "label_id": 6, "intent": "semester_subjects", "out_of_scope": false}
+{"text": "pls what does the curriculum say about labs please? according to the official document", "label_id": 10, "intent": "laboratory_information", "out_of_scope": false}
+{"text": "What learning outcome is listed for Operating Systems please?", "label_id": 5, "intent": "course_outcomes", "out_of_scope": false}
+{"text": "pls where can i find the academic office contact please? according to the official document", "label_id": 19, "intent": "office_contact_info", "out_of_scope": false}

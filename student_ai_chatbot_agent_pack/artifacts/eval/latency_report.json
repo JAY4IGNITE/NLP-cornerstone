@@ -1,0 +1,33 @@
+{
+  "queries": 10,
+  "repetitions": 5,
+  "embedding_mode": "sentence-transformers",
+  "intent_backend": "lexical-fallback",
+  "provider": "extractive",
+  "stages": {
+    "intent": {
+      "n": 50,
+      "mean_ms": 0.08,
+      "p50_ms": 0.09,
+      "p95_ms": 0.1,
+      "p99_ms": 0.15,
+      "max_ms": 0.15
+    },
+    "retrieval": {
+      "n": 50,
+      "mean_ms": 8.19,
+      "p50_ms": 8.12,
+      "p95_ms": 10.28,
+      "p99_ms": 12.57,
+      "max_ms": 12.57
+    },
+    "end_to_end": {
+      "n": 50,
+      "mean_ms": 8.79,
+      "p50_ms": 9.04,
+      "p95_ms": 10.63,
+      "p99_ms": 11.31,
+      "max_ms": 11.31
+    }
+  }
+}

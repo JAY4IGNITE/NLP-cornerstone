@@ -1,0 +1,24 @@
+# Optional local infrastructure for the DB-backed retrieval path.
+# The prototype runs WITHOUT this (offline local vector store is the default).
+# Start with:  docker compose up -d
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: campusbot-db
+    environment:
+      POSTGRES_USER: campusbot
+      POSTGRES_PASSWORD: campusbot
+      POSTGRES_DB: campusbot
+    ports:
+      - "5432:5432"
+    volumes:
+      - campusbot_pgdata:/var/lib/postgresql/data
+      - ./scripts/sql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U campusbot -d campusbot"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  campusbot_pgdata:

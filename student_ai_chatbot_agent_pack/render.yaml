@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: student-ai-chatbot
+    env: docker
+    plan: free
+    region: oregon
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: LLM_PROVIDER
+        value: extractive
+      - key: OPENAI_API_KEY
+        sync: false

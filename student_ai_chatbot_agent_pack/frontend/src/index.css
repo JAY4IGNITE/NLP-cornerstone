@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.glass-panel {
+  @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400;
+}

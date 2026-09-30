@@ -1,0 +1,65 @@
+{
+  "registry_note": "Production registry mapping to actual campus curriculum.",
+  "sources": [
+    {
+      "source_id": "DOC-CAMPUS-CURR",
+      "title": "B.Tech Computer Science Curriculum",
+      "uri": "campus://curriculum",
+      "authority": "Department of Computer Science",
+      "document_type": "curriculum",
+      "version": "2026-production",
+      "published_at": "2026-06-01",
+      "effective_from": "2026-08-01",
+      "retrieved_at": "2026-09-29",
+      "license": "Internal",
+      "approval_status": "approved",
+      "demo_only": false,
+      "local_path": "data/campus/curriculum.md"
+    },
+    {
+      "source_id": "DOC-CAMPUS-REG",
+      "title": "Academic Regulations",
+      "uri": "campus://regulations",
+      "authority": "Academic Council",
+      "document_type": "policy",
+      "version": "2026-production",
+      "published_at": "2026-06-01",
+      "effective_from": "2026-08-01",
+      "retrieved_at": "2026-09-29",
+      "license": "Internal",
+      "approval_status": "approved",
+      "demo_only": false,
+      "local_path": "data/campus/regulations.md"
+    },
+    {
+      "source_id": "DOC-CAMPUS-FAQ",
+      "title": "Aditya University General FAQ",
+      "uri": "campus://faq",
+      "authority": "Student Affairs",
+      "document_type": "faq",
+      "version": "2026-production",
+      "published_at": "2026-09-30",
+      "effective_from": "2026-09-30",
+      "retrieved_at": "2026-09-30",
+      "license": "Internal",
+      "approval_status": "approved",
+      "demo_only": false,
+      "local_path": "data/campus/faq.md"
+    },
+    {
+      "source_id": "DOC-CAMPUS-HOME",
+      "title": "Aditya University Homepage",
+      "uri": "campus://home",
+      "authority": "Aditya University",
+      "document_type": "website",
+      "version": "2026-production",
+      "published_at": "2026-09-30",
+      "effective_from": "2026-09-30",
+      "retrieved_at": "2026-09-30",
+      "license": "Internal",
+      "approval_status": "approved",
+      "demo_only": false,
+      "local_path": "data/campus/aditya_university_home.md"
+    }
+  ]
+}

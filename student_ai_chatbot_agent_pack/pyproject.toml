@@ -1,0 +1,65 @@
+[project]
+name = "student-ai-chatbot"
+version = "0.1.0"
+description = "Student AI Chatbot — grounded college-information assistant (Intent + Hybrid Retrieval + RAG + Citation Validation + Abstention)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary — see DATASET.md / SECURITY_PRIVACY.md" }
+
+# Core runtime deps. The prototype is designed to run fully offline with these
+# alone (deterministic fallbacks for embeddings / vector store / LLM). Heavy or
+# networked components live in optional extras below.
+dependencies = [
+    "fastapi>=0.115,<1.0",
+    "uvicorn[standard]>=0.30,<1.0",
+    "pydantic>=2.7,<3.0",
+    "pydantic-settings>=2.3,<3.0",
+    "numpy>=1.26,<3.0",
+    "httpx>=0.27,<1.0",
+    "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+# Real ML models (intent DistilBERT + MiniLM dense embeddings). Optional: the
+# core falls back to a deterministic lexical intent model + hash embeddings.
+ml = [
+    "torch>=2.2",
+    "transformers>=4.40",
+    "sentence-transformers>=2.7",
+    "scikit-learn>=1.4",
+]
+# PostgreSQL + pgvector backend. Optional: the core uses a local NumPy vector
+# store when DATABASE_URL is unset or unreachable.
+db = [
+    "psycopg[binary]>=3.1",
+    "pgvector>=0.2.5",
+    "sqlalchemy>=2.0",
+]
+# LLM provider SDKs. Optional: the core uses a deterministic extractive
+# grounded generator when no provider key is configured.
+providers = [
+    "google-genai>=0.3",
+    "anthropic>=0.34",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.5",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["backend*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
