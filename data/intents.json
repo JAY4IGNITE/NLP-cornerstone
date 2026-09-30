@@ -1,0 +1,119 @@
+{
+  "intents": [
+    {
+      "name": "course_overview",
+      "description": "General introduction, description, and summary of a course",
+      "examples": ["What is DBMS?", "Give me an overview of Operating Systems", "Tell me about Computer Networks"]
+    },
+    {
+      "name": "course_outcome",
+      "description": "Course outcomes (COs) and learning outcomes expected upon course completion",
+      "examples": ["What are the course outcomes of DBMS?", "Tell me DBMS COs", "What will I learn in Operating Systems?"]
+    },
+    {
+      "name": "course_objectives",
+      "description": "Educational objectives and instructional goals of the course",
+      "examples": ["What are the objectives of Data Structures?", "Explain instructional goals of Machine Learning"]
+    },
+    {
+      "name": "syllabus",
+      "description": "Complete syllabus outline or module breakdown of a course",
+      "examples": ["What is the syllabus for Operating Systems?", "Give me the syllabus for DBMS", "Show Machine Learning syllabus"]
+    },
+    {
+      "name": "course_code",
+      "description": "Official catalog course code identifier (e.g., CS301)",
+      "examples": ["What is the course code for Operating Systems?", "Course code for DBMS?", "What code represents Computer Networks?"]
+    },
+    {
+      "name": "credits",
+      "description": "Academic credit allocation and lecture/tutorial/practical distribution",
+      "examples": ["How many credits does Computer Networks have?", "DBMS credits?", "What are the credits for Operating Systems?"]
+    },
+    {
+      "name": "prerequisites",
+      "description": "Prior coursework or knowledge needed before enrolling",
+      "examples": ["What are the prerequisites for Machine Learning?", "DBMS prerequisites?", "What do I need to know before Compiler Design?"]
+    },
+    {
+      "name": "units",
+      "description": "Total number of units/modules and unit breakdown of a course",
+      "examples": ["How many units are there in DBMS?", "What units comprise Operating Systems?"]
+    },
+    {
+      "name": "unit_topics",
+      "description": "Specific topics and sub-sections taught in a designated unit",
+      "examples": ["What topics are covered in Unit 3 of DBMS?", "Topics in Unit 1 of Computer Networks?", "What is taught in OS Unit 4?"]
+    },
+    {
+      "name": "semester_subjects",
+      "description": "List of all curriculum courses offered in a specific semester",
+      "examples": ["Which subjects are available in semester 5?", "What subjects are in sem 6?", "Courses in semester 7?"]
+    },
+    {
+      "name": "branch_subjects",
+      "description": "Subjects offered under a specific academic branch or engineering department",
+      "examples": ["Which subjects belong to CSE?", "List courses for Computer Science Engineering"]
+    },
+    {
+      "name": "faculty_information",
+      "description": "Teaching faculty, course coordinators, and office hours",
+      "examples": ["Who teaches DBMS?", "Who is the faculty for Operating Systems?", "Course instructor for ML?"]
+    },
+    {
+      "name": "academic_regulations",
+      "description": "Academic rules, attendance criteria, passing marks, and grading guidelines",
+      "examples": ["What is the attendance policy?", "Minimum passing percentage for theory courses?", "Academic regulation rules"]
+    },
+    {
+      "name": "examination_information",
+      "description": "Midterm exams, final exams, continuous internal assessment, and evaluation schemes",
+      "examples": ["What is the exam pattern for DBMS?", "Internal assessment weightage?", "How are semester exams conducted?"]
+    },
+    {
+      "name": "lab_information",
+      "description": "Practical laboratory sessions, experiment lists, and lab manuals",
+      "examples": ["Is there a lab for DBMS?", "What experiments are in the OS lab?", "Computer Networks lab syllabus"]
+    },
+    {
+      "name": "elective_information",
+      "description": "Professional electives, open electives, and elective baskets",
+      "examples": ["What electives are offered in semester 7?", "Can I take AI as an elective?", "Professional elective options"]
+    },
+    {
+      "name": "course_structure",
+      "description": "Overall curriculum scheme, degree requirements, and credit distribution across semesters",
+      "examples": ["What is the overall course structure of B.Tech CSE?", "Total degree credits required?"]
+    },
+    {
+      "name": "subject_comparison",
+      "description": "Comparative analysis between two courses, syllabi, or difficulty",
+      "examples": ["Difference between DBMS and Operating Systems?", "Compare Machine Learning with Artificial Intelligence"]
+    },
+    {
+      "name": "curriculum_search",
+      "description": "Broad or exploratory search across curriculum topics",
+      "examples": ["Find courses covering SQL", "Where is memory management taught?", "Which course teaches neural networks?"]
+    },
+    {
+      "name": "greeting",
+      "description": "Conversational opening and polite greetings",
+      "examples": ["Hello", "Hi there", "Good morning", "Hey bot"]
+    },
+    {
+      "name": "thanks",
+      "description": "Polite appreciation and closing expressions",
+      "examples": ["Thank you", "Thanks a lot", "Appreciate your help", "Got it, thanks!"]
+    },
+    {
+      "name": "help",
+      "description": "Guidance on how to use the chatbot and available queries",
+      "examples": ["Help me", "What questions can you answer?", "How do I use this chatbot?", "Show instructions"]
+    },
+    {
+      "name": "fallback",
+      "description": "Out-of-scope, ambiguous, or unrecognizable queries",
+      "examples": ["asdfghjk", "Who won the football world cup?", "Order a pizza for me", "What is the capital of France?"]
+    }
+  ]
+}

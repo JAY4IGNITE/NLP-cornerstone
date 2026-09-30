@@ -1,0 +1,21 @@
+{
+  "total_chunks": 49,
+  "upserted_count": 49,
+  "resources": {
+    "curriculum": 22,
+    "regulations": 6,
+    "campus_services": 5,
+    "study_guides": 3,
+    "academic_calendar": 1
+  },
+  "vector_store": {
+    "provider": "Cloudflare Vectorize",
+    "index_name": "student-curriculum-index",
+    "dimensions": 1024,
+    "metric": "cosine",
+    "total_vectors": 131,
+    "is_remote_authenticated": false,
+    "edge_storage_status": "synced",
+    "account_configured": false
+  }
+}

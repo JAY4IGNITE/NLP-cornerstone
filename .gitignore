@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+build/
+dist/
+coverage/
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Environment files
+.env*
+!.env.example
+
+# Large Data Cache & Raw Downloads
+data/cache/
+*.parquet
+
+# OS & Logs
+.DS_Store
+Thumbs.db
+*.log

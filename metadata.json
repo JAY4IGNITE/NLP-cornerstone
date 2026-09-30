@@ -1,0 +1,6 @@
+{
+  "name": "AI-Based Student Chatbot",
+  "description": "Academic NLP and RAG student assistant for university curriculum inquiries with TF-IDF intent classification, entity extraction, vector retrieval, and grounded answer generation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
