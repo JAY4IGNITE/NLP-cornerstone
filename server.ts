@@ -4,7 +4,7 @@ import http from "http";
 import { spawn, ChildProcess } from "child_process";
 import { createServer as createViteServer } from "vite";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const FASTAPI_PORT = 8001;
 const FASTAPI_URL = `http://127.0.0.1:${FASTAPI_PORT}`;
 
