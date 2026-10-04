@@ -111,6 +111,26 @@
       "examples": ["Help me", "What questions can you answer?", "How do I use this chatbot?", "Show instructions"]
     },
     {
+      "name": "admissions_applications",
+      "description": "Questions related to university admissions, application processes, fees, and deadlines",
+      "examples": ["How do I apply?", "What is the application deadline?", "Application fee?"]
+    },
+    {
+      "name": "financial_aid_scholarships",
+      "description": "Questions regarding financial aid, student loans, grants, and merit scholarships",
+      "examples": ["How to apply for financial aid?", "Scholarship details?", "Tuition waivers?"]
+    },
+    {
+      "name": "campus_life_housing",
+      "description": "Information about on-campus housing, dorms, dining facilities, and student life",
+      "examples": ["How do I get a hostel?", "Dining hall timings?", "Dorm fees?"]
+    },
+    {
+      "name": "placements_career_services",
+      "description": "Queries related to career services, campus placements, internships, and resume building",
+      "examples": ["When is the career fair?", "How to register for placements?", "Resume review?"]
+    },
+    {
       "name": "fallback",
       "description": "Out-of-scope, ambiguous, or unrecognizable queries",
       "examples": ["asdfghjk", "Who won the football world cup?", "Order a pizza for me", "What is the capital of France?"]
