@@ -33,3 +33,6 @@ reports/
 .DS_Store
 Thumbs.db
 *.log
+
+# Node
+package-lock.json
