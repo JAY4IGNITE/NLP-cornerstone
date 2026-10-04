@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"python -m uvicorn backend.main:app --port 8001\" \"vite\"",
+    "dev": "concurrently \"python -m uvicorn backend.main:app --port 8001 --reload\" \"vite\"",
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "start": "node dist/server.cjs",
     "preview": "vite preview",

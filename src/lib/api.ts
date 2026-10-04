@@ -1,12 +1,3 @@
-/**
- * Thin API client for the backend. All calls go through the `/api` base path,
- * which the Vite dev server proxies to the backend (stripping the prefix).
- *
- * Non-2xx responses are parsed and returned as the backend's structured
- * `ErrorResponse` so the UI can render them uniformly. Network/parse failures
- * are converted into a synthetic client-side `ErrorResponse` so callers never
- * have to deal with thrown exceptions.
- */
 import type {
   ChatResponse,
   ErrorCode,
@@ -18,47 +9,10 @@ import type {
 
 const API_BASE = "/api";
 
-/** Narrow a chat result to the error variant. */
 export function isErrorResponse(
   value: ChatResponse | ErrorResponse,
 ): value is ErrorResponse {
   return value.status === "error";
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null;
-}
-
-function isStructuredError(value: unknown): value is ErrorResponse {
-  return (
-    isRecord(value) &&
-    value.status === "error" &&
-    typeof value.code === "string" &&
-    typeof value.message === "string" &&
-    typeof value.trace_id === "string"
-  );
-}
-
-function isChatResponse(value: unknown): value is ChatResponse {
-  return (
-    isRecord(value) &&
-    (value.status === "answered" || value.status === "abstained") &&
-    typeof value.answer === "string" &&
-    typeof value.trace_id === "string" &&
-    Array.isArray(value.citations) &&
-    isRecord(value.intent)
-  );
-}
-
-function isHealthResponse(value: unknown): value is HealthResponse {
-  return (
-    isRecord(value) &&
-    (value.status === "ok" || value.status === "degraded") &&
-    typeof value.version === "string" &&
-    typeof value.knowledge_base_version === "string" &&
-    typeof value.index_ready === "boolean" &&
-    typeof value.provider === "string"
-  );
 }
 
 function clientTraceId(): string {
@@ -66,9 +20,7 @@ function clientTraceId(): string {
     if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
       return `client-${crypto.randomUUID()}`;
     }
-  } catch {
-    /* fall through to the timestamp-based id below */
-  }
+  } catch {}
   return `client-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
 
@@ -76,7 +28,7 @@ function clientError(message: string, code: ErrorCode = "INTERNAL_ERROR"): Error
   return { trace_id: clientTraceId(), status: "error", code, message };
 }
 
-async function parseJsonSafe(response: Response): Promise<unknown> {
+async function parseJsonSafe(response: Response): Promise<any> {
   try {
     return await response.json();
   } catch {
@@ -84,36 +36,49 @@ async function parseJsonSafe(response: Response): Promise<unknown> {
   }
 }
 
-/** Send a chat message; resolves to a ChatResponse or a (structured) ErrorResponse. */
 export async function sendChat(message: string): Promise<ChatResponse | ErrorResponse> {
   let response: Response;
   try {
     response = await fetch(`${API_BASE}/chat`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ query: message, chat_history: [], top_k: 4 }),
     });
   } catch {
     return clientError(
-      "Could not reach the server. Make sure the backend is running on port 8000.",
+      "Could not reach the server. Make sure the backend is running.",
     );
   }
 
-  const data = await parseJsonSafe(response);
+  const rawData = await parseJsonSafe(response);
   if (!response.ok) {
-    return isStructuredError(data)
-      ? data
-      : clientError(`The request failed with status ${response.status}.`);
+    return clientError(rawData?.detail || `The request failed with status ${response.status}.`);
   }
-  return isChatResponse(data)
-    ? data
-    : clientError("The server returned an unexpected response.");
+  
+  if (!rawData) {
+      return clientError("The server returned an empty response.");
+  }
+
+  const data: ChatResponse = {
+    status: rawData.answer ? "answered" : "abstained",
+    trace_id: clientTraceId(),
+    answer: rawData.answer || "No response generated.",
+    intent: {
+      label: rawData.intent || "unknown",
+      confidence: rawData.intent_confidence || 0,
+    },
+    citations: (rawData.sources || []).map((s: any) => ({
+      document_id: s.document_id || "unknown",
+      title: s.document_name || "Document",
+      location: s.section_heading || "General",
+      chunk_id: s.chunk_id || null,
+      content: s.text || s.content || null
+    }))
+  };
+
+  return data;
 }
 
-/**
- * Submit thumbs up/down feedback for a previous answer. Fire-and-forget from the
- * UI's perspective, but the resolved value is still typed for callers that care.
- */
 export async function sendFeedback(
   traceId: string,
   rating: FeedbackRating,
@@ -124,29 +89,38 @@ export async function sendFeedback(
     response = await fetch(`${API_BASE}/feedback`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ trace_id: traceId, rating, reason }),
+      body: JSON.stringify({
+          query: "Unknown Query (via Chat UI)", 
+          answer: "Unknown Answer",
+          intent: "unknown",
+          feedback: rating === "helpful" ? "thumbs_up" : "thumbs_down",
+          comments: reason || ""
+      }),
     });
   } catch {
     return clientError("Could not submit feedback.");
   }
 
-  const data = await parseJsonSafe(response);
   if (!response.ok) {
-    return isStructuredError(data) ? data : clientError("Feedback submission failed.");
+    return clientError("Feedback submission failed.");
   }
-  if (isRecord(data) && data.ok === true && typeof data.trace_id === "string") {
-    return { trace_id: data.trace_id, ok: true };
-  }
-  return clientError("Unexpected feedback response.");
+  return { trace_id: traceId, ok: true };
 }
 
-/** Fetch backend health. Returns null on any failure so callers stay robust. */
 export async function getHealth(): Promise<HealthResponse | null> {
   try {
     const response = await fetch(`${API_BASE}/health`);
     if (!response.ok) return null;
-    const data = await parseJsonSafe(response);
-    return isHealthResponse(data) ? data : null;
+    const rawData = await parseJsonSafe(response);
+    if (!rawData) return null;
+    
+    return {
+      status: rawData.status === "healthy" ? "ok" : "degraded",
+      version: rawData.version || "1.0.0",
+      knowledge_base_version: "1.0",
+      index_ready: rawData.indexed_chunks_count > 0,
+      provider: rawData.vector_provider || "Local Engine",
+    };
   } catch {
     return null;
   }

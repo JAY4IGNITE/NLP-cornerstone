@@ -172,7 +172,7 @@ export function App() {
         </header>
 
         {/* Content */}
-        <main className="flex-1 w-full max-w-4xl mx-auto px-4 pb-4 relative z-10 flex flex-col min-h-0 overflow-hidden">
+        <main className="flex-1 w-full pb-4 relative z-10 flex flex-col min-h-0 overflow-hidden">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex-1 flex flex-col min-h-0 overflow-hidden">
             <Chat />
           </motion.div>

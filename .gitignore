@@ -36,3 +36,15 @@ Thumbs.db
 
 # Node
 package-lock.json
+
+# User datasets (Large PDFs, raw files)
+datasets/
+
+# Python Virtual Environments
+venv/
+env/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
