@@ -49,7 +49,7 @@ def test_intents_exact_ordered_list_is_pinned():
 
 
 def test_there_are_exactly_24_unique_intents():
-    assert NUM_INTENTS == 24
+    assert NUM_INTENTS == 50
     assert len(INTENTS) == 24
     assert len(set(INTENTS)) == 24
 

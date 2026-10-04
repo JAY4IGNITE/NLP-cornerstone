@@ -3,12 +3,9 @@ import { Chat } from "./components/Chat";
 import { getHealth } from "./lib/api";
 import type { HealthResponse } from "./types/chat";
 import { motion } from "framer-motion";
-import { ServerCrash, Activity, MessageSquare, BarChart2, Info, FileText, Plus, Hexagon, Search, Folder, Compass, Settings, ChevronDown } from "lucide-react";
-import Dock from './components/Dock';
-import './components/CardNav.css';
+import { ServerCrash, Activity, MessageSquare, Hexagon, Search, Folder, Compass, Settings, ChevronDown, Plus } from "lucide-react";
 
 type StatusTone = "unknown" | "offline" | "ok" | "degraded";
-type Tab = "chat" | "analytics" | "info";
 
 function statusInfo(health: HealthResponse | null, checked: boolean) {
   if (!checked) return { tone: "unknown", label: "Connecting...", icon: <Activity className="w-4 h-4 animate-pulse" /> };
@@ -25,7 +22,6 @@ function statusInfo(health: HealthResponse | null, checked: boolean) {
 export function App() {
   const [health, setHealth] = useState<HealthResponse | null>(null);
   const [checked, setChecked] = useState(false);
-  const [activeTab, setActiveTab] = useState<Tab>("chat");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   useEffect(() => {
@@ -42,14 +38,6 @@ export function App() {
   }, []);
 
   const status = statusInfo(health, checked);
-
-
-  const items = [
-    { icon: <MessageSquare size={18} strokeWidth={1.5} />, label: 'Chatbot', onClick: () => setActiveTab("chat") },
-    { icon: <BarChart2 size={18} strokeWidth={1.5} />, label: 'Analytics', onClick: () => setActiveTab("analytics") },
-    { icon: <Info size={18} strokeWidth={1.5} />, label: 'Project Info', onClick: () => setActiveTab("info") },
-  ];
-
 
   return (
     <div className="h-screen w-full bg-[#212121] text-gray-300 font-sans flex overflow-hidden">
@@ -113,11 +101,11 @@ export function App() {
               <div className="space-y-0.5">
                 <button className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors group">
                   <MessageSquare className="w-4 h-4 text-gray-500 group-hover:text-gray-300 transition-colors" strokeWidth={1.5} />
-                  <span className="truncate">Data structures overview</span>
+                  <span className="truncate">Campus Life FAQ</span>
                 </button>
                 <button className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors group">
                   <MessageSquare className="w-4 h-4 text-gray-500 group-hover:text-gray-300 transition-colors" strokeWidth={1.5} />
-                  <span className="truncate">React state management</span>
+                  <span className="truncate">Registration Help</span>
                 </button>
               </div>
             </div>
@@ -172,18 +160,9 @@ export function App() {
             )}
           </div>
 
-          {/* Center Dock */}
           <div className="flex-1 flex justify-center relative h-[42px]">
-            <div className="absolute inset-0 flex justify-center items-center z-50">
-              <Dock 
-                items={items}
-                panelHeight={42}
-                baseItemSize={30}
-                magnification={42}
-                dockHeight={42}
-                spring={{ mass: 0.2, stiffness: 120, damping: 14 }}
-              />
-            </div>
+            {/* Minimalistic Header Title */}
+            <div className="font-semibold text-lg text-white">Campus AI Chat</div>
           </div>
 
           {/* Status */}
@@ -194,104 +173,11 @@ export function App() {
 
         {/* Content */}
         <main className="flex-1 w-full max-w-4xl mx-auto px-4 pb-4 relative z-10 flex flex-col min-h-0 overflow-hidden">
-        {activeTab === "chat" && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex-1 flex flex-col min-h-0 overflow-hidden">
             <Chat />
           </motion.div>
-        )}
-
-        {activeTab === "analytics" && (
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex-1 overflow-y-auto pb-20">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">Usage Analytics</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl text-center">
-                <div className="text-gray-400 text-sm mb-2 uppercase tracking-widest">Total Queries</div>
-                <div className="text-5xl font-bold text-white">12,458</div>
-              </div>
-              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl text-center">
-                <div className="text-gray-400 text-sm mb-2 uppercase tracking-widest">Avg. Latency</div>
-                <div className="text-5xl font-bold text-white">1.2s</div>
-              </div>
-              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl text-center">
-                <div className="text-gray-400 text-sm mb-2 uppercase tracking-widest">Feedback Score</div>
-                <div className="text-5xl font-bold text-white">4.8/5</div>
-              </div>
-            </div>
-            
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl max-w-3xl mx-auto">
-              <h3 className="text-white font-bold mb-6 text-xl text-center">Top Intents</h3>
-              <ul className="space-y-6">
-                {['course_subject_info', 'student_services', 'academic_calendar', 'exam_schedule', 'office_contact_info'].map((intent, idx) => (
-                  <li key={intent} className="flex items-center justify-between">
-                    <span className="font-mono text-sm text-gray-300 w-1/3">{intent}</span>
-                    <div className="flex-1 mx-4 h-3 bg-white/10 rounded-full overflow-hidden">
-                      <div className="h-full bg-white rounded-full" style={{ width: `${80 - (idx * 15)}%` }} />
-                    </div>
-                    <span className="text-sm text-white font-bold w-12 text-right">{80 - (idx * 15)}%</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
-        )}
-
-        {activeTab === "info" && (
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex-1 overflow-y-auto pb-20 flex flex-col items-center">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">Project Information</h2>
-            <div className="w-full max-w-3xl space-y-8">
-              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <Activity className="w-5 h-5" /> Architecture
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-6">
-                  This system is a Retrieval-Augmented Generation (RAG) chatbot designed specifically for campus intelligence. It combines a highly optimized Logistic Regression intent classifier with a BM25 & Sentence-Transformer hybrid vector store.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm bg-black/20 p-6 rounded-2xl border border-white/5">
-                  <div className="flex flex-col gap-1">
-                    <span className="text-gray-500 uppercase tracking-wider text-xs font-bold">LLM Provider</span>
-                    <span className="text-white text-base">{health?.provider || "N/A"}</span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-gray-500 uppercase tracking-wider text-xs font-bold">Vector Store</span>
-                    <span className="text-white text-base">Local FAISS / NumPy</span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-gray-500 uppercase tracking-wider text-xs font-bold">Knowledge Base</span>
-                    <span className="text-white text-base">{health?.knowledge_base_version || "N/A"}</span>
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-gray-500 uppercase tracking-wider text-xs font-bold">Status</span>
-                    <span className="text-white text-base flex items-center gap-2">
-                      {status.icon} {health?.status || "N/A"}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
-                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                  <FileText className="w-5 h-5" /> Dataset details
-                </h3>
-                <ul className="space-y-4 text-gray-300">
-                  <li className="flex items-start gap-4 p-4 bg-black/20 rounded-2xl border border-white/5">
-                    <div className="mt-1 w-2 h-2 bg-white rounded-full flex-shrink-0" />
-                    <span>Intents are trained on a 50k-record custom dataset spanning 24 specific campus topics using TF-IDF vectorization.</span>
-                  </li>
-                  <li className="flex items-start gap-4 p-4 bg-black/20 rounded-2xl border border-white/5">
-                    <div className="mt-1 w-2 h-2 bg-white rounded-full flex-shrink-0" />
-                    <span>The retrieval corpus includes official university curriculums, regulations, and dynamic FAQ content.</span>
-                  </li>
-                  <li className="flex items-start gap-4 p-4 bg-black/20 rounded-2xl border border-white/5">
-                    <div className="mt-1 w-2 h-2 bg-white rounded-full flex-shrink-0" />
-                    <span>NVIDIA NIM API powers the generation phase, grounding all generated answers exclusively in the retrieved source chunks.</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </main>
-    </div>
+        </main>
+      </div>
     </div>
   );
 }

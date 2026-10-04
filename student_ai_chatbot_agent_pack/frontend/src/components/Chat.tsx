@@ -142,13 +142,12 @@ export function Chat() {
       </div>
 
       {/* Input Area */}
-      <div className="p-4 bg-gradient-to-t from-[#212121] via-[#212121]/80 to-transparent flex justify-center sticky bottom-0 z-10 w-full max-w-3xl mx-auto pb-8 pt-8">
-        <div className="w-full flex flex-col gap-2">
-
-          <div className="relative w-full flex items-center gap-2 bg-white/5 border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl rounded-[2rem] px-4 py-2 transition-all duration-300 hover:bg-white/10 hover:border-white/20 focus-within:bg-white/10 focus-within:border-white/30 focus-within:shadow-[0_4px_40px_rgba(255,255,255,0.05)]">
+      <div className="p-4 bg-[#212121] flex justify-center sticky bottom-0 z-10 w-full max-w-3xl mx-auto pb-6 pt-4">
+        <div className="w-full flex flex-col gap-2 relative">
+          <div className="relative w-full flex items-center gap-2 bg-[#2f2f2f] border border-white/10 rounded-[1.5rem] px-4 py-2 focus-within:border-white/30 transition-colors">
             <textarea
-              className="flex-1 bg-transparent text-white py-2 max-h-32 min-h-[24px] resize-none outline-none placeholder:text-gray-400 text-[15px] font-medium"
-              placeholder="Ask anything..."
+              className="flex-1 bg-transparent text-white py-2 max-h-32 min-h-[24px] resize-none outline-none placeholder:text-gray-400 text-[15px]"
+              placeholder="Message CampusAI..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={onKeyDown}
@@ -162,9 +161,12 @@ export function Chat() {
                 disabled={!input.trim() || loading}
                 className="w-8 h-8 flex items-center justify-center rounded-full transition-all disabled:opacity-30 disabled:hover:bg-transparent bg-white text-black hover:bg-gray-200"
               >
-                <Send className="w-4 h-4 mr-0.5 mt-0.5" strokeWidth={1.5} />
+                <Send className="w-4 h-4 mr-0.5 mt-0.5" strokeWidth={2} />
               </button>
             </div>
+          </div>
+          <div className="text-center text-xs text-gray-500 mt-1">
+            CampusAI can make mistakes. Consider verifying important academic information.
           </div>
         </div>
       </div>
