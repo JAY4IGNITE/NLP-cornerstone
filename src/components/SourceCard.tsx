@@ -1,63 +1,47 @@
-import React, { useState } from "react";
-import { BookMarked, ChevronDown, ChevronUp, FileText, CheckCircle } from "lucide-react";
-import { CitationSource } from "../types";
+import { useState } from "react";
+import type { Citation } from "../types/chat";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface SourceCardProps {
-  source: CitationSource;
-  index: number;
+  citation: Citation;
 }
 
-export const SourceCard: React.FC<SourceCardProps> = ({ source, index }) => {
+/** Renders a single citation as a clearly marked "source" card. */
+export function SourceCard({ citation }: SourceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-
-  const relevancePct = Math.round(source.relevance_score * 100);
-
+  const { title, location, document_id, chunk_id, content } = citation;
   return (
-    <div className="border border-slate-200 rounded-lg bg-slate-50/70 overflow-hidden text-xs transition-all hover:border-slate-300">
-      <div
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="px-3 py-2 flex items-center justify-between cursor-pointer hover:bg-slate-100/80 transition-colors"
-      >
-        <div className="flex items-center space-x-2 truncate mr-2">
-          <span className="w-5 h-5 rounded-full bg-zinc-700 text-zinc-300 flex items-center justify-center font-bold text-[10px] shrink-0">
-            {index + 1}
+    <article 
+      className={`source-card ${content ? 'cursor-pointer' : ''}`}
+      onClick={() => content && setIsExpanded(!isExpanded)}
+    >
+      <div className="flex items-start justify-between w-full">
+        <div className="flex items-start gap-3">
+          <span className="source-card__badge" aria-hidden="true">
+            DOC
           </span>
-          <div className="truncate">
-            <span className="font-semibold text-slate-900 truncate block">
-              {source.course_code ? `[${source.course_code}] ` : ""}
-              {source.section || source.course_name || source.source_document}
-            </span>
-            <span className="text-slate-500 text-[11px]">
-              {source.source_document} • Page {source.page}
-            </span>
+          <div className="source-card__body">
+            <p className="source-card__title">{title || "Untitled source"}</p>
+            {location ? <p className="source-card__location">{location}</p> : null}
+            <p className="source-card__meta">
+              <span className="source-card__id">{document_id}</span>
+              {chunk_id ? (
+                <span className="source-card__chunk">chunk {chunk_id}</span>
+              ) : null}
+            </p>
           </div>
         </div>
-
-        <div className="flex items-center space-x-2 shrink-0">
-          <span className="px-2 py-0.5 rounded-full text-[10px] font-medium bg-zinc-800 text-white">
-            {relevancePct}% match
-          </span>
-          {isExpanded ? (
-            <ChevronUp className="w-4 h-4 text-slate-400" />
-          ) : (
-            <ChevronDown className="w-4 h-4 text-slate-400" />
-          )}
-        </div>
+        {content && (
+          <div className="text-slate-400 mt-1">
+            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          </div>
+        )}
       </div>
-
-      {isExpanded && (
-        <div className="px-3 py-2.5 bg-white border-t border-slate-200 text-slate-700 leading-relaxed font-mono text-[11px] whitespace-pre-wrap max-h-48 overflow-y-auto">
-          <div className="flex items-center justify-between pb-1.5 mb-1.5 border-b border-slate-100 text-[10px] text-slate-400 font-sans">
-            <span>Chunk ID: {source.chunk_id}</span>
-            {source.is_cited && (
-              <span className="flex items-center text-zinc-600 font-medium">
-                <CheckCircle className="w-3 h-3 mr-1" /> Explicitly Cited
-              </span>
-            )}
-          </div>
-          <div>{source.course_name ? `Subject: ${source.course_name}\n` : ""}{source.section ? `Section: ${source.section}\n\n` : ""}Official curriculum verified passage.</div>
+      {isExpanded && content && (
+        <div className="mt-3 pt-3 border-t border-white/10 text-xs text-slate-300 whitespace-pre-wrap font-mono bg-black/20 p-2 rounded">
+          {content}
         </div>
       )}
-    </div>
+    </article>
   );
-};
+}
