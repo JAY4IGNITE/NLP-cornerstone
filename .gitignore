@@ -14,9 +14,20 @@ __pycache__/
 .env*
 !.env.example
 
-# Large Data Cache & Raw Downloads
+# Large Data Cache, Vector DBs & Logs
 data/cache/
+data/processed/
+data/qdrant_storage/
+data/*_log.json
+data/cloudflare_vectorize_storage.json
 *.parquet
+
+# ML Model Artifacts & Reports
+models/
+reports/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
 
 # OS & Logs
 .DS_Store
