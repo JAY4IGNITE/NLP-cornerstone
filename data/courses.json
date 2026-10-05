@@ -1,0 +1,54 @@
+{
+  "courses": [
+    {
+      "course_code": "CS201",
+      "course_name": "Data Structures and Algorithms",
+      "aliases": ["dsa", "data structures"]
+    },
+    {
+      "course_code": "CS301",
+      "course_name": "Database Management Systems",
+      "aliases": ["dbms", "database"]
+    },
+    {
+      "course_code": "CS302",
+      "course_name": "Operating Systems",
+      "aliases": ["os"]
+    },
+    {
+      "course_code": "CS303",
+      "course_name": "Computer Networks",
+      "aliases": ["cn", "networks"]
+    },
+    {
+      "course_code": "CS304",
+      "course_name": "Compiler Design",
+      "aliases": ["cd", "compilers"]
+    },
+    {
+      "course_code": "CS305",
+      "course_name": "Web Technologies",
+      "aliases": ["web tech", "web"]
+    },
+    {
+      "course_code": "CS306",
+      "course_name": "Software Engineering",
+      "aliases": ["se", "soft eng"]
+    },
+    {
+      "course_code": "CS401",
+      "course_name": "Machine Learning",
+      "aliases": ["ml"]
+    },
+    {
+      "course_code": "CS402",
+      "course_name": "Artificial Intelligence",
+      "aliases": ["ai"]
+    },
+    {
+      "course_code": "CS403",
+      "course_name": "Cloud Computing",
+      "aliases": ["cloud", "cc"]
+    }
+  ]
+}

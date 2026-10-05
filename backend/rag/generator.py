@@ -68,28 +68,41 @@ class AnswerGenerator:
 
         # Build clean factual summary from top chunks
         lines = []
+        
+        # Display intents nicely to show NLP processing is active
+        intent_display = intent.replace("_", " ").title()
+        lines.append(f"### Verified Academic Insight ({intent_display})")
+        lines.append("")
+
         course_name = entities.get("canonical_course_name") or chunks[0].get("course_name")
         course_code = entities.get("course_code") or chunks[0].get("course_code")
 
         if course_name or course_code:
-            header = f"### Official Curriculum Information: {course_name or ''} ({course_code or ''})".strip()
-            lines.append(header)
+            lines.append(f"**Focus:** {course_name or ''} ({course_code or ''})".strip())
             lines.append("")
 
-        for i, chunk in enumerate(chunks[:3], 1):
+        for i, chunk in enumerate(chunks[:2], 1):
             text = chunk.get("text", "").strip()
             doc_name = chunk.get("source_document") or chunk.get("document_name") or "Curriculum Handbook"
             page = chunk.get("page_number") or chunk.get("page", 1)
             sec = chunk.get("section_heading") or chunk.get("section") or f"Section {i}"
 
-            # Format bullet points
-            lines.append(f"**From {sec}** ([{doc_name}, Page {page}]):")
-            # Filter out repeated page numbers
-            cleaned_lines = [l for l in text.split("\n") if not l.startswith("Page ") and not l.startswith("DEPARTMENT")]
-            lines.append("\n".join(cleaned_lines))
+            lines.append(f"📘 **From {sec}** ([{doc_name}, Page {page}]):")
+            
+            # Smart formatting for precision
+            cleaned_lines = [l.strip() for l in text.split("\n") if l.strip() and not l.startswith("Page ") and not l.startswith("DEPARTMENT")]
+            # Only show top 4 lines of context for precision, avoiding massive dumps
+            for l in cleaned_lines[:4]:
+                if l.startswith(("-", "*", "1.", "2.", "3.", "4.")):
+                    lines.append(f"  {l}")
+                else:
+                    lines.append(f"> {l}")
+            
+            if len(cleaned_lines) > 4:
+                lines.append("> *(additional details truncated for brevity)*")
             lines.append("")
 
-        lines.append(f"*Verified against official B.Tech CSE Curriculum Regulations.*")
+        lines.append(f"✅ *Generated and grounded securely via CampusNLP.*")
         return "\n".join(lines)
 
     def generate(

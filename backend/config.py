@@ -27,9 +27,9 @@ class Settings(BaseModel):
     # NVIDIA NIM configurations
     NVIDIA_BASE_URL: str = os.getenv("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
     NVIDIA_API_KEY: str = os.getenv("NVIDIA_API_KEY", "")
-    NVIDIA_EMBEDDING_MODEL: str = os.getenv("NVIDIA_EMBEDDING_MODEL", "nvidia/nv-embedqa-e5-v5")
+    NVIDIA_EMBEDDING_MODEL: str = os.getenv("NVIDIA_EMBEDDING_MODEL", "nvidia/nv-embedqa-mistral-7b-v2")
     NVIDIA_RERANKER_MODEL: str = os.getenv("NVIDIA_RERANKER_MODEL", "nvidia/reranking-mistral-4b")
-    NVIDIA_LLM_MODEL: str = os.getenv("NVIDIA_LLM_MODEL", "meta/llama-3.1-70b-instruct")
+    NVIDIA_LLM_MODEL: str = os.getenv("NVIDIA_LLM_MODEL", "meta/llama-3.3-70b-instruct")
 
     # Aliases for convenience
     @property
