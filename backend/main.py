@@ -86,8 +86,10 @@ def _append_log(file_path: Path, entry: Dict[str, Any]):
             data = data[-500:]
         with open(file_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
+        return True
     except Exception as e:
         logger.error(f"Failed to log entry to {file_path}: {e}")
+        return False
 
 @app.get("/api/health")
 def health_check():
@@ -321,7 +323,8 @@ def submit_feedback(fb: FeedbackRequest):
         "feedback": fb.feedback,
         "comments": fb.comments
     }
-    _append_log(FEEDBACK_FILE, entry)
+    if not _append_log(FEEDBACK_FILE, entry):
+        raise HTTPException(status_code=503, detail="Feedback could not be saved. Please try again.")
     return {"status": "success", "message": "Feedback logged successfully"}
 
 @app.get("/api/feedback")

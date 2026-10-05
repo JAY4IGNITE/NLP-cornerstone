@@ -103,6 +103,7 @@ class AttributionEngine:
                 is_cited = True
 
             citations.append({
+                "document_id": c.get("document_id") or source_doc,
                 "chunk_id": c_id,
                 "source_document": source_doc,
                 "page": page,
@@ -110,7 +111,8 @@ class AttributionEngine:
                 "course_code": doc_code,
                 "course_name": c.get("course_name"),
                 "relevance_score": c.get("rerank_score") or c.get("retrieval_score", 0.0),
-                "is_cited": is_cited
+                "is_cited": is_cited,
+                "content": c.get("text", "")
             })
 
         citation_score = 0.9 if any(cit["is_cited"] for cit in citations) else 0.65

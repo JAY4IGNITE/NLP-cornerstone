@@ -191,7 +191,12 @@ class HybridRetriever:
             rrf_scores[c_id] += 1.0 / (self.rrf_k + rank)
 
         # Sort combined chunks by RRF score
-        sorted_chunks = sorted(rrf_scores.keys(), key=lambda k: rrf_scores[k], reverse=True)
+        # Prefer explicit lexical evidence when dense and sparse ranks tie.
+        # Offline projection vectors can otherwise win ties with unrelated text.
+        sorted_chunks = sorted(
+            rrf_scores.keys(),
+            key=lambda key: (-rrf_scores[key], sparse_ranks.get(key, float("inf")))
+        )
         final_results = []
 
         for c_id in sorted_chunks[:top_k]:
@@ -201,6 +206,8 @@ class HybridRetriever:
             # Max possible score for rank 1 in both is 2 / (60 + 1) = 0.03278
             normalized_score = min(1.0, round(fused_score / 0.0328, 4))
             chunk_copy = dict(chunk)
+            chunk_copy["document_name"] = chunk.get("document_name") or chunk.get("source_document") or "Academic document"
+            chunk_copy["page_number"] = chunk.get("page_number") or chunk.get("page")
             chunk_copy["rrf_score"] = fused_score
             chunk_copy["retrieval_score"] = normalized_score
             chunk_copy["dense_rank"] = dense_ranks.get(c_id)

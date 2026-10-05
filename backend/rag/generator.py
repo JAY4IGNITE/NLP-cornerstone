@@ -66,19 +66,16 @@ class AnswerGenerator:
                 "Please verify the course title, code, or semester and try again."
             )
 
-        # Build clean factual summary from top chunks
-        lines = []
-        
-        # Display intents nicely to show NLP processing is active
-        intent_display = intent.replace("_", " ").title()
-        lines.append(f"### Verified Academic Insight ({intent_display})")
-        lines.append("")
+        # Quote relevant source passages when the remote generator is unavailable.
+        # Do not label an extract as a verified, generated explanation.
+        lines = ["Here’s what I found in the academic resources:", ""]
 
         course_name = entities.get("canonical_course_name") or chunks[0].get("course_name")
         course_code = entities.get("course_code") or chunks[0].get("course_code")
 
         if course_name or course_code:
-            lines.append(f"**Focus:** {course_name or ''} ({course_code or ''})".strip())
+            focus = " ".join(value for value in [course_name, f"({course_code})" if course_code else None] if value)
+            lines.append(f"**{focus}**")
             lines.append("")
 
         for i, chunk in enumerate(chunks[:2], 1):
@@ -87,22 +84,24 @@ class AnswerGenerator:
             page = chunk.get("page_number") or chunk.get("page", 1)
             sec = chunk.get("section_heading") or chunk.get("section") or f"Section {i}"
 
-            lines.append(f"📘 **From {sec}** ([{doc_name}, Page {page}]):")
-            
-            # Smart formatting for precision
+            lines.append(f"**{sec}** — [{doc_name}, Page {page}]")
+
             cleaned_lines = [l.strip() for l in text.split("\n") if l.strip() and not l.startswith("Page ") and not l.startswith("DEPARTMENT")]
-            # Only show top 4 lines of context for precision, avoiding massive dumps
-            for l in cleaned_lines[:4]:
-                if l.startswith(("-", "*", "1.", "2.", "3.", "4.")):
-                    lines.append(f"  {l}")
-                else:
-                    lines.append(f"> {l}")
-            
-            if len(cleaned_lines) > 4:
-                lines.append("> *(additional details truncated for brevity)*")
+            query_terms = set(re.findall(r"\b[a-z0-9]+\b", query.lower())) - {
+                "what", "which", "where", "when", "how", "is", "are", "the", "a", "an", "of", "in", "for",
+                "to", "my", "me", "i", "do", "does", "can", "about", "under", "academic", "regulations"
+            }
+            if cleaned_lines:
+                scores = [len(query_terms.intersection(re.findall(r"\b[a-z0-9]+\b", line.lower()))) for line in cleaned_lines]
+                start = max(range(len(scores)), key=lambda index: scores[index])
+                # Include the section heading immediately before a matching paragraph.
+                if start and len(cleaned_lines[start - 1]) < 90 and not cleaned_lines[start - 1].endswith("."):
+                    start -= 1
+                for line in cleaned_lines[start:start + 6]:
+                    lines.append(f"> {line}")
             lines.append("")
 
-        lines.append(f"✅ *Generated and grounded securely via CampusNLP.*")
+        lines.append("You can expand the sources below to read the full supporting excerpts.")
         return "\n".join(lines)
 
     def generate(

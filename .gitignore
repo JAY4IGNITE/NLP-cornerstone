@@ -34,9 +34,6 @@ reports/
 Thumbs.db
 *.log
 
-# Node
-package-lock.json
-
 # User datasets (Large PDFs, raw files)
 datasets/
 

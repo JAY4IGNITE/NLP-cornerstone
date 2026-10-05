@@ -128,7 +128,7 @@ class IntentClassifier:
             confidence = 0.96
             is_fallback = False
             final_intent = "academic_regulations"
-        elif confidence < self.threshold:
+        elif raw_intent in {"unsupported_or_unknown", "out_of_scope", "fallback"} or confidence < self.threshold:
             final_intent = "fallback"
             is_fallback = True
 

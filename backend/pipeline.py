@@ -82,6 +82,10 @@ class StudentChatbotPipeline:
             # 4. Cross-Encoder Reranking
             if retrieved_chunks:
                 reranked_chunks = reranker_service.rerank(query=query, chunks=retrieved_chunks, intent=intent)
+                reranked_chunks = [
+                    chunk for chunk in reranked_chunks
+                    if chunk.get("rerank_score", chunk.get("retrieval_score", 0.0)) >= guardrails.retrieval_threshold
+                ]
             else:
                 reranked_chunks = []
 

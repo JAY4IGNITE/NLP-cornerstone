@@ -1,11 +1,28 @@
-/**
- * TypeScript interfaces mirroring the backend API contract exactly.
- * See backend/app/schemas/chat.py.
- */
+/** Frontend view models normalized from backend/main.py by lib/api.ts. */
+
+export interface HistoryTurn {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+export type Message =
+  | { id: string; kind: 'user'; text: string }
+  | { id: string; kind: 'assistant'; result: ChatResult; feedback?: FeedbackRating }
+  | { id: string; kind: 'notice'; text: string };
+
+export interface Conversation {
+  id: string;
+  title: string;
+  updatedAt: number;
+  messages: Message[];
+  draft: string;
+}
 
 /** POST /api/chat request body. */
 export interface ChatRequest {
-  message: string;
+  query: string;
+  chat_history: HistoryTurn[];
+  top_k: number;
 }
 
 /** A single grounded source backing an answer. */
@@ -60,9 +77,11 @@ export type FeedbackRating = "helpful" | "not_helpful";
 
 /** POST /api/feedback request body. */
 export interface FeedbackRequest {
-  trace_id: string;
-  rating: FeedbackRating;
-  reason?: string;
+  query: string;
+  answer: string;
+  intent: string;
+  feedback: 'thumbs_up' | 'thumbs_down';
+  comments?: string;
 }
 
 /** POST /api/feedback response body. */

@@ -1,183 +1,106 @@
-import { useEffect, useState } from "react";
-import { Chat } from "./components/Chat";
-import { getHealth } from "./lib/api";
-import type { HealthResponse } from "./types/chat";
-import { motion } from "framer-motion";
-import { ServerCrash, Activity, MessageSquare, Hexagon, Search, Folder, Compass, Settings, ChevronDown, Plus } from "lucide-react";
+import { useEffect, useRef, useState } from 'react';
+import { AlertCircle, ArrowUpRight, Check, ChevronRight, Moon, PanelLeftOpen, RefreshCw, ShieldCheck, Sun, Trash2 } from 'lucide-react';
+import { Chat } from './components/Chat';
+import { Sidebar } from './components/Sidebar';
+import { Dialog } from './components/Dialog';
+import { useConversations } from './hooks/useConversations';
+import { getHealth } from './lib/api';
+import type { Conversation, HealthResponse } from './types/chat';
 
-type StatusTone = "unknown" | "offline" | "ok" | "degraded";
-
-function statusInfo(health: HealthResponse | null, checked: boolean) {
-  if (!checked) return { tone: "unknown", label: "Connecting...", icon: <Activity className="w-4 h-4 animate-pulse" /> };
-  if (!health) return { tone: "offline", label: "System Offline", icon: <ServerCrash className="w-4 h-4 text-white" /> };
-  const ready = health.index_ready;
-  const tone: StatusTone = health.status === "ok" && ready ? "ok" : "degraded";
-  return {
-    tone,
-    label: `${health.provider} · ${ready ? "Online" : "Syncing"}`,
-    icon: <div className={`w-2 h-2 rounded-full ${tone === 'ok' ? 'bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'bg-gray-400'}`} />
-  };
+type Modal = 'help' | 'settings' | Conversation | null;
+function initialTheme(): 'light' | 'dark' {
+  try { return localStorage.getItem('campusai.theme') === 'dark' ? 'dark' : 'light'; } catch { return 'light'; }
 }
 
 export function App() {
+  const chats = useConversations();
+  const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth >= 900);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 900);
+  const [modal, setModal] = useState<Modal>(null);
+  const [theme, setTheme] = useState(initialTheme);
   const [health, setHealth] = useState<HealthResponse | null>(null);
+  const [checking, setChecking] = useState(true);
   const [checked, setChecked] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const sidebar = useRef<HTMLElement>(null);
+  const opener = useRef<HTMLButtonElement>(null);
+  const toggleTheme = () => setTheme(value => value === 'light' ? 'dark' : 'light');
 
   useEffect(() => {
-    let active = true;
-    void getHealth().then((result) => {
-      if (active) {
-        setHealth(result);
-        setChecked(true);
-      }
-    });
-    return () => {
-      active = false;
-    };
+    const query = window.matchMedia('(max-width: 899px)');
+    const change = () => { setIsMobile(query.matches); setSidebarOpen(!query.matches); };
+    query.addEventListener('change', change);
+    return () => query.removeEventListener('change', change);
   }, []);
 
-  const status = statusInfo(health, checked);
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem('campusai.theme', theme); } catch { /* Theme still works for the current session. */ }
+  }, [theme]);
 
-  return (
-    <div className="h-screen w-full bg-[#212121] text-gray-300 font-sans flex overflow-hidden">
-      
-      {/* Left Sidebar (ChatGPT style) */}
-      <motion.aside 
-        initial={false}
-        animate={{ width: isSidebarOpen ? 260 : 0, opacity: isSidebarOpen ? 1 : 0 }}
-        className="flex-shrink-0 bg-[#171717] flex flex-col border-r border-white/5 overflow-hidden"
-      >
-        <div className="p-3 flex flex-col h-full w-[260px]">
-          <div className="flex items-center justify-between mb-6 px-1">
-            <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-white/20 to-white/5 border border-white/10 flex items-center justify-center shadow-lg backdrop-blur-md">
-                <Hexagon className="w-4 h-4 text-white" strokeWidth={2} />
-              </div>
-              <span className="font-semibold text-white tracking-wide text-[15px]">
-                Campus<span className="text-gray-400 font-medium ml-[2px]">AI</span>
-              </span>
-            </div>
-            <button onClick={() => setIsSidebarOpen(false)} className="p-1 hover:bg-white/5 rounded-lg transition-colors flex items-center justify-center w-8 h-8 group overflow-hidden">
-              <div className="hamburger-menu open scale-[0.45] transition-transform duration-300 group-hover:scale-50">
-                <div className="hamburger-line bg-white/60 group-hover:bg-white/90 transition-colors" />
-                <div className="hamburger-line bg-white/60 group-hover:bg-white/90 transition-colors" />
-              </div>
-            </button>
-          </div>
-          
-          {/* Top Actions */}
-          <div className="flex flex-col gap-2 mb-4">
-            <button className="flex items-center justify-center gap-2 bg-white text-black hover:bg-gray-200 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors shadow-sm">
-              <Plus className="w-4 h-4" strokeWidth={2} />
-              New chat
-            </button>
-            <div className="relative group">
-              <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 group-focus-within:text-white transition-colors" strokeWidth={1.5} />
-              <input 
-                type="text" 
-                placeholder="Search chats..." 
-                className="w-full bg-white/5 border border-white/10 rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-white/20 focus:bg-white/10 transition-all"
-              />
-            </div>
-          </div>
+  useEffect(() => {
+    let mounted = true;
+    const check = async () => {
+      const result = await getHealth();
+      if (mounted) { setHealth(result); setChecking(false); setChecked(true); }
+    };
+    void check();
+    const timer = setInterval(() => { if (!document.hidden) void check(); }, 60_000);
+    window.addEventListener('online', check);
+    return () => { mounted = false; clearInterval(timer); window.removeEventListener('online', check); };
+  }, []);
 
-          <div className="flex-1 overflow-y-auto space-y-5 pr-1">
-            {/* Core Navigation */}
-            <div className="space-y-0.5">
-              <button className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
-                <Compass className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
-                Discover
-              </button>
-              <button className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
-                <Folder className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
-                Workspaces
-              </button>
-            </div>
+  useEffect(() => {
+    if (!sidebarOpen || !isMobile) return;
+    const panel = sidebar.current;
+    panel?.querySelector<HTMLButtonElement>('button')?.focus();
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setSidebarOpen(false); opener.current?.focus(); }
+      if (event.key !== 'Tab') return;
+      const items = panel?.querySelectorAll<HTMLElement>('button:not(:disabled), input');
+      if (!items?.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    panel?.addEventListener('keydown', keydown);
+    return () => panel?.removeEventListener('keydown', keydown);
+  }, [sidebarOpen, isMobile]);
 
-            {/* Recent History */}
-            <div>
-              <div className="text-[11px] font-semibold text-gray-500 px-3 py-1.5 uppercase tracking-wider">Recent</div>
-              <div className="space-y-0.5">
-                <button className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors group">
-                  <MessageSquare className="w-4 h-4 text-gray-500 group-hover:text-gray-300 transition-colors" strokeWidth={1.5} />
-                  <span className="truncate">Campus Life FAQ</span>
-                </button>
-                <button className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors group">
-                  <MessageSquare className="w-4 h-4 text-gray-500 group-hover:text-gray-300 transition-colors" strokeWidth={1.5} />
-                  <span className="truncate">Registration Help</span>
-                </button>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-auto pt-3 border-t border-white/5 flex flex-col gap-1">
-            <button className="flex items-center px-3 py-2 hover:bg-white/5 rounded-lg text-sm text-gray-300 hover:text-white transition-colors">
-              <div className="flex items-center gap-3">
-                <Settings className="w-4 h-4 text-gray-400" strokeWidth={1.5} />
-                Settings
-              </div>
-            </button>
-            <div className="flex items-center justify-between px-3 py-2 hover:bg-white/5 rounded-lg cursor-pointer transition-colors group">
-              <div className="flex items-center gap-3">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-medium text-xs shadow-sm ring-1 ring-white/10">
-                  U
-                </div>
-                <span className="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">User Account</span>
-              </div>
-              <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-gray-300 transition-colors" strokeWidth={1.5} />
-            </div>
-          </div>
+  const closeSidebar = () => { setSidebarOpen(false); requestAnimationFrame(() => opener.current?.focus()); };
+  const closeOnMobile = () => { if (window.innerWidth < 900) closeSidebar(); };
+  const retryHealth = async () => { setChecking(true); setHealth(await getHealth()); setChecked(true); setChecking(false); };
+  const available = health?.status === 'ok' && health.index_ready;
+
+  return <div className={`app-shell ${sidebarOpen ? 'sidebar-open' : ''}`} data-theme={theme}>
+    <a className="skip-link" href="#chat-input">Skip to message</a>
+    {sidebarOpen && <button className="sidebar-backdrop" aria-label="Close navigation" onClick={closeSidebar} tabIndex={-1} />}
+    <aside id="chat-sidebar" ref={sidebar} className="sidebar" aria-label="Chat sidebar" role={isMobile && sidebarOpen ? 'dialog' : undefined} aria-modal={isMobile && sidebarOpen ? true : undefined} inert={!sidebarOpen}>
+      <Sidebar conversations={chats.conversations} activeId={chats.active.id} pendingId={chats.pendingId}
+        onNew={() => { chats.create(); closeOnMobile(); requestAnimationFrame(() => document.getElementById('chat-input')?.focus()); }} onSelect={id => { chats.select(id); closeOnMobile(); }}
+        onManage={chat => setModal(chat)} onClose={closeSidebar} onHelp={() => setModal('help')} onSettings={() => setModal('settings')} />
+    </aside>
+    <main className="main-panel" inert={isMobile && sidebarOpen}>
+      <header className="topbar">
+        <div className="topbar-leading"><button ref={opener} className="icon-button sidebar-opener" aria-label="Open sidebar" aria-expanded={sidebarOpen} aria-controls="chat-sidebar" onClick={() => setSidebarOpen(true)}><PanelLeftOpen size={19} /></button>
+          <span className="topbar-workspace">Your workspace</span><ChevronRight size={13} className="breadcrumb-arrow" /><span className="topbar-title">{chats.active.messages.length ? chats.active.title : 'New conversation'}</span>
         </div>
-      </motion.aside>
+        <div className="topbar-actions"><span className="academic-badge"><ShieldCheck size={14} />Academic assistant</span><button className="icon-button" onClick={toggleTheme} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`} title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}>{theme === 'light' ? <Moon size={17} /> : <Sun size={17} />}</button></div>
+      </header>
+      {chats.storageError && <div className="connection-banner" role="alert"><AlertCircle size={15} /><span>{chats.storageError}</span></div>}
+      {checked && !available && <div className="connection-banner" role="status"><AlertCircle size={15} /><span>{health ? 'Some campus resources are unavailable. Answers may be limited.' : 'The assistant is offline. Your saved conversations are still here.'}</span><button className="text-button" disabled={checking} onClick={() => void retryHealth()}><RefreshCw size={13} />{checking ? 'Checking…' : 'Reconnect'}</button></div>}
+      <Chat key={chats.active.id} conversation={chats.active} loading={chats.pendingId === chats.active.id} otherPending={!!chats.pendingId && chats.pendingId !== chats.active.id}
+        onDraft={chats.setDraft} onSubmit={chats.submit} onStop={chats.stop} onFeedback={chats.feedback} />
+    </main>
+    {modal && <Dialog title={modal === 'help' ? 'A guide to your campus companion' : modal === 'settings' ? 'Make yourself at home' : 'Manage conversation'} onClose={() => setModal(null)}>
+      {modal === 'help' ? <div className="help-content"><p>CampusAI helps you find information in your university’s academic resources. Start with a course, a semester, or a specific question.</p><ul><li><strong>Courses & syllabi</strong><span>Topics, units, credits, and prerequisites.</span></li><li><strong>Academic guidelines</strong><span>Attendance, exams, grading, and regulations.</span></li><li><strong>Semester planning</strong><span>Subjects, course structure, and electives.</span></li></ul><div className="dialog-note"><ShieldCheck size={18} /><p>Expand the sources below an answer to see its references. If the resources don’t support an answer, CampusAI will tell you.</p></div><p className="muted">Include the course name or code in follow-up questions for the most relevant results.</p><button className="primary-button" onClick={() => { setModal(null); document.getElementById('chat-input')?.focus(); }}>Let’s start a conversation<ArrowUpRight size={16} /></button></div>
+      : modal === 'settings' ? <div className="settings-content"><div className="settings-row"><div><strong>Appearance</strong><p>A comfortable space to think.</p></div><button className="secondary-button" onClick={toggleTheme}>{theme === 'light' ? <Sun size={16} /> : <Moon size={16} />}{theme === 'light' ? 'Light' : 'Dark'}</button></div><div className="settings-row"><div><strong>Assistant connection</strong><p>{checking ? 'Checking connection…' : available ? 'Connected to campus resources' : health ? 'Connected with limited resources' : 'Currently offline'}</p></div><button className="icon-button" disabled={checking} onClick={() => void retryHealth()} aria-label="Check connection"><RefreshCw size={17} /></button></div><div className="dialog-note"><ShieldCheck size={18} /><p>Conversation history is saved in this browser. Questions are sent to the configured academic backend to generate answers. Clearing browser data removes local history.</p></div><p className="muted">Thinking Orbs by <a href="https://github.com/Jakubantalik/thinking-orbs" target="_blank" rel="noopener noreferrer">Jakub Antalik</a>.</p></div>
+      : <ManageConversation conversation={modal} onRename={title => { chats.rename(modal.id, title); setModal(null); }} onDelete={() => { chats.remove(modal.id); setModal(null); }} />}
+    </Dialog>}
+  </div>;
+}
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex flex-col min-w-0 bg-[#212121]">
-        
-        {/* Header Area */}
-        <header className="w-full flex items-center justify-between px-4 py-3 z-50">
-          <div className="flex items-center gap-3 w-48">
-            {!isSidebarOpen && (
-              <div 
-                onClick={() => setIsSidebarOpen(true)} 
-                className="relative flex items-center justify-center w-8 h-8 rounded-lg hover:bg-white/5 cursor-pointer group transition-colors overflow-hidden ml-1"
-              >
-                {/* Logo - visible by default, fades out on hover */}
-                <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:opacity-0 group-hover:scale-75">
-                  <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-white/20 to-white/5 border border-white/10 flex items-center justify-center shadow-lg backdrop-blur-md">
-                    <Hexagon className="w-3.5 h-3.5 text-white" strokeWidth={2} />
-                  </div>
-                </div>
-                
-                {/* Toggle - invisible by default, fades in on hover */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 scale-75 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100">
-                  <div className="hamburger-menu scale-[0.45]">
-                    <div className="hamburger-line bg-white/80" />
-                    <div className="hamburger-line bg-white/80" />
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div className="flex-1 flex justify-center relative h-[42px]">
-            {/* Minimalistic Header Title */}
-            <div className="font-semibold text-lg text-white">Campus AI Chat</div>
-          </div>
-
-          {/* Status */}
-          <div className="flex items-center gap-2 text-xs font-medium text-gray-400 w-48 justify-end relative z-50">
-            {status.icon}
-          </div>
-        </header>
-
-        {/* Content */}
-        <main className="flex-1 w-full pb-4 relative z-10 flex flex-col min-h-0 overflow-hidden">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex-1 flex flex-col min-h-0 overflow-hidden">
-            <Chat />
-          </motion.div>
-        </main>
-      </div>
-    </div>
-  );
+function ManageConversation({ conversation, onRename, onDelete }: { conversation: Conversation; onRename: (title: string) => void; onDelete: () => void }) {
+  const [title, setTitle] = useState(conversation.title);
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  return <form onSubmit={event => { event.preventDefault(); onRename(title); }}><label className="field-label" htmlFor="conversation-title">Conversation name</label><input className="dialog-input" id="conversation-title" value={title} maxLength={80} onChange={event => setTitle(event.target.value)} /><button className="primary-button save-title" disabled={!title.trim()}><Check size={16} />Save name</button><div className="delete-area"><p>{confirmDelete ? 'This removes the conversation from this browser. This cannot be undone.' : 'Remove this conversation and its messages from this browser.'}</p><button className="danger-button" type="button" onClick={() => confirmDelete ? onDelete() : setConfirmDelete(true)}><Trash2 size={15} />{confirmDelete ? 'Delete permanently' : 'Delete conversation'}</button>{confirmDelete && <button className="text-button" type="button" onClick={() => setConfirmDelete(false)}>Keep conversation</button>}</div></form>;
 }
