@@ -34,6 +34,7 @@ export interface ChatResponse {
   answer: string;
   citations: Citation[];
   intent: IntentInfo;
+  overall_confidence: number;
 }
 
 /** Structured error codes the backend may return. */

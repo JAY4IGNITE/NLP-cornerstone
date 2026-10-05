@@ -130,6 +130,7 @@ def health_check():
     }
 
 @app.post("/api/chat")
+@app.post("/api/query")
 def chat_endpoint(req: ChatRequest):
     """Full end-to-end Academic NLP and RAG pipeline execution."""
     result = pipeline.process_query(

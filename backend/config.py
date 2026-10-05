@@ -9,7 +9,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 MODELS_DIR = BASE_DIR / "models"
-DOCUMENTS_DIR = BASE_DIR / "documents" / "curriculum"
+DOCUMENTS_DIR = BASE_DIR / "data" / "institutional" / "curriculum"
 REPORTS_DIR = BASE_DIR / "reports"
 
 # Ensure essential directories exist

@@ -73,7 +73,8 @@ export async function sendChat(message: string): Promise<ChatResponse | ErrorRes
       location: s.section_heading || "General",
       chunk_id: s.chunk_id || null,
       content: s.text || s.content || null
-    }))
+    })),
+    overall_confidence: rawData.overall_confidence || rawData.intent_confidence || 0,
   };
 
   return data;

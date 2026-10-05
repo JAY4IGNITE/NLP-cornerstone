@@ -1,6 +1,6 @@
-"""Train high-throughput TF-IDF + Calibrated Classifier on the real-world 1M Hugging Face dataset.
+"""Train high-throughput TF-IDF + Calibrated Classifier on the synthetic CampusFAQ-50K benchmark.
 Evaluates on test split, logs metrics, generates confusion matrix plot and classification report.
-Saves production joblib model artifacts for sub-millisecond inference in FastAPI.
+Saves production joblib model artifacts for inference.
 """
 import json
 import os
@@ -19,13 +19,16 @@ import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import LinearSVC
+from sklearn.calibration import CalibratedClassifierCV
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, f1_score, precision_score, recall_score
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
 
 from backend.nlp.preprocessing import preprocess_query
 
 DATA_DIR = BASE_DIR / "data"
-PROCESSED_DIR = DATA_DIR / "processed"
+BENCHMARK_CSV = DATA_DIR / "benchmark" / "campusfaq_50k.csv"
 MODELS_DIR = BASE_DIR / "models"
 REPORTS_DIR = BASE_DIR / "reports"
 
@@ -33,47 +36,25 @@ MODELS_DIR.mkdir(parents=True, exist_ok=True)
 REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
 def train_and_evaluate():
-    print("[Trainer] Starting Model Training Pipeline on Real-World Hugging Face Data...")
+    print("[Trainer] Starting Model Training Pipeline on Synthetic CampusFAQ-50K Benchmark...")
     t0 = time.time()
 
-    train_parquet = PROCESSED_DIR / "train.parquet"
-    test_parquet = PROCESSED_DIR / "test.parquet"
-    train_csv = PROCESSED_DIR / "train.csv"
-    test_csv = PROCESSED_DIR / "test.csv"
+    if not BENCHMARK_CSV.exists():
+        raise FileNotFoundError(f"Benchmark CSV not found at {BENCHMARK_CSV}")
 
-    # Prefer parquet if available, fallback to csv
-    if train_parquet.exists() and test_parquet.exists():
-        print(f"[Trainer] Loading parquet splits from {PROCESSED_DIR}...")
-        train_df = pd.read_parquet(train_parquet, columns=["question", "intent"])
-        test_df = pd.read_parquet(test_parquet, columns=["question", "intent"])
-        
-        # Take a robust, balanced large-scale training set of 80,000 samples for sub-minute training
-        if len(train_df) > 80_000:
-            print(f"[Trainer] Stratified subsampling 80,000 training examples from {len(train_df):,} total train rows...")
-            train_df = train_df.groupby("intent", group_keys=False).apply(
-                lambda x: x.sample(n=min(len(x), 8_000), random_state=42)
-            ).reset_index(drop=True)
-
-        if len(test_df) > 15_000:
-            print(f"[Trainer] Stratified subsampling 15,000 test examples from {len(test_df):,} total test rows...")
-            test_df = test_df.groupby("intent", group_keys=False).apply(
-                lambda x: x.sample(n=min(len(x), 1_500), random_state=42)
-            ).reset_index(drop=True)
-    elif train_csv.exists() and test_csv.exists():
-        print(f"[Trainer] Loading CSV splits from {PROCESSED_DIR}...")
-        train_df = pd.read_csv(train_csv)
-        test_df = pd.read_csv(test_csv)
-    else:
-        raise FileNotFoundError("Neither train.parquet nor train.csv found in data/processed/")
+    df = pd.read_csv(BENCHMARK_CSV)
+    
+    # Stratified split for train/test
+    train_df, test_df = train_test_split(df, test_size=0.2, random_state=42, stratify=df['intent'])
 
     print(f"[Trainer] Training samples: {len(train_df):,} | Test samples: {len(test_df):,}")
 
     # Preprocessing
     print("[Trainer] Applying domain-aware preprocessing...")
-    X_train_raw = train_df["question"].fillna("").astype(str).tolist()
+    X_train_raw = train_df["query"].fillna("").astype(str).tolist()
     y_train_raw = train_df["intent"].astype(str).tolist()
 
-    X_test_raw = test_df["question"].fillna("").astype(str).tolist()
+    X_test_raw = test_df["query"].fillna("").astype(str).tolist()
     y_test_raw = test_df["intent"].astype(str).tolist()
 
     X_train = [preprocess_query(q) for q in X_train_raw]
@@ -98,7 +79,13 @@ def train_and_evaluate():
     X_test_vec = vectorizer.transform(X_test)
     print(f"[Trainer] Vocabulary size: {X_train_vec.shape[1]:,} features")
 
-    # Logistic Regression Classifier
+    # Linear SVM Classifier (Baseline 2)
+    print("[Trainer] Training Baseline Linear SVM...")
+    svm = LinearSVC(C=1.0, max_iter=1000, random_state=42)
+    calibrated_svm = CalibratedClassifierCV(estimator=svm, method='isotonic', cv=3)
+    calibrated_svm.fit(X_train_vec, y_train)
+
+    # Logistic Regression Classifier (Baseline 1 - Production Model)
     print("[Trainer] Fitting Calibrated Logistic Regression (C=2.5, solver='lbfgs')...")
     clf = LogisticRegression(
         C=2.5,
@@ -108,7 +95,7 @@ def train_and_evaluate():
     )
     clf.fit(X_train_vec, y_train)
 
-    # Save models using joblib
+    # Save models using joblib (saving LR as primary)
     joblib.dump(vectorizer, MODELS_DIR / "tfidf_vectorizer.joblib")
     joblib.dump(clf, MODELS_DIR / "intent_classifier.joblib")
     joblib.dump(label_encoder, MODELS_DIR / "label_encoder.joblib")
@@ -120,25 +107,31 @@ def train_and_evaluate():
     accuracy = accuracy_score(y_test, y_pred)
     macro_f1 = f1_score(y_test, y_pred, average="macro")
     weighted_f1 = f1_score(y_test, y_pred, average="weighted")
-    precision = precision_score(y_test, y_pred, average="weighted")
-    recall = recall_score(y_test, y_pred, average="weighted")
+    precision = precision_score(y_test, y_pred, average="weighted", zero_division=0)
+    recall = recall_score(y_test, y_pred, average="weighted", zero_division=0)
 
     target_names = list(label_encoder.classes_)
-    report_text = classification_report(y_test, y_pred, target_names=target_names, digits=4)
+    report_text = classification_report(y_test, y_pred, target_names=target_names, digits=4, zero_division=0)
 
     print("\n" + "="*70)
-    print("TEST SET CLASSIFICATION REPORT (REAL HUGGING FACE BENCHMARK)")
+    print("TEST SET CLASSIFICATION REPORT (SYNTHETIC CAMPUSFAQ-50K BENCHMARK)")
     print("="*70)
     print(report_text)
     print(f"Accuracy: {accuracy:.4f} | Macro F1: {macro_f1:.4f} | Weighted F1: {weighted_f1:.4f}")
     print("="*70 + "\n")
 
+    # Evaluate SVM for comparison
+    y_pred_svm = calibrated_svm.predict(X_test_vec)
+    acc_svm = accuracy_score(y_test, y_pred_svm)
+    print(f"[Trainer] SVM Baseline Accuracy: {acc_svm:.4f}")
+
     # Save Classification Report
     report_file = REPORTS_DIR / "classification_report.txt"
     with open(report_file, "w", encoding="utf-8") as f:
         f.write("ACADEMIC NLP PROJECT - INTENT CLASSIFICATION EVALUATION REPORT\n")
-        f.write("Dataset: 1,000,000 Real Samples from Hugging Face (community-datasets/yahoo_answers_topics)\n")
+        f.write("Dataset: Synthetic CampusFAQ-50K Benchmark\n")
         f.write("Model Architecture: TF-IDF (1,2-grams, sublinear) + Logistic Regression (C=2.5)\n")
+        f.write("Baseline Comparison: Linear SVM Accuracy = {:.4f}\n".format(acc_svm))
         f.write("===============================================================================\n")
         f.write(f"Test Set Size: {len(y_test)} samples\n")
         f.write(f"Accuracy:    {accuracy:.4f}\n")
@@ -150,9 +143,9 @@ def train_and_evaluate():
         f.write(report_text)
     print(f"[Trainer] Report saved to {report_file}")
 
-    # Compute Confusion Matrix and find strongest / weakest / confused intents
+    # Compute Confusion Matrix
     cm = confusion_matrix(y_test, y_pred)
-    per_class_f1 = f1_score(y_test, y_pred, average=None)
+    per_class_f1 = f1_score(y_test, y_pred, average=None, zero_division=0)
     intent_f1_pairs = sorted(zip(target_names, per_class_f1), key=lambda x: x[1], reverse=True)
 
     strongest = intent_f1_pairs[:5]
@@ -170,15 +163,15 @@ def train_and_evaluate():
     confused_pairs = sorted(confused_pairs, key=lambda x: x["count"], reverse=True)[:10]
 
     eval_summary = {
-        "dataset_source": "Hugging Face (community-datasets/yahoo_answers_topics - 1M Real Samples)",
+        "dataset_source": "Synthetic CampusFAQ-50K Benchmark",
         "accuracy": round(float(accuracy), 4),
         "precision": round(float(precision), 4),
         "recall": round(float(recall), 4),
         "macro_f1": round(float(macro_f1), 4),
         "weighted_f1": round(float(weighted_f1), 4),
+        "svm_accuracy": round(float(acc_svm), 4),
         "test_samples": len(y_test),
         "train_samples": len(train_df),
-        "total_dataset_rows": 1_000_000,
         "num_classes": len(target_names),
         "strongest_intents": [{"intent": k, "f1": round(float(v), 4)} for k, v in strongest],
         "weakest_intents": [{"intent": k, "f1": round(float(v), 4)} for k, v in weakest],
@@ -186,21 +179,19 @@ def train_and_evaluate():
         "training_time_seconds": round(time.time() - t0, 2)
     }
 
-    # Save to both file names so all endpoints can read it
-    for fn in ["model_evaluation.json", "evaluation_results.json"]:
-        with open(REPORTS_DIR / fn, "w", encoding="utf-8") as f:
-            json.dump(eval_summary, f, indent=2)
+    with open(REPORTS_DIR / "evaluation_results.json", "w", encoding="utf-8") as f:
+        json.dump(eval_summary, f, indent=2)
 
     # Plot and save Confusion Matrix
     plt.figure(figsize=(12, 10))
     plt.imshow(cm, interpolation="nearest", cmap=plt.cm.Blues)
-    plt.title("Real Hugging Face Intent Classification Confusion Matrix", fontsize=13, fontweight="bold", pad=15)
+    plt.title("Intent Classification Confusion Matrix", fontsize=13, fontweight="bold", pad=15)
     plt.colorbar(fraction=0.046, pad=0.04)
     tick_marks = np.arange(len(target_names))
     plt.xticks(tick_marks, target_names, rotation=45, ha="right", fontsize=9)
     plt.yticks(tick_marks, target_names, fontsize=9)
-    plt.xlabel("Predicted Topic/Intent", fontsize=10, labelpad=10)
-    plt.ylabel("Actual Topic/Intent", fontsize=10, labelpad=10)
+    plt.xlabel("Predicted Intent", fontsize=10, labelpad=10)
+    plt.ylabel("Actual Intent", fontsize=10, labelpad=10)
     plt.tight_layout()
 
     cm_path = REPORTS_DIR / "confusion_matrix.png"

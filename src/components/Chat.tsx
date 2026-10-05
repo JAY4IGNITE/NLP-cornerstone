@@ -203,6 +203,9 @@ function AssistantBubble({ message, feedback, onFeedback }: any) {
         <span className="text-[10px] text-gray-500 font-mono">
           {result.intent.label}
         </span>
+        <span className="text-[10px] text-emerald-500/80 font-mono ml-auto font-medium">
+          Confidence {Math.round(result.overall_confidence * 100)}%
+        </span>
       </div>
 
       <div className="text-[15px] leading-relaxed whitespace-pre-wrap mb-2">

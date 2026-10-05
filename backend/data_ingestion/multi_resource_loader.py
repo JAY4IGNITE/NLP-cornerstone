@@ -16,7 +16,7 @@ from backend.rag.embeddings import embedding_service
 from backend.rag.cloudflare_vector_store import cloudflare_vector_store
 from backend.utils.logger import logger
 
-RESOURCES_DIR = BASE_DIR / "documents"
+RESOURCES_DIR = BASE_DIR / "data" / "institutional"
 CURRICULUM_DIR = RESOURCES_DIR / "curriculum"
 REGULATIONS_DIR = RESOURCES_DIR / "regulations"
 CAMPUS_DIR = RESOURCES_DIR / "campus_services"
