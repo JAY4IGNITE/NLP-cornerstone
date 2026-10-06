@@ -37,7 +37,7 @@ export default function BrandMark({ className = '', animate = true }) {
       targetY = Math.sin(angle) * distance;
     };
 
-    const animate = () => {
+    const animationLoop = () => {
       // Lerp (linear interpolation) for extreme smoothness
       currentX += (targetX - currentX) * 0.12;
       currentY += (targetY - currentY) * 0.12;
@@ -45,11 +45,11 @@ export default function BrandMark({ className = '', animate = true }) {
       if (eyesRef.current) {
         eyesRef.current.style.transform = `translate(${currentX}px, ${currentY}px)`;
       }
-      animationFrameId = requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animationLoop);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    animate();
+    animationLoop();
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
