@@ -74,14 +74,18 @@ pip install -r requirements.txt
 npm install
 ```
 
+Copy `.env.example` to `.env` if needed and configure the academic providers locally. Set `NVIDIA_API_KEY` to enable NVIDIA generation; without a usable key the backend extracts answers from retrieved resources. Never commit API keys.
+
 ## 11. API Usage
 The main endpoint conceptually supports:
 ```http
-POST /api/query
+POST /api/chat
 Content-Type: application/json
 
 {
-  "query": "What is the minimum attendance required?"
+  "query": "What is the minimum attendance required?",
+  "chat_history": [],
+  "top_k": 4
 }
 ```
 
@@ -107,7 +111,11 @@ Run the development server:
 ```bash
 npm run dev
 ```
-Navigate to `http://localhost:5173` to interact with the UI, which visibly demonstrates the query, predicted intent, answer, confidence, evidence, and safe abstention.
+Navigate to `http://localhost:5173`. The command starts Vite and the Python API on `127.0.0.1:8002`, using `.venv` when available. Run `npm run dev:web` or `npm run dev:api` to start either service separately.
+
+The CampusAI interface includes Thinking Orbs, light/dark appearance, mobile navigation, locally saved conversation history, search, rename/delete, Markdown answers, source excerpts, copy, feedback, cancellation, retry, and regeneration. Enter sends a message; Shift+Enter adds a line. Conversation history stays in the current browser, while submitted questions and recent turns go to the configured backend. Include a course name or code in follow-ups for reliable retrieval.
+
+Run `npm test`, `npm run lint`, `npm run build`, and `python -m pytest -q` to verify the project. The interface uses [Thinking Orbs by Jakub Antalik](https://github.com/Jakubantalik/thinking-orbs) under its MIT license.
 
 ## 13. Limitations
 The system relies on a synthetic benchmark for classification and static PDFs for retrieval. We lack a large-scale dataset of authentic, noisy student queries, meaning our high classification accuracy reflects the controlled nature of the benchmark rather than true ecological validity in the wild.

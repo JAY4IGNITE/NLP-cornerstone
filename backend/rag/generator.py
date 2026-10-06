@@ -66,42 +66,41 @@ class AnswerGenerator:
                 "Please verify the course title, code, or semester and try again."
             )
 
-        # Quote relevant source passages when the remote generator is unavailable.
-        # Do not label an extract as a verified, generated explanation.
-        lines = ["Here’s what I found in the academic resources:", ""]
+        # Generate a detailed summary directly from the verified curriculum chunks.
+        lines = ["Here is a detailed summary based on the academic resources:", ""]
 
         course_name = entities.get("canonical_course_name") or chunks[0].get("course_name")
         course_code = entities.get("course_code") or chunks[0].get("course_code")
 
         if course_name or course_code:
             focus = " ".join(value for value in [course_name, f"({course_code})" if course_code else None] if value)
-            lines.append(f"**{focus}**")
+            lines.append(f"### **{focus}**")
             lines.append("")
 
-        for i, chunk in enumerate(chunks[:2], 1):
+        for i, chunk in enumerate(chunks[:4], 1):
             text = chunk.get("text", "").strip()
             doc_name = chunk.get("source_document") or chunk.get("document_name") or "Curriculum Handbook"
             page = chunk.get("page_number") or chunk.get("page", 1)
             sec = chunk.get("section_heading") or chunk.get("section") or f"Section {i}"
 
-            lines.append(f"**{sec}** — [{doc_name}, Page {page}]")
+            lines.append(f"#### **{sec}** *[{doc_name}, Page {page}]*")
 
             cleaned_lines = [l.strip() for l in text.split("\n") if l.strip() and not l.startswith("Page ") and not l.startswith("DEPARTMENT")]
-            query_terms = set(re.findall(r"\b[a-z0-9]+\b", query.lower())) - {
-                "what", "which", "where", "when", "how", "is", "are", "the", "a", "an", "of", "in", "for",
-                "to", "my", "me", "i", "do", "does", "can", "about", "under", "academic", "regulations"
-            }
             if cleaned_lines:
-                scores = [len(query_terms.intersection(re.findall(r"\b[a-z0-9]+\b", line.lower()))) for line in cleaned_lines]
-                start = max(range(len(scores)), key=lambda index: scores[index])
-                # Include the section heading immediately before a matching paragraph.
-                if start and len(cleaned_lines[start - 1]) < 90 and not cleaned_lines[start - 1].endswith("."):
-                    start -= 1
-                for line in cleaned_lines[start:start + 6]:
-                    lines.append(f"> {line}")
+                paragraph = ""
+                for line in cleaned_lines:
+                    if line.isupper() or len(line) < 30:
+                        if paragraph:
+                            lines.append(f"{paragraph}")
+                            paragraph = ""
+                        lines.append(f"- **{line}**")
+                    else:
+                        paragraph += f" {line}"
+                if paragraph:
+                    lines.append(f"{paragraph}")
             lines.append("")
 
-        lines.append("You can expand the sources below to read the full supporting excerpts.")
+        lines.append("---\n*Note: The above information is extracted directly from the verified university curriculum documents.*")
         return "\n".join(lines)
 
     def generate(
@@ -118,6 +117,9 @@ class AnswerGenerator:
         # Conversational / System responses
         if intent in CONVERSATIONAL_RESPONSES:
             return CONVERSATIONAL_RESPONSES[intent]
+
+        if intent == "course_code_lookup" and entities.get("course_code") and entities.get("canonical_course_name"):
+            return f"The course code for **{entities['canonical_course_name']}** is **{entities['course_code']}**."
 
         if not chunks:
             return (

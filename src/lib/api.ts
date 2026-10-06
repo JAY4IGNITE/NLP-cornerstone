@@ -100,3 +100,11 @@ export async function getHealth(): Promise<HealthResponse | null> {
     };
   } catch { return null; }
 }
+
+export async function getMetrics(): Promise<any> {
+  try {
+    const response = await fetch(`${API_BASE}/metrics`, { signal: AbortSignal.timeout(5_000) });
+    if (!response.ok) return null;
+    return await readJson(response);
+  } catch { return null; }
+}

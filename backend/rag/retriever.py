@@ -198,8 +198,15 @@ class HybridRetriever:
             key=lambda key: (-rrf_scores[key], sparse_ranks.get(key, float("inf")))
         )
         final_results = []
+        # Preserve the strongest lexical candidates for the reranker. Dense/sparse
+        # overlap can otherwise crowd an exact policy match out of a small pool.
+        selected = sorted_chunks[:top_k]
+        if top_k >= 4:
+            lexical_ids = [item['chunk_id'] for item in sparse_results[:2]]
+            selected = lexical_ids + [key for key in sorted_chunks if key not in lexical_ids]
+            selected = selected[:top_k]
 
-        for c_id in sorted_chunks[:top_k]:
+        for c_id in selected:
             chunk = chunk_map[c_id]
             fused_score = round(rrf_scores[c_id], 5)
             # Normalize RRF score to 0.0 - 1.0 scale approximately

@@ -50,7 +50,7 @@ export function Sidebar({ conversations, activeId, pendingId, onNew, onSelect, o
       <div className="sidebar-note"><span className="note-star" aria-hidden="true">✳</span><p>A little help.<br /><strong>Ahead of every class.</strong></p></div>
       <button className="sidebar-link" onClick={onHelp}><BookOpen size={17} />What can I ask?<ArrowUpRight size={14} /></button>
       <button className="sidebar-link" onClick={onSettings}><Settings2 size={17} />Preferences</button>
-      <div className="local-profile"><span className="profile-monogram">You</span><div><strong>Your study space</strong><span>Chats saved in this browser</span></div><span className="local-dot" /></div>
+
     </div>
   </>;
 }

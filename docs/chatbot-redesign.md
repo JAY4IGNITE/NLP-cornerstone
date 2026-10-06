@@ -4,7 +4,7 @@
 Replace the placeholder dashboard with a focused, responsive academic chatbot. Retain the existing FastAPI retrieval pipeline, grounded answers, source citations, abstention, and feedback. Remove mock navigation, fake history, account controls, and the old loader.
 
 ## Experience
-Warm ivory surfaces, ink typography, restrained terracotta accents, a persistent conversation sidebar, a clear welcome screen, and a comfortable reading column. Use the published `thinking-orbs` React component for the welcome and pending-answer states. Respect reduced motion.
+Soft neutral glass surfaces, blue accents, Outfit and Space Grotesk typography, a persistent conversation sidebar, a clear welcome screen, and a comfortable reading column. Use the published `thinking-orbs` React component for the welcome and pending-answer states. Respect reduced motion, including message entrance animations.
 
 ## Functional acceptance criteria
 - Create, search, reopen, rename, and delete locally saved conversations; explain local storage and surface storage failures.
@@ -14,7 +14,7 @@ Warm ivory surfaces, ink typography, restrained terracotta accents, a persistent
 - Offer keyboard-accessible dialogs, mobile navigation, visible focus, and light/dark appearance.
 
 ## Implementation order
-1. Correct the typed API adapter and add contract tests using Node's test runner through `tsx`.
+1. Correct the typed API adapter and add contract tests using Node's test runner with TypeScript stripping.
 2. Implement validated local conversation persistence and request lifecycle handling.
 3. Build the sidebar, welcome view, messages, composer, dialogs, and responsive styles.
 4. Verify typecheck, build, contract/persistence tests, existing backend tests where runtime is available, and real browser flows.

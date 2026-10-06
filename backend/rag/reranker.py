@@ -2,6 +2,7 @@
 Reranks initial candidate chunks using cross-attention relevance scoring.
 """
 from typing import List, Dict, Any, Optional
+import re
 import requests
 from backend.config import settings
 from backend.utils.logger import logger
@@ -14,11 +15,10 @@ class RerankerService:
         self.top_k = settings.RERANKER_TOP_K
 
     def _fallback_rerank(self, query: str, chunks: List[Dict[str, Any]], intent: Optional[str] = None) -> List[Dict[str, Any]]:
-        """Intelligent local cross-scoring using n-gram overlap, exact code matching, section match, and position weighting."""
+        """Aggressive local fallback reranker prioritizing lexical match to overcome random dense vectors."""
         query_words = set(query.lower().split())
         scored = []
 
-        # Intent to section keywords
         intent_keywords = {
             "prerequisites": ["prerequisite", "prereq", "prior"],
             "course_outcome": ["outcome", "co", "learning outcome"],
@@ -26,7 +26,8 @@ class RerankerService:
             "credits": ["credit", "l: ", "t: ", "p: "],
             "units": ["unit", "module"],
             "unit_topics": ["unit", "module", "topics"],
-            "academic_regulations": ["attendance", "grading", "regulation", "cia", "credit requirements"]
+            "academic_regulations": ["attendance", "grading", "regulation", "cia", "credit requirements"],
+            "attendance_rules": ["attendance", "grading", "regulation", "cia", "credit requirements"]
         }
 
         target_kws = intent_keywords.get(intent or "", [])
@@ -43,20 +44,24 @@ class RerankerService:
             intent_bonus = 0.0
             for kw in target_kws:
                 if kw in text:
-                    intent_bonus = 0.45
+                    intent_bonus = 0.60
                     break
 
-            # Exact phrase bonus
-            phrase_bonus = 0.35 if any(w in text for w in query_words if len(w) > 4) else 0.0
+            # Exact phrase bonus - huge bump to ensure exact matches bubble to the top
+            phrase_bonus = 0.50 if query.lower() in text else 0.0
 
             # Course code exact match bonus
-            code_bonus = 0.25 if chunk.get("course_code") and chunk["course_code"].lower() in query.lower() else 0.0
+            code_bonus = 0.40 if chunk.get("course_code") and chunk["course_code"].lower() in query.lower() else 0.0
 
             # Base retrieval score
             ret_score = chunk.get("retrieval_score", 0.5)
 
-            # Combined pseudo cross-attention score
-            score = round(min(1.0, 0.3 * ret_score + 0.25 * jaccard + phrase_bonus + code_bonus + intent_bonus), 4)
+            # Heavily weight Jaccard and explicit lexical overlap, but preserve ret_score if it's good
+            score = round(min(1.0, 0.8 * ret_score + 0.20 * jaccard + phrase_bonus + code_bonus + intent_bonus), 4)
+
+            # If the chunk has a matching course code to the query (explicitly or implicitly via entities in retriever), boost it
+            if chunk.get("course_code") and (chunk["course_code"].lower() in query.lower() or intent == "course_subject_info"):
+                score = max(score, 0.65)
 
             item = dict(chunk)
             item["rerank_score"] = score

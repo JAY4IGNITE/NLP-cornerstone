@@ -1,5 +1,7 @@
+import { useEffect, useRef } from 'react';
 import { ArrowUpRight, BookOpen, CalendarDays, GraduationCap, ListChecks } from 'lucide-react';
 import { ThinkingOrb } from 'thinking-orbs';
+import gsap from 'gsap';
 
 const suggestions = [
   { icon: BookOpen, category: 'Explore a course', text: 'What will I learn in DBMS?', question: 'What topics are covered in the DBMS course?' },
@@ -9,7 +11,21 @@ const suggestions = [
 ];
 
 export function Welcome({ onSuggestion, disabled }: { onSuggestion: (text: string) => void; disabled: boolean }) {
-  return <section className="welcome" aria-labelledby="welcome-title">
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.welcome-orb', { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 1, ease: 'power3.out' });
+      gsap.fromTo('.eyebrow', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: 'power2.out' });
+      gsap.fromTo('.welcome h1', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.3, ease: 'power3.out' });
+      gsap.fromTo('.welcome-description', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.4, ease: 'power2.out' });
+      gsap.fromTo('.suggestion-heading', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.5, ease: 'power2.out' });
+      gsap.fromTo('.suggestion', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.6, ease: 'back.out(1.2)' });
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
+
+  return <section className="welcome" aria-labelledby="welcome-title" ref={containerRef}>
     <div className="welcome-orb"><ThinkingOrb state="breathing" size={64} aria-label="CampusAI is ready to help" /></div>
     <p className="eyebrow">A little clarity for campus life</p>
     <h1 id="welcome-title">Less searching.<br /><em>More understanding.</em></h1>

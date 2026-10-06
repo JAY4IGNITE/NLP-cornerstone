@@ -69,7 +69,7 @@ class AcademicGuardrails:
         retrieved_chunks: List[Dict[str, Any]]
     ) -> Tuple[bool, Optional[str]]:
         """Verify that retrieved curriculum chunks meet minimum relevance threshold."""
-        if intent in {"greeting", "thanks", "help"}:
+        if intent in {"greeting", "thanks", "help", "course_code_lookup"}:
             return True, None
 
         if not retrieved_chunks:

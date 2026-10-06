@@ -71,7 +71,7 @@ class StudentChatbotPipeline:
         reranked_chunks = []
 
         # Conversational intents do not require PDF retrieval
-        if intent not in {"greeting", "thanks", "help", "fallback"}:
+        if intent not in {"greeting", "thanks", "help", "fallback", "course_code_lookup"}:
             retrieved_chunks = hybrid_retriever.retrieve(
                 query=query,
                 entities=entities,

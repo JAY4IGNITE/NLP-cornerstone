@@ -26,6 +26,15 @@ def test_citations_include_readable_source_excerpts():
     assert result["citations"][0]["content"] == "75% attendance is required."
 
 
+def test_exact_lexical_candidate_survives_dense_overlap(monkeypatch):
+    noise = [{"chunk_id": f"noise-{i}", "text": "Unrelated policy"} for i in range(8)]
+    exact = {"chunk_id": "attendance", "text": "75% attendance is required"}
+    monkeypatch.setattr(embedding_service, "get_query_embedding", lambda query: [0.0])
+    monkeypatch.setattr(vector_store, "search", lambda **kwargs: noise)
+    monkeypatch.setattr(hybrid_retriever.bm25, "search", lambda *args, **kwargs: [exact, *noise])
+    assert "attendance" in {item["chunk_id"] for item in hybrid_retriever.retrieve("attendance", top_k=4)}
+
+
 def test_irrelevant_tail_chunks_do_not_reach_answer_generation(monkeypatch):
     relevant = {"chunk_id": "rules", "text": "75% attendance", "rerank_score": .8, "retrieval_score": .8}
     irrelevant = {"chunk_id": "graphs", "text": "Graph traversal", "rerank_score": .1, "retrieval_score": .4}
@@ -60,3 +69,13 @@ def test_feedback_does_not_report_success_when_storage_fails(monkeypatch):
         "query": "Attendance?", "answer": "75%", "intent": "attendance_rules", "feedback": "thumbs_up"
     })
     assert response.status_code == 503
+
+
+def test_local_reranker_does_not_confuse_minimum_attendance_with_minimum_spanning_trees():
+    result = reranker_service._fallback_rerank("What is the minimum attendance requirement?", [
+        {"chunk_id": "graphs", "text": "Minimum spanning trees and graph algorithms.", "retrieval_score": .9},
+        {"chunk_id": "rules", "text": "Students must have 75% attendance.", "retrieval_score": .8},
+    ], "attendance_rules")
+    assert result[0]["chunk_id"] == "rules"
+    assert result[0]["rerank_score"] >= .45
+    assert result[1]["rerank_score"] < .45
