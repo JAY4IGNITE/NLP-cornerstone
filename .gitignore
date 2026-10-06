@@ -6,12 +6,16 @@ coverage/
 
 # Python cache & bytecode
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
 *.py[cod]
 *$py.class
 .pytest_cache/
 
 # Environment files
-.env*
+.env
+.env.*
 !.env.example
 
 # Large Data Cache, Vector DBs & Logs
@@ -34,9 +38,6 @@ reports/
 Thumbs.db
 *.log
 
-# Node
-package-lock.json
-
 # User datasets (Large PDFs, raw files)
 datasets/
 
@@ -44,7 +45,16 @@ datasets/
 venv/
 env/
 .venv/
+env.bak/
+venv.bak/
 
 # IDE files
 .vscode/
 .idea/
+
+# OS/editor temporary files
+*~
+*.swp
+*.swo
+*.bak
+*.tmp

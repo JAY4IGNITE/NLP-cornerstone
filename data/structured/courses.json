@@ -1,0 +1,529 @@
+{
+  "courses": [
+    {
+      "course_name": "Database Management Systems",
+      "course_code": "CS301",
+      "aliases": ["DBMS", "database management", "database systems", "dbms", "database"],
+      "branch": "CSE",
+      "semester": 5,
+      "credits": 4,
+      "lecture_hours": 3,
+      "tutorial_hours": 1,
+      "practical_hours": 0,
+      "prerequisites": ["Data Structures and Algorithms (CS201)", "Discrete Mathematics (MA202)"],
+      "objectives": [
+        "To understand the fundamental concepts of relational database management systems.",
+        "To design database schemas using Entity-Relationship modeling and normalization techniques.",
+        "To formulate complex database queries using Structured Query Language (SQL) and relational algebra.",
+        "To examine transaction processing, concurrency control protocols, and database recovery mechanisms.",
+        "To introduce NoSQL architectures and modern storage paradigms."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Apply relational algebra and relational calculus to formulate declarative database queries."},
+        {"code": "CO2", "description": "Design conceptual schema using Entity-Relationship diagrams and map them to relational schemas."},
+        {"code": "CO3", "description": "Construct optimized SQL queries including joins, subqueries, views, and aggregate functions."},
+        {"code": "CO4", "description": "Evaluate relational schemas using 1NF, 2NF, 3NF, and BCNF functional dependency decomposition to eliminate anomalies."},
+        {"code": "CO5", "description": "Analyze ACID transaction properties, serializability, lock-based concurrency control, and write-ahead logging recovery."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "Introduction & Database System Architecture",
+          "topics": "Data models, schemas, and instances; Three-schema architecture and data independence; Database languages and interfaces; Database users and administrators; Entity-Relationship model: entities, attributes, entity sets, relationships, constraints, weak entity sets, Extended ER features (specialization, generalization, categorization)."
+        },
+        {
+          "unit_number": 2,
+          "title": "Relational Data Model & Relational Algebra",
+          "topics": "Relational model concepts, relational integrity constraints; Relational algebra operations: Selection, Projection, Union, Set Difference, Cartesian Product, Rename, Natural Join, Outer Joins, Division; Tuple Relational Calculus and Domain Relational Calculus; Overview of QBE."
+        },
+        {
+          "unit_number": 3,
+          "title": "SQL & Query Processing",
+          "topics": "Data Definition Language (DDL) commands: CREATE, ALTER, DROP; Data Manipulation Language (DML) commands: INSERT, UPDATE, DELETE; Advanced SELECT queries: nested subqueries, correlated subqueries, set operations, aggregate functions, GROUP BY, HAVING; Integrity constraints, assertions, triggers, views; Overview of query optimization and cost estimation."
+        },
+        {
+          "unit_number": 4,
+          "title": "Database Design Theory & Normalization",
+          "topics": "Informal design guidelines for relation schemas; Functional dependencies: Armstrong's axioms, closure of functional dependencies, minimal cover; Normal forms based on primary keys: First Normal Form (1NF), Second Normal Form (2NF), Third Normal Form (3NF); Boyce-Codd Normal Form (BCNF); Multi-valued dependencies and Fourth Normal Form (4NF); Lossless join decomposition and dependency preservation."
+        },
+        {
+          "unit_number": 5,
+          "title": "Transaction Processing, Concurrency & Recovery",
+          "topics": "Transaction concepts, states, ACID properties; Schedules and serializability: conflict and view serializability; Concurrency control techniques: Two-Phase Locking (2PL), strict 2PL, deadlock prevention and detection, timestamp ordering; Database recovery techniques: deferred update, immediate update, shadow paging, write-ahead logging (WAL), checkpoints."
+        }
+      ]
+    },
+    {
+      "course_name": "Operating Systems",
+      "course_code": "CS302",
+      "aliases": ["OS", "operating systems", "os", "operating system"],
+      "branch": "CSE",
+      "semester": 5,
+      "credits": 4,
+      "lecture_hours": 3,
+      "tutorial_hours": 1,
+      "practical_hours": 0,
+      "prerequisites": ["Computer Organization and Architecture (CS202)", "Data Structures and Algorithms (CS201)"],
+      "objectives": [
+        "To introduce the core services, structures, and system call interfaces of modern operating systems.",
+        "To explain process management, threads, multi-programming, and CPU scheduling algorithms.",
+        "To study process synchronization mechanisms, critical-section problem solutions, and deadlock handling.",
+        "To analyze contiguous and non-contiguous memory management, paging, segmentation, and virtual memory.",
+        "To examine file system implementation, directory structures, and secondary storage disk scheduling."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Explain operating system structure, system calls, interrupt handling, and kernel architecture."},
+        {"code": "CO2", "description": "Analyze and compare preemptive and non-preemptive CPU scheduling algorithms for responsiveness and throughput."},
+        {"code": "CO3", "description": "Implement synchronization primitives (semaphores, mutexes, monitors) to solve classic synchronization problems."},
+        {"code": "CO4", "description": "Design and evaluate deadlock prevention, avoidance (Banker's Algorithm), and detection strategies."},
+        {"code": "CO5", "description": "Demonstrate virtual memory techniques including page replacement algorithms (FIFO, LRU, Optimal) and evaluate disk scheduling."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "OS Overview & Process Concept",
+          "topics": "Role and purpose of operating systems, kernel architectures (monolithic, microkernel, hybrid), system calls, OS services; Process concept: process states, Process Control Block (PCB), context switching; Threads: user-level and kernel-level threads, multithreading models; Process scheduling queues, schedulers."
+        },
+        {
+          "unit_number": 2,
+          "title": "CPU Scheduling & Process Synchronization",
+          "topics": "Scheduling criteria: CPU utilization, throughput, turnaround time, waiting time, response time; Scheduling algorithms: First-Come First-Served (FCFS), Shortest Job First (SJF), Shortest Remaining Time First (SRTF), Priority Scheduling, Round Robin (RR), Multilevel Queue Scheduling; Inter-process communication (IPC); Critical Section problem, Peterson's algorithm, hardware synchronization, semaphores, mutex locks, monitors; Classic problems: Producer-Consumer, Readers-Writers, Dining Philosophers."
+        },
+        {
+          "unit_number": 3,
+          "title": "Deadlocks",
+          "topics": "Deadlock characterization: mutual exclusion, hold and wait, no preemption, circular wait; Resource allocation graph (RAG); Deadlock prevention strategies; Deadlock avoidance: safe state, Banker's algorithm for single and multiple resource instances; Deadlock detection and recovery."
+        },
+        {
+          "unit_number": 4,
+          "title": "Memory Management & Virtual Memory",
+          "topics": "Logical versus physical address space, swapping, contiguous allocation, fragmentation (internal and external), paging, translation lookaside buffer (TLB), multi-level paging, inverted page tables, segmentation; Virtual memory: demand paging, page fault handling, page replacement algorithms (FIFO, Optimal, LRU, LFU, MFU), allocation of frames, thrashing and working set model."
+        },
+        {
+          "unit_number": 5,
+          "title": "Storage Management & File Systems",
+          "topics": "File concepts, access methods (sequential, direct, indexed), directory structures, file mounting and protection; File system structure, allocation methods (contiguous, linked, indexed), free-space management; Secondary storage structure: disk structure, disk scheduling algorithms (FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK), RAID levels."
+        }
+      ]
+    },
+    {
+      "course_name": "Computer Networks",
+      "course_code": "CS303",
+      "aliases": ["CN", "computer networks", "networking", "cn", "networks"],
+      "branch": "CSE",
+      "semester": 5,
+      "credits": 3,
+      "lecture_hours": 3,
+      "tutorial_hours": 0,
+      "practical_hours": 0,
+      "prerequisites": ["Data Communication Principles (CS204)", "Operating Systems (CS302)"],
+      "objectives": [
+        "To build a solid understanding of layered network architectures (OSI 7-layer and TCP/IP protocol suites).",
+        "To study framing, error detection/correction, and medium access control mechanisms.",
+        "To master routing algorithms, subnetting, IPv4/IPv6 addressing, and congestion control.",
+        "To explore transport protocols (TCP and UDP), flow control, reliability, and socket programming.",
+        "To analyze key application layer protocols including DNS, HTTP, SMTP, and network security basics."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Differentiate OSI reference model and TCP/IP protocol stack layers and their respective duties."},
+        {"code": "CO2", "description": "Apply error detection (CRC, checksum) and framing algorithms at the Data Link Layer."},
+        {"code": "CO3", "description": "Formulate IPv4/IPv6 CIDR subnet masks and evaluate distance-vector and link-state routing protocols."},
+        {"code": "CO4", "description": "Contrast TCP and UDP connection semantics, congestion control (AIMD, slow start), and flow control."},
+        {"code": "CO5", "description": "Analyze client-server application protocols including DNS, HTTP/HTTPS, DHCP, and SMTP."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "Introduction & Physical / Data Link Layer",
+          "topics": "Network topologies, PAN, LAN, MAN, WAN; Protocol layers: OSI reference model vs TCP/IP protocol suite; Physical layer transmission media; Data link layer design issues: framing, error control, CRC, Hamming codes, flow control: Stop-and-Wait, Go-Back-N, Selective Repeat ARQ; HDLC."
+        },
+        {
+          "unit_number": 2,
+          "title": "Medium Access Control (MAC) Sublayer",
+          "topics": "Multiple access protocols: Pure and Slotted ALOHA, CSMA, CSMA/CD, CSMA/CA; IEEE 802.3 Ethernet standard, Fast Ethernet, Gigabit Ethernet; IEEE 802.11 Wireless LAN architecture; Bridges, switches, VLANs."
+        },
+        {
+          "unit_number": 3,
+          "title": "Network Layer & Routing",
+          "topics": "Network layer design issues, store-and-forward packet switching; Routing algorithms: shortest path routing, Distance Vector Routing (Bellman-Ford), Link State Routing (Dijkstra), hierarchical routing, OSPF, BGP; Congestion control principles; IP addressing: IPv4 classes, CIDR subnetting, NAT, ARP, RARP, ICMP, IPv6 header format and transition strategies."
+        },
+        {
+          "unit_number": 4,
+          "title": "Transport Layer",
+          "topics": "Transport service primitives, socket addressing, multiplexing and demultiplexing; User Datagram Protocol (UDP): segment header, checksum; Transmission Control Protocol (TCP): connection establishment (three-way handshake), termination, TCP segment structure, flow control via sliding window, TCP congestion control: slow start, congestion avoidance, fast retransmit, fast recovery."
+        },
+        {
+          "unit_number": 5,
+          "title": "Application Layer & Security Fundamentals",
+          "topics": "Domain Name System (DNS): hierarchical namespace, resource records, resolution; Electronic mail: SMTP, POP3, IMAP; HyperText Transfer Protocol (HTTP/1.1, HTTP/2), HTTPS, cookies; Dynamic Host Configuration Protocol (DHCP); Network security introduction: symmetric and asymmetric cryptography, firewalls."
+        }
+      ]
+    },
+    {
+      "course_name": "Compiler Design",
+      "course_code": "CS304",
+      "aliases": ["CD", "compiler design", "compiler", "cd", "compilers"],
+      "branch": "CSE",
+      "semester": 6,
+      "credits": 4,
+      "lecture_hours": 3,
+      "tutorial_hours": 1,
+      "practical_hours": 0,
+      "prerequisites": ["Formal Languages and Automata Theory (CS205)", "Data Structures and Algorithms (CS201)"],
+      "objectives": [
+        "To explore the phases of a language translator and the construction of lexical analyzers.",
+        "To develop top-down and bottom-up parsing techniques for Context-Free Grammars.",
+        "To apply syntax-directed translation for intermediate code generation.",
+        "To study code optimization algorithms and target machine code generation."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Construct deterministic finite automata and lexical analyzers using regular expressions."},
+        {"code": "CO2", "description": "Design LL(1), SLR(1), LR(1), and LALR(1) parsing tables for context-free grammars."},
+        {"code": "CO3", "description": "Formulate syntax-directed definitions (SDD) and generate intermediate representations like three-address code."},
+        {"code": "CO4", "description": "Apply machine-independent optimizations including loop invariant code motion and common subexpression elimination."},
+        {"code": "CO5", "description": "Generate optimized target machine instructions and implement register allocation using graph coloring."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "Introduction to Compilers & Lexical Analysis",
+          "topics": "Phases of a compiler, passes, compiler construction tools; Role of lexical analyzer, tokens, patterns, lexemes; Regular expressions, Thompson's construction to NFA, subset construction to DFA, minimization of DFAs; Lex/Flex tool specification."
+        },
+        {
+          "unit_number": 2,
+          "title": "Syntax Analysis (Top-Down & Bottom-Up Parsing)",
+          "topics": "Context-free grammars, derivations, parse trees, ambiguity; Top-down parsing: recursive descent, predictive LL(1) parsing, FIRST and FOLLOW computations; Bottom-up parsing: shift-reduce parsing, operator precedence, LR parsing algorithms (SLR, canonical LR, LALR); Yacc/Bison parser generator."
+        },
+        {
+          "unit_number": 3,
+          "title": "Syntax-Directed Translation & Intermediate Code",
+          "topics": "Syntax-directed definitions (SDD), synthesized and inherited attributes, evaluation orders for SDDs; Intermediate representations: syntax trees, postfix notation, three-address code (quadruples, triples, indirect triples); Translation of expressions, type checking, boolean expressions, control flow statements."
+        },
+        {
+          "unit_number": 4,
+          "title": "Run-Time Storage & Code Optimization",
+          "topics": "Storage organization, activation records, stack allocation of space, heap management, parameter passing mechanisms; Principles of code optimization: basic blocks, flow graphs, loop optimization, common subexpression elimination, dead code elimination, copy propagation, constant folding."
+        },
+        {
+          "unit_number": 5,
+          "title": "Code Generation & Register Allocation",
+          "topics": "Issues in the design of code generators; Target machine description; Simple code generator algorithm; Register allocation and assignment, register allocation by graph coloring; Peephole optimization."
+        }
+      ]
+    },
+    {
+      "course_name": "Machine Learning",
+      "course_code": "CS401",
+      "aliases": ["ML", "machine learning", "ml", "machine intelligence"],
+      "branch": "CSE",
+      "semester": 7,
+      "credits": 4,
+      "lecture_hours": 3,
+      "tutorial_hours": 1,
+      "practical_hours": 0,
+      "prerequisites": ["Probability and Linear Algebra (MA201)", "Data Structures and Algorithms (CS201)", "Python for Data Science (CS102)"],
+      "objectives": [
+        "To introduce fundamental concepts of supervised, unsupervised, and reinforcement learning.",
+        "To study mathematical foundations of regression, classification, and clustering algorithms.",
+        "To evaluate model generalization, bias-variance tradeoff, and cross-validation methodologies.",
+        "To introduce neural networks, deep learning architectures, and modern ML pipelines."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Formulate supervised learning models including Linear Regression, Logistic Regression, and SVMs."},
+        {"code": "CO2", "description": "Analyze decision trees, random forests, and ensemble boosting techniques (AdaBoost, XGBoost)."},
+        {"code": "CO3", "description": "Apply unsupervised clustering (K-Means, Hierarchical) and dimensionality reduction (PCA, t-SNE)."},
+        {"code": "CO4", "description": "Evaluate classification performance using precision, recall, F1 score, ROC-AUC, and cross-validation."},
+        {"code": "CO5", "description": "Construct multi-layer perceptrons with backpropagation and explain regularizers (L1/L2, dropout)."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "Foundations & Supervised Regression",
+          "topics": "Overview of machine learning, types of learning; Linear regression: hypothesis representation, ordinary least squares, gradient descent (batch, stochastic, mini-batch); Polynomial regression; Overfitting, underfitting, bias-variance tradeoff; Regularization: Ridge (L2) and Lasso (L1) regression."
+        },
+        {
+          "unit_number": 2,
+          "title": "Supervised Classification Models",
+          "topics": "Logistic regression: sigmoid activation, log-loss cost function, decision boundaries; Naive Bayes classifier, Bayes theorem, Gaussian and Multinomial variants; Support Vector Machines (SVM): maximal margin hyperplane, soft margin, kernel trick (RBF, polynomial kernels); K-Nearest Neighbors (KNN)."
+        },
+        {
+          "unit_number": 3,
+          "title": "Tree-Based Models & Ensemble Learning",
+          "topics": "Decision tree learning: ID3, C4.5, CART; Splitting criteria: entropy, information gain, Gini impurity; Tree pruning; Ensemble methods: Bagging (Random Forest), Boosting (AdaBoost, Gradient Boost, XGBoost); Stacking and voting classifiers."
+        },
+        {
+          "unit_number": 4,
+          "title": "Unsupervised Learning & Dimensionality Reduction",
+          "topics": "Clustering: K-Means algorithm, Elbow method, Silhouette score; Hierarchical clustering (agglomerative, divisive, dendrograms); Density-based clustering (DBSCAN); Dimensionality reduction: Principal Component Analysis (PCA), singular value decomposition (SVD), t-SNE."
+        },
+        {
+          "unit_number": 5,
+          "title": "Neural Networks & Model Evaluation",
+          "topics": "Biological vs artificial neurons, Perceptron learning rule; Multi-Layer Perceptron (MLP), forward propagation, activation functions (ReLU, Sigmoid, Tanh, Softmax); Backpropagation algorithm, chain rule, loss functions; Evaluation metrics: confusion matrix, precision, recall, F1-score, ROC and PR curves, k-fold cross-validation."
+        }
+      ]
+    },
+    {
+      "course_name": "Data Structures and Algorithms",
+      "course_code": "CS201",
+      "aliases": ["DSA", "data structures", "algorithms", "dsa", "data structures & algorithms"],
+      "branch": "CSE",
+      "semester": 3,
+      "credits": 4,
+      "lecture_hours": 3,
+      "tutorial_hours": 1,
+      "practical_hours": 0,
+      "prerequisites": ["Programming in C (CS101)"],
+      "objectives": [
+        "To introduce asymptotic notations and complexity analysis of algorithms.",
+        "To implement linear data structures: arrays, linked lists, stacks, and queues.",
+        "To master non-linear data structures: trees, binary search trees, AVL trees, and graphs.",
+        "To apply classic algorithm design paradigms: divide-and-conquer, greedy, and dynamic programming."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Compute asymptotic time and space complexity using Big-O, Big-Omega, and Big-Theta notations."},
+        {"code": "CO2", "description": "Implement singly, doubly, and circular linked lists, stacks, and queues for real-world problems."},
+        {"code": "CO3", "description": "Construct binary trees, BSTs, and self-balancing AVL trees with tree traversals."},
+        {"code": "CO4", "description": "Execute graph traversal algorithms (BFS, DFS) and minimum spanning tree algorithms (Prim, Kruskal)."},
+        {"code": "CO5", "description": "Design dynamic programming and greedy solutions (knapsack, Dijkstra, Floyd-Warshall)."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "Complexity Analysis & Linear Data Structures",
+          "topics": "Asymptotic notations: O, Omega, Theta; Arrays and matrices; Linked Lists: singly linked lists, doubly linked lists, circular linked lists; Operations: insertion, deletion, searching, traversal."
+        },
+        {
+          "unit_number": 2,
+          "title": "Stacks & Queues",
+          "topics": "Stack abstract data type, array and linked list implementation; Applications of stacks: infix to postfix conversion, postfix evaluation, balanced parenthesis; Queue ADT: circular queues, double-ended queues (deque), priority queues."
+        },
+        {
+          "unit_number": 3,
+          "title": "Trees & Binary Search Trees",
+          "topics": "Tree terminologies, binary trees, representations, binary tree traversals (inorder, preorder, postorder, level order); Binary Search Trees (BST): insertion, deletion, searching; Balanced search trees: AVL trees, rotations; B-trees and heaps (min-heap, max-heap)."
+        },
+        {
+          "unit_number": 4,
+          "title": "Graphs & Graph Algorithms",
+          "topics": "Graph representations: adjacency matrix, adjacency list; Graph traversals: Breadth First Search (BFS), Depth First Search (DFS); Topological sort; Minimum Spanning Trees: Prim's and Kruskal's algorithms; Shortest paths: Dijkstra's algorithm."
+        },
+        {
+          "unit_number": 5,
+          "title": "Algorithm Design Techniques & Sorting",
+          "topics": "Divide and Conquer: Merge Sort, Quick Sort; Greedy algorithms: Fractional Knapsack, Huffman coding; Dynamic Programming: 0/1 Knapsack, Longest Common Subsequence; Sorting algorithms: Insertion, Selection, Bubble, Radix sort; Hashing: hash tables, collision resolution techniques."
+        }
+      ]
+    },
+    {
+      "course_name": "Web Technologies",
+      "course_code": "CS305",
+      "aliases": ["WT", "web technologies", "web tech", "wt", "web development"],
+      "branch": "CSE",
+      "semester": 6,
+      "credits": 3,
+      "lecture_hours": 3,
+      "tutorial_hours": 0,
+      "practical_hours": 0,
+      "prerequisites": ["Object-Oriented Programming through Java (CS203)"],
+      "objectives": [
+        "To teach modern web architectural standards, semantic markup, and responsive stylesheets.",
+        "To explore client-side scripting with JavaScript and DOM manipulation.",
+        "To build RESTful web services and server-side applications."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Construct standards-compliant, accessible responsive layouts using HTML5 and CSS3."},
+        {"code": "CO2", "description": "Write modern ES6+ JavaScript code handling events, asynchronous fetch calls, and DOM modifications."},
+        {"code": "CO3", "description": "Develop backend server APIs using Node.js and Express with JSON payload exchanges."},
+        {"code": "CO4", "description": "Integrate relational and document databases with backend web application routes."},
+        {"code": "CO5", "description": "Implement web security best practices including CORS, CSRF, XSS protection, and JWT authentication."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "HTML5, CSS3 & Responsive Design",
+          "topics": "HTML5 semantic elements, forms, input types, audio and video tags; CSS3 selectors, box model, Flexbox, CSS Grid layout, media queries, mobile-first design principles."
+        },
+        {
+          "unit_number": 2,
+          "title": "Client-Side Scripting with JavaScript (ES6+)",
+          "topics": "JavaScript syntax, variables (let, const), data types, functions, arrow functions, template literals, destructuring; DOM manipulation, event listeners; Promises, async/await, Fetch API for AJAX communication."
+        },
+        {
+          "unit_number": 3,
+          "title": "Server-Side Programming with Node.js & Express",
+          "topics": "Node.js runtime environment, npm, event loop, modules; Express framework: routing, middleware, request and response objects, error handling, serving static files."
+        },
+        {
+          "unit_number": 4,
+          "title": "RESTful API Architecture & Data Persistence",
+          "topics": "REST architectural constraints, HTTP methods (GET, POST, PUT, DELETE), status codes, JSON serialization; Database connectivity with MongoDB and MySQL; CRUD operations via ORMs."
+        },
+        {
+          "unit_number": 5,
+          "title": "Web Security & Deployment",
+          "topics": "Web security vulnerabilities: Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), SQL injection; Authentication & Authorization using JWT and OAuth2; Deployment on cloud platforms, HTTPS, SSL/TLS certificates."
+        }
+      ]
+    },
+    {
+      "course_name": "Software Engineering",
+      "course_code": "CS306",
+      "aliases": ["SE", "software engineering", "se"],
+      "branch": "CSE",
+      "semester": 6,
+      "credits": 3,
+      "lecture_hours": 3,
+      "tutorial_hours": 0,
+      "practical_hours": 0,
+      "prerequisites": ["None"],
+      "objectives": [
+        "To introduce software development lifecycles and Agile engineering practices.",
+        "To master requirements elicitation, SRS authoring, and architectural design modeling.",
+        "To apply software testing methodologies and quality assurance standards."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Select appropriate software process models (Waterfall, Spiral, Agile Scrum) for software projects."},
+        {"code": "CO2", "description": "Draft formal Software Requirements Specifications (SRS) based on IEEE 830 guidelines."},
+        {"code": "CO3", "description": "Design modular software architectures using UML class, use-case, sequence, and activity diagrams."},
+        {"code": "CO4", "description": "Formulate black-box and white-box test cases including boundary value analysis and path coverage."},
+        {"code": "CO5", "description": "Apply software maintenance, risk management, and project scheduling techniques (Gantt charts, PERT)."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "Software Process Models",
+          "topics": "Nature of software, software engineering layers; Software Process Models: Waterfall, Incremental, Evolutionary, Spiral; Agile development: Agile manifesto, Scrum methodology, sprint planning, user stories, extreme programming (XP)."
+        },
+        {
+          "unit_number": 2,
+          "title": "Requirements Engineering & Analysis",
+          "topics": "Requirements engineering tasks: inception, elicitation, elaboration, negotiation, specification, validation; Functional and non-functional requirements; Use-case modeling; IEEE 830 standard Software Requirements Specification (SRS) documentation."
+        },
+        {
+          "unit_number": 3,
+          "title": "Software Design & UML Modeling",
+          "topics": "Design concepts: abstraction, modularity, architecture, information hiding, functional independence (cohesion and coupling); Object-Oriented design using UML: Class diagrams, Object diagrams, Sequence diagrams, Collaboration diagrams, Activity diagrams, State machine diagrams."
+        },
+        {
+          "unit_number": 4,
+          "title": "Software Testing Strategies & Techniques",
+          "topics": "Strategic approach to testing: unit testing, integration testing, validation testing, system testing; Black-box testing: equivalence partitioning, boundary value analysis, cause-effect graphing; White-box testing: basis path testing, cyclomatic complexity, control structure testing; Regression testing."
+        },
+        {
+          "unit_number": 5,
+          "title": "Software Project Management & Quality",
+          "topics": "Project metrics, software estimation: COCOMO II model; Project scheduling: Gantt charts, PERT/CPM; Risk management: identification, projection, mitigation; Software Quality Assurance (SQA): ISO 9001, CMMI levels, software maintenance."
+        }
+      ]
+    },
+    {
+      "course_name": "Artificial Intelligence",
+      "course_code": "CS402",
+      "aliases": ["AI", "artificial intelligence", "ai"],
+      "branch": "CSE",
+      "semester": 7,
+      "credits": 3,
+      "lecture_hours": 3,
+      "tutorial_hours": 0,
+      "practical_hours": 0,
+      "prerequisites": ["Data Structures and Algorithms (CS201)", "Discrete Mathematics (MA202)"],
+      "objectives": [
+        "To provide foundations of intelligent agents and heuristic search strategies.",
+        "To model knowledge representation and automated reasoning using first-order predicate logic.",
+        "To explore planning algorithms and uncertainty management using Bayesian networks."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Formulate state-space search problems for rational agents in complex environments."},
+        {"code": "CO2", "description": "Implement informed heuristic search algorithms including A* search and Greedy Best-First Search."},
+        {"code": "CO3", "description": "Represent domain knowledge using First-Order Logic (FOL) and apply resolution refutation."},
+        {"code": "CO4", "description": "Model probabilistic reasoning in uncertain domains using Bayesian Belief Networks."},
+        {"code": "CO5", "description": "Design adversarial game-playing agents using Minimax algorithm with Alpha-Beta pruning."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "Introduction to AI & State-Space Search",
+          "topics": "Definitions of AI, Turing test, intelligent agents, agent architectures, PEAS classification, environment types; Problem formulation as state-space search; Uninformed search strategies: Breadth-First Search (BFS), Depth-First Search (DFS), Uniform-Cost Search (UCS), Iterative Deepening Search (IDS)."
+        },
+        {
+          "unit_number": 2,
+          "title": "Heuristic Search & Adversarial Games",
+          "topics": "Informed search strategies: Greedy Best-First Search, A* search, admissibility and consistency of heuristics; Local search: Hill climbing, Simulated Annealing, Genetic Algorithms; Adversarial search: Game playing, Minimax algorithm, Alpha-Beta pruning, evaluation functions."
+        },
+        {
+          "unit_number": 3,
+          "title": "Knowledge Representation & Logic",
+          "topics": "Knowledge-based agents, propositional logic, inference rules, horn clauses; First-Order Logic (FOL): syntax and semantics, quantifiers, unifications, forward chaining, backward chaining, resolution refutation theorem proving."
+        },
+        {
+          "unit_number": 4,
+          "title": "Classical Planning & Constraint Satisfaction",
+          "topics": "Constraint Satisfaction Problems (CSP): constraint propagation, backtracking search for CSPs, forward checking; Classical planning: PDDL language, STRIPS operators, state-space planning, planning graphs."
+        },
+        {
+          "unit_number": 5,
+          "title": "Reasoning under Uncertainty",
+          "topics": "Acting under uncertainty, probability axioms, joint probability distribution, conditional probability, Bayes' rule; Bayesian Belief Networks: semantics, conditional independence; Exact and approximate inference in Bayesian networks."
+        }
+      ]
+    },
+    {
+      "course_name": "Cloud Computing",
+      "course_code": "CS403",
+      "aliases": ["CC", "cloud computing", "cloud", "cc"],
+      "branch": "CSE",
+      "semester": 8,
+      "credits": 3,
+      "lecture_hours": 3,
+      "tutorial_hours": 0,
+      "practical_hours": 0,
+      "prerequisites": ["Operating Systems (CS302)", "Computer Networks (CS303)"],
+      "objectives": [
+        "To study cloud delivery models (IaaS, PaaS, SaaS) and deployment architectures.",
+        "To examine hypervisor virtualization and container technologies (Docker, Kubernetes).",
+        "To analyze cloud storage, distributed file systems, serverless computing, and cloud security."
+      ],
+      "course_outcomes": [
+        {"code": "CO1", "description": "Differentiate cloud service models (IaaS, PaaS, SaaS) and deployment types (Public, Private, Hybrid)."},
+        {"code": "CO2", "description": "Analyze CPU, memory, and network virtualization techniques and hypervisors (Type 1 and Type 2)."},
+        {"code": "CO3", "description": "Deploy containerized microservices using Docker and manage container clusters with Kubernetes."},
+        {"code": "CO4", "description": "Examine distributed storage architectures including Google File System (GFS) and Amazon S3."},
+        {"code": "CO5", "description": "Implement cloud security, IAM role-based access control, and SLA monitoring."}
+      ],
+      "units": [
+        {
+          "unit_number": 1,
+          "title": "Cloud Computing Fundamentals",
+          "topics": "NIST definition of cloud computing, essential characteristics, service models: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Software as a Service (SaaS); Deployment models: Public, Private, Community, Hybrid; Economics of cloud."
+        },
+        {
+          "unit_number": 2,
+          "title": "Virtualization Technology",
+          "topics": "Virtualization concepts, benefits, hardware-assisted virtualization; Hypervisors: Type-1 (bare-metal) and Type-2 (hosted); Virtualization of CPU, memory, and I/O devices; Virtual machine migration (live migration); Comparison between VMs and Containers."
+        },
+        {
+          "unit_number": 3,
+          "title": "Containers & Cloud Orchestration",
+          "topics": "Linux namespaces and cgroups; Docker container architecture, Dockerfile, Docker Compose; Container orchestration using Kubernetes: pods, services, deployments, ingress controllers, horizontal pod autoscaling (HPA)."
+        },
+        {
+          "unit_number": 4,
+          "title": "Cloud Storage & Distributed Computing",
+          "topics": "Distributed file systems: Google File System (GFS), Hadoop Distributed File System (HDFS); Cloud object storage (Amazon S3); NoSQL in the cloud; Serverless computing and Function-as-a-Service (AWS Lambda, Google Cloud Functions)."
+        },
+        {
+          "unit_number": 5,
+          "title": "Cloud Security, Governance & SLAs",
+          "topics": "Cloud security risks, shared responsibility model, Identity and Access Management (IAM); Encryption at rest and in transit; Service Level Agreements (SLAs), cloud monitoring and auto-scaling, disaster recovery in the cloud."
+        }
+      ]
+    }
+  ],
+  "academic_regulations": {
+    "attendance_requirement": "Students must secure a minimum of 75% aggregate attendance across all registered courses in a semester to be eligible to appear for the End-Semester Examination. A condonation of up to 10% (between 65% and 74%) may be granted on medical grounds subject to approval by the Academic Council.",
+    "grading_system": "The institution follows a 10-point Letter Grading Scale: O (Outstanding, 90-100%, Grade Point 10), A+ (Excellent, 80-89%, Grade Point 9), A (Very Good, 70-79%, Grade Point 8), B+ (Good, 60-69%, Grade Point 7), B (Above Average, 55-59%, Grade Point 6), C (Average, 50-54%, Grade Point 5), P (Pass, 40-49%, Grade Point 4), F (Fail, below 40%, Grade Point 0).",
+    "credit_requirements": "The total number of credits required for the award of the B.Tech Degree in Computer Science & Engineering (CSE) is 160 credits distributed across 8 semesters.",
+    "examination_pattern": "Continuous Internal Assessment (CIA) accounts for 40% weightage (2 Mid-Term Tests of 20 marks each, Assignments/Quizzes of 10 marks, normalized to 40). End-Semester Examination accounts for 60% weightage (3-hour comprehensive theory paper). Minimum passing marks are 40% in End-Semester Exam and 40% aggregate."
+  }
+}

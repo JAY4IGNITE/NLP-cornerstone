@@ -13,9 +13,9 @@
     "index_name": "student-curriculum-index",
     "dimensions": 1024,
     "metric": "cosine",
-    "total_vectors": 131,
-    "is_remote_authenticated": false,
+    "total_vectors": 2910,
+    "is_remote_authenticated": true,
     "edge_storage_status": "synced",
-    "account_configured": false
+    "account_configured": true
   }
 }

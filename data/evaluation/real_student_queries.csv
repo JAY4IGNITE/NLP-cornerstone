@@ -1,0 +1,2 @@
+query,intent,answerable,expected_evidence,difficulty,source
+"Due to privacy and IRB constraints, real student queries have not yet been collected. This file is a placeholder for the future real evaluation set.",,,,,,
