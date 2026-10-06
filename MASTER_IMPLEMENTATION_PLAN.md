@@ -918,25 +918,25 @@ Run:
 
 The project is considered complete only when:
 
-- [ ] Existing application still works.
-- [ ] Synthetic benchmark is honestly labelled.
-- [ ] Dataset sources are documented.
-- [ ] Intent taxonomy is documented.
-- [ ] Preprocessing is reproducible.
-- [ ] At least two classification baselines are evaluated.
-- [ ] Semantic retrieval works.
-- [ ] Hybrid pipeline works.
-- [ ] Evidence/source is returned.
-- [ ] Low-confidence queries can abstain.
-- [ ] Actual metrics are generated.
-- [ ] Confusion matrix exists.
-- [ ] Retrieval evaluation exists where ground truth permits.
-- [ ] No fabricated metrics exist.
-- [ ] No secrets are committed.
+- [x] Existing application still works.
+- [x] Synthetic benchmark is honestly labelled.
+- [x] Dataset sources are documented.
+- [x] Intent taxonomy is documented.
+- [x] Preprocessing is reproducible.
+- [x] At least two classification baselines are evaluated.
+- [x] Semantic retrieval works.
+- [x] Hybrid pipeline works.
+- [x] Evidence/source is returned.
+- [x] Low-confidence queries can abstain.
+- [x] Actual metrics are generated.
+- [x] Confusion matrix exists.
+- [x] Retrieval evaluation exists where ground truth permits.
+- [x] No fabricated metrics exist.
+- [x] No secrets are committed.
 - [x] Duplicate/unnecessary files are removed.
-- [ ] README explains the research contribution.
-- [ ] The frontend demonstrates the NLP pipeline.
-- [ ] The repository can be understood by a reviewer without asking the developer.
+- [x] README explains the research contribution.
+- [x] The frontend demonstrates the NLP pipeline.
+- [x] The repository can be understood by a reviewer without asking the developer.
 
 ---
 

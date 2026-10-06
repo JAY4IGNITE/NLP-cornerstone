@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import sys
 from pathlib import Path
@@ -9,6 +10,15 @@ sys.path.insert(0, str(BASE_DIR))
 from src.pipeline import HybridPipeline
 
 app = FastAPI(title="CampusNLP API", description="Intelligent NLP-Based University Student Query Understanding and Knowledge Retrieval System")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 nlp_pipeline = HybridPipeline()
 
 class QueryRequest(BaseModel):

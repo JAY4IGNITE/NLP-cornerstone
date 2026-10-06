@@ -6,6 +6,7 @@ import pandas as pd
 from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import LinearSVC
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import classification_report, accuracy_score
 import joblib
@@ -57,6 +58,13 @@ def train_intent_model():
     clf = LogisticRegression(C=2.5, max_iter=500, random_state=42, solver='lbfgs')
     clf.fit(X_train_vec, y_train)
     
+    
+    print("[Trainer] Evaluating Baseline 2: Linear SVM...")
+    svm = LinearSVC(random_state=42)
+    svm.fit(X_train_vec, y_train)
+    y_pred_svm = svm.predict(X_test_vec)
+    print(f"SVM Test Accuracy: {accuracy_score(y_test, y_pred_svm):.4f}")
+
     print("[Trainer] Saving models...")
     joblib.dump(vectorizer, MODELS_DIR / "tfidf_vectorizer.joblib")
     joblib.dump(clf, MODELS_DIR / "intent_classifier.joblib")

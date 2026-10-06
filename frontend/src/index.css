@@ -1,0 +1,66 @@
+:root {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #262b28;
+  background: #fafbf9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --surface: #fafbf9;
+  --surface-raised: #ffffff;
+  --sidebar: #f0f2ee;
+  --surface-hover: #e8ece6;
+  --surface-muted: #f3f5f1;
+  --text: #262b28;
+  --text-secondary: #626b63;
+  --text-muted: #727a72;
+  --border: #e0e5dd;
+  --border-strong: #cbd3c8;
+  --accent: #3f6650;
+  --accent-hover: #315440;
+  --accent-soft: #e5ede3;
+  --accent-text: #375640;
+  --error: #a33f32;
+  --error-soft: #fcf0ed;
+  --shadow: 0 4px 24px #25342306, 0 1px 3px #25342304;
+  --radius: 12px;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --surface: #1d211f;
+  --surface-raised: #252a26;
+  --sidebar: #181c19;
+  --surface-hover: #303831;
+  --surface-muted: #242b26;
+  --text: #e6eae5;
+  --text-secondary: #abb5ac;
+  --text-muted: #a0aaa1;
+  --border: #343d35;
+  --border-strong: #4a574c;
+  --accent: #a3c6a9;
+  --accent-hover: #b6d5bb;
+  --accent-soft: #2d4031;
+  --accent-text: #b6d5b7;
+  --error: #f0a69a;
+  --error-soft: #3b2825;
+  --shadow: 0 4px 24px #0000000c;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--text); background: var(--surface); font-size: 14px; line-height: 1.5; }
+button, input, textarea { font: inherit; }
+button, a, input, textarea, summary { -webkit-tap-highlight-color: transparent; }
+button { color: inherit; cursor: pointer; }
+button { border: 0; background: none; }
+button:disabled { cursor: not-allowed; opacity: .5; }
+input, textarea { color: var(--text); }
+button, a, input, textarea, summary { outline-offset: 4px; }
+:focus-visible { outline: 2px solid var(--accent); }
+button { transition: background .15s ease, color .15s ease, border-color .15s ease; }
+h1, h2, p { margin: 0; }
+svg { flex-shrink: 0; }
+::selection { background: var(--accent-soft); color: var(--accent-text); }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+.skip-link { position: fixed; top: -60px; left: 16px; z-index: 100; background: var(--surface-raised); color: var(--accent); padding: 12px 20px; border-radius: 8px; }
+.skip-link:focus { top: 12px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
