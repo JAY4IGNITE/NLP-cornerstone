@@ -12,7 +12,6 @@ export default function Navigation({ ref, open, collapsed, view, conversations, 
     <nav className="sidebar-nav" aria-label="Main navigation">
       <button className="new-chat-button" onClick={() => { setSearch(''); onNew(); }}><SquarePen size={18} /><span>New chat</span><span className="new-chat-plus">+</span></button>
       <label className="search-field"><Search size={17} /><input type="search" placeholder="Search conversations" aria-label="Search conversations" value={search} onChange={e => setSearch(e.target.value)} />{search && <button className="search-clear" aria-label="Clear search" onClick={() => setSearch('')}><X size={14} /></button>}</label>
-      <button className={`nav-button ${view === 'guide' ? 'is-active' : ''}`} onClick={() => onView('guide')}><BookOpen size={18} /><span>Topic guide</span><span className="nav-badge">6</span></button>
     </nav>
     <div className="history-section">
       <div className="section-label">{search ? 'SEARCH RESULTS' : 'YOUR CONVERSATIONS'}<span>{filtered.length > 0 ? filtered.length : ''}</span></div>

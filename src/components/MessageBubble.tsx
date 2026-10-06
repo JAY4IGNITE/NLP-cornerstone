@@ -23,10 +23,6 @@ export function MessageBubble({ message, canRetry, onRetry, onFeedback }: Props)
     return () => { animation.revert(); };
   }, []);
 
-
-
-
-
   if (message.kind === 'user') return <article ref={bubbleRef} className="user-message" aria-label="Your message"><div>{message.text}</div></article>;
   if (message.kind === 'notice') return <div className="message-notice"><p>{message.text}</p>{canRetry && <button className="text-button" onClick={onRetry}><RotateCcw size={14} />Try again</button>}</div>;
   const { result } = message;
