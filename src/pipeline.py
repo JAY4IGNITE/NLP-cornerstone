@@ -12,6 +12,33 @@ class HybridPipeline:
         self.retriever = SemanticRetriever()
         
     def process_query(self, query: str):
+        # Quick greeting/help check before going to classifier
+        query_lower = query.strip().lower()
+        import re
+        
+        def has_word(w):
+            return bool(re.search(rf"\b{re.escape(w)}\b", query_lower))
+
+        if any(has_word(k) for k in ["hello", "hi", "hey", "greetings", "good morning", "good afternoon", "good evening", "who are you"]):
+            return {
+                "query": query,
+                "intent": "greeting",
+                "confidence": 1.0,
+                "response": "Hello! I am your university chatbot. How can I help you today?",
+                "evidence": None,
+                "source": None
+            }
+            
+        if any(has_word(k) for k in ["help", "support", "what can you do"]):
+            return {
+                "query": query,
+                "intent": "help",
+                "confidence": 1.0,
+                "response": "I can help you with course information, curriculum details, academic policies, and general campus questions. What would you like to know?",
+                "evidence": None,
+                "source": None
+            }
+
         intent, conf = self.classifier.predict(query)
         evidence, retrieval_score = self.retriever.retrieve(query)
         
