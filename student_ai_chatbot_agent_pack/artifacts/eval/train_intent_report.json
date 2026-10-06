@@ -1,9 +1,0 @@
-{
-  "base_model": "distilbert-base-uncased",
-  "epochs": 1,
-  "train_rows": 64,
-  "val_rows": 64,
-  "val_accuracy": 0.7812,
-  "output_dir": "artifacts/models/intent_smoke",
-  "smoke": true
-}

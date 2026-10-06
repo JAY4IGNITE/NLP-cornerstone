@@ -933,7 +933,7 @@ The project is considered complete only when:
 - [ ] Retrieval evaluation exists where ground truth permits.
 - [ ] No fabricated metrics exist.
 - [ ] No secrets are committed.
-- [ ] Duplicate/unnecessary files are removed.
+- [x] Duplicate/unnecessary files are removed.
 - [ ] README explains the research contribution.
 - [ ] The frontend demonstrates the NLP pipeline.
 - [ ] The repository can be understood by a reviewer without asking the developer.

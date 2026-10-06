@@ -1,5 +1,0 @@
-Model,Accuracy,Macro F1,Weighted F1,Precision,Recall,Inference Latency
-hybrid_tfidf,1.0,1.0,1.0,1.0,1.0,0.12792820930480955
-logistic,1.0,1.0,1.0,1.0,1.0,0.005811643600463868
-naive_bayes,1.0,1.0,1.0,1.0,1.0,0.01096491813659668
-svm,1.0,1.0,1.0,1.0,1.0,0.010517406463623046
