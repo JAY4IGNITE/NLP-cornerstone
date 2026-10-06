@@ -62,7 +62,7 @@ export default function ChatInterface({ input, onInputChange, messages, isThinki
         <div className="welcome-trust"><ShieldCheck size={15} /><span>Grounded in the collection. Sources included when available.</span></div>
       </div> : <div className="message-list" role="log" aria-label="Conversation" aria-live="polite" aria-relevant="additions text">
         {messages.map(message => <ChatMessage key={message.id} message={message} onRetry={() => onRetry(message.id)} isThinking={isThinking} />)}
-        {isThinking && <div className="thinking-message" role="status"><div className="assistant-avatar"><BrandMark /></div><div><strong>Looking into it</strong><span><Search size={13} />Matching your question with campus sources<span className="loading-dots" aria-hidden="true"><i /><i /><i /></span></span></div></div>}
+        {isThinking && <div className="thinking-message" role="status"><div className="assistant-avatar"><BrandMark state="thinking" /></div><div><strong>Looking into it</strong><span><Search size={13} />Matching your question with campus sources<span className="loading-dots" aria-hidden="true"><i /><i /><i /></span></span></div></div>}
         <div ref={endRef} />
       </div>}
     </div>
