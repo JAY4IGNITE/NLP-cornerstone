@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# CampusNLP: An Intelligent NLP-Based University Student Query Understanding and Knowledge Retrieval System
 
-# Run and deploy your AI Studio app
+## Overview
+This repository contains a clean, academically defensible hybrid NLP pipeline designed to understand student queries, predict their intent, and retrieve highly relevant academic evidence from a controlled institutional knowledge base. 
 
-This contains everything you need to run your app locally.
+## Research Question
+> Can a hybrid NLP pipeline combining intent classification, semantic retrieval, and institution-specific knowledge grounding accurately understand and answer university student queries?
 
-View your app in AI Studio: https://ai.studio/apps/450087bb-57f0-4dc0-8912-dfbacd918136
+## Architecture
+The system implements a rigorous pipeline without relying on black-box LLM hallucinations:
+1. **Dataset**: Synthetic benchmarking on `CampusFAQ-50K`.
+2. **Preprocessing**: Deterministic, domain-aware text normalization.
+3. **Intent Classification**: L2-regularized Logistic Regression over TF-IDF n-gram vectors.
+4. **Semantic Retrieval**: Cosine similarity matching over an institutional document index.
+5. **Evidence Grounding**: Confidence thresholding to guarantee answers are grounded in retrieved texts.
 
-## Run Locally
+## Documentation
+Please see the `docs/` directory for detailed methodologies:
+- [Dataset Methodology](docs/DATASET_METHODOLOGY.md)
+- [NLP Pipeline](docs/NLP_PIPELINE.md)
+- [Experiments](docs/EXPERIMENTS.md)
+- [Evaluation](docs/EVALUATION.md)
+- [Limitations](docs/LIMITATIONS.md)
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Installation & Usage
+1. Activate your python environment.
+2. Install requirements: `pip install -r requirements.txt`
+3. The entire pipeline is demonstrated interactively in `notebooks/data_processing_and_training.ipynb`.
+4. To run the API backend: `uvicorn backend.main:app`
