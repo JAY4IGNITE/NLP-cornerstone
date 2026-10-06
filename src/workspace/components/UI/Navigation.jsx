@@ -7,7 +7,7 @@ export default function Navigation({ ref, open, collapsed, view, conversations, 
   const [search, setSearch] = useState('');
   const filtered = filterConversations(conversations, search);
   return <aside ref={ref} className={`sidebar ${open ? 'is-open' : ''} ${collapsed ? 'is-collapsed' : ''}`} aria-label="Sidebar">
-    <div className="sidebar-brand"><button className="brand-home" onClick={onNew} aria-label="CampusNLP, start a new chat"><BrandMark /><span>Campus<span className="brand-light">NLP</span></span></button><button className="icon-button sidebar-collapse" title="Collapse sidebar" aria-label="Collapse sidebar" onClick={onCollapse}><PanelLeftClose size={18} /></button><button className="icon-button sidebar-close" aria-label="Close sidebar" onClick={onClose}><X size={20} /></button></div>
+    <div className="sidebar-brand"><button className="brand-home" onClick={onNew} aria-label="CampusNLP, start a new chat"><BrandMark animate={false} /><span>Campus<span className="brand-light">NLP</span></span></button><button className="icon-button sidebar-collapse" title="Collapse sidebar" aria-label="Collapse sidebar" onClick={onCollapse}><PanelLeftClose size={18} /></button><button className="icon-button sidebar-close" aria-label="Close sidebar" onClick={onClose}><X size={20} /></button></div>
     <div className="workspace-label"><span className="workspace-dot" />STUDENT WORKSPACE</div>
     <nav className="sidebar-nav" aria-label="Main navigation">
       <button className="new-chat-button" onClick={() => { setSearch(''); onNew(); }}><SquarePen size={18} /><span>New chat</span><span className="new-chat-plus">+</span></button>

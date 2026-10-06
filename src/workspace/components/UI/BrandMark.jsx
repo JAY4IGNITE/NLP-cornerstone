@@ -1,12 +1,14 @@
 import { useEffect, useRef, useId } from 'react';
 
-export default function BrandMark({ className = '' }) {
+export default function BrandMark({ className = '', animate = true }) {
   const containerRef = useRef(null);
   const eyesRef = useRef(null);
   // Generate a unique ID for the mask to prevent conflicts when multiple logos are rendered
   const maskId = `eyes-mask-${useId().replace(/:/g, '')}`;
 
   useEffect(() => {
+    if (!animate) return;
+    
     let animationFrameId;
     let targetX = 0;
     let targetY = 0;
