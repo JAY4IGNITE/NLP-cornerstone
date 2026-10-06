@@ -29,7 +29,16 @@ class HybridPipeline:
         content = evidence.get('content', evidence.get('text', str(evidence))) if evidence else "No details found."
         source = evidence.get('source', evidence.get('document_id', 'Unknown')) if evidence else 'Unknown'
         
-        response = f"Based on {source} ({intent}): {content}"
+        if intent == "course_code_lookup":
+            # Extract just the course code from the content if possible
+            import re
+            code_match = re.search(r"Course Code:\s*([A-Za-z]+\d+)", content)
+            if code_match:
+                response = f"The course code is {code_match.group(1)}."
+            else:
+                response = "I could not find the specific course code."
+        else:
+            response = f"Based on {source} ({intent}): {content}"
         
         return {
             "query": query,
