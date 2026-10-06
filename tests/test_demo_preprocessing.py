@@ -2,7 +2,7 @@ import pytest
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from src.preprocessing.text_preprocessor import preprocess_query
+from backend.core.preprocessing.text_preprocessor import preprocess_query
 
 def test_preprocessing():
     assert preprocess_query("Hello World!") == "hello world"

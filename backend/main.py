@@ -15,7 +15,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, StringConstraints
 
-from src.pipeline import HybridPipeline
+from backend.core.pipeline import HybridPipeline
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 FEEDBACK_FILE = BASE_DIR / "data" / "feedback_log.json"
