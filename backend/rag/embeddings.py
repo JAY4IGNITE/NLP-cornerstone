@@ -3,8 +3,6 @@ Supports batch embedding, dimension verification, retry mechanism, and offline f
 """
 import hashlib
 import json
-import os
-import time
 from typing import List, Optional
 import numpy as np
 import requests

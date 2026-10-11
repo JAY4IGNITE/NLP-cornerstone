@@ -3,6 +3,8 @@ node_modules/
 build/
 dist/
 coverage/
+.coverage
+htmlcov/
 
 # Python cache & bytecode
 __pycache__/

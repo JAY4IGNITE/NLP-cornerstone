@@ -1,8 +1,7 @@
 """Source Attribution and Groundedness Evaluation Engine.
 Computes multi-factor RAG confidence scores and verifies factual citations.
 """
-import re
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 
 class AttributionEngine:
     def __init__(self, retrieval_threshold: float = 0.40, rerank_threshold: float = 0.40):

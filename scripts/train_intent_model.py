@@ -3,7 +3,6 @@ Evaluates on test split, logs metrics, generates confusion matrix plot and class
 Saves production joblib model artifacts for inference.
 """
 import json
-import os
 import sys
 import time
 from pathlib import Path

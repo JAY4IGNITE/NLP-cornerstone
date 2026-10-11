@@ -1,7 +1,4 @@
-import os
 import sys
-import time
-import json
 import pandas as pd
 from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer

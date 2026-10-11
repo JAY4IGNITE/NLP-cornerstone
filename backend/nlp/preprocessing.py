@@ -3,7 +3,6 @@ Preserves university acronyms, course codes, unit numbers, and curriculum entiti
 """
 import re
 from typing import List, Set
-import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 

@@ -2,7 +2,6 @@
 Enforces strict grounding, source attribution, and anti-hallucination guardrails.
 """
 import json
-import re
 from typing import List, Dict, Any, Optional
 import requests
 

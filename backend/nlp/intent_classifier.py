@@ -1,5 +1,4 @@
 """Production Intent Classifier using TF-IDF + Logistic Regression."""
-import os
 import re
 from pathlib import Path
 from typing import Dict, Any, Optional
