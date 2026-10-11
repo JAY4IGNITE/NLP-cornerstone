@@ -2,7 +2,6 @@
 Reranks initial candidate chunks using cross-attention relevance scoring.
 """
 from typing import List, Dict, Any, Optional
-import re
 import requests
 from backend.config import settings
 from backend.utils.logger import logger

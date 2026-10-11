@@ -2,8 +2,7 @@
 import logging
 import json
 import sys
-import time
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 class StructuredFormatter(logging.Formatter):
     def format(self, record: logging.LogRecord) -> str:

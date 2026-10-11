@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AlertCircle, Check, ChevronDown, Copy, FileText, RotateCcw } from 'lucide-react';
+import { AlertCircle, Check, ChevronDown, Copy, RotateCcw } from 'lucide-react';
 import BrandMark from '../UI/BrandMark';
 
 export default function ChatMessage({ message, onRetry, isThinking }) {

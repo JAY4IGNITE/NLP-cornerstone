@@ -1,3 +1,4 @@
+import re
 import sys
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -14,7 +15,6 @@ class HybridPipeline:
     def process_query(self, query: str):
         # Quick greeting/help check before going to classifier
         query_lower = query.strip().lower()
-        import re
         
         def has_word(w):
             return bool(re.search(rf"\b{re.escape(w)}\b", query_lower))
@@ -58,7 +58,6 @@ class HybridPipeline:
         
         if intent == "course_code_lookup":
             # Extract just the course code from the content if possible
-            import re
             code_match = re.search(r"Course Code:\s*([A-Za-z]+\d+)", content)
             if code_match:
                 response = f"The course code is {code_match.group(1)}."
