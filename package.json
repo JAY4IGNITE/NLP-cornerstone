@@ -3,15 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "frontend"
+  ],
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"npm:dev:api\" \"npm:dev:web\"",
     "dev:api": "node scripts/run-backend.mjs",
-    "dev:web": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "clean": "rm -rf dist",
-    "lint": "tsc --noEmit",
-    "test": "node --test src/lib/workspace.test.js"
+    "dev:web": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "clean": "npm --prefix frontend run clean",
+    "lint": "npm --prefix frontend run lint",
+    "test": "npm --prefix frontend test"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",

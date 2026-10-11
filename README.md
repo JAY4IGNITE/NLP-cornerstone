@@ -107,15 +107,30 @@ Example Output:
 ```
 
 ## 12. Demo
-Run the development server:
+Run the development server from the repository root:
 ```bash
 npm run dev
 ```
-Navigate to `http://localhost:5173`. The command starts Vite and the Python API on `127.0.0.1:8002`, using `.venv` when available. Run `npm run dev:web` or `npm run dev:api` to start either service separately.
+Navigate to `http://localhost:5173`. The command concurrently starts the Vite frontend in `frontend/` and the Python API on `127.0.0.1:8002`, using `.venv` when available.
+
+You can also run commands directly within the `frontend/` directory:
+```bash
+cd frontend
+npm run dev     # Start frontend dev server
+npm run build   # Production bundle
+npm test        # Run frontend unit tests
+npm run lint    # TypeScript typechecking
+```
+Or manage everything from the project root:
+- `npm run dev:web` / `npm run dev:api`: start either service separately.
+- `npm test`: runs frontend workspace tests.
+- `npm run lint`: runs TypeScript typechecking.
+- `npm run build`: builds the production assets into `frontend/dist/`.
+- `python -m pytest tests`: runs the backend NLP test suite.
 
 The CampusAI interface includes Thinking Orbs, light/dark appearance, mobile navigation, locally saved conversation history, search, rename/delete, Markdown answers, source excerpts, copy, feedback, cancellation, retry, and regeneration. Enter sends a message; Shift+Enter adds a line. Conversation history stays in the current browser, while submitted questions and recent turns go to the configured backend. Include a course name or code in follow-ups for reliable retrieval.
 
-Run `npm test`, `npm run lint`, `npm run build`, and `python -m pytest -q` to verify the project. The interface uses [Thinking Orbs by Jakub Antalik](https://github.com/Jakubantalik/thinking-orbs) under its MIT license.
+The interface uses [Thinking Orbs by Jakub Antalik](https://github.com/Jakubantalik/thinking-orbs) under its MIT license.
 
 ## 13. Limitations
 The system relies on a synthetic benchmark for classification and static PDFs for retrieval. We lack a large-scale dataset of authentic, noisy student queries, meaning our high classification accuracy reflects the controlled nature of the benchmark rather than true ecological validity in the wild.
