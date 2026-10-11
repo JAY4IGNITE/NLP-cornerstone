@@ -3,6 +3,7 @@ import { BookOpen, Download, Menu, Moon, Sun, ArrowLeft } from 'lucide-react';
 import Navigation from './components/UI/Navigation';
 import ChatInterface from './components/Chat/ChatInterface';
 import KnowledgeGuide from './components/KnowledgeGuide';
+import LandingPage from './components/LandingPage';
 import ConversationDialog from './components/UI/ConversationDialog';
 import useWorkspace from './hooks/useWorkspace';
 import { conversationToMarkdown } from './lib/workspace';
@@ -13,9 +14,14 @@ function readTheme() {
   catch { return 'light'; }
 }
 
+function readView() {
+  const hash = window.location.hash;
+  return hash === '#chat' ? 'chat' : hash === '#guide' ? 'guide' : 'home';
+}
+
 export default function App() {
   const workspace = useWorkspace();
-  const [view, setView] = useState('chat');
+  const [view, setView] = useState(readView);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [theme, setTheme] = useState(readTheme);
@@ -23,6 +29,23 @@ export default function App() {
   const [drafts, setDrafts] = useState({});
   const menuRef = useRef(null);
   const sidebarRef = useRef(null);
+  const previousView = useRef(view);
+
+  useEffect(() => {
+    const onHashChange = () => {
+      setView(readView());
+      setSidebarOpen(false);
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (previousView.current === view) return;
+    previousView.current = view;
+    window.scrollTo(0, 0);
+    document.getElementById('main-content')?.focus({ preventScroll: true });
+  }, [view]);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -52,7 +75,11 @@ export default function App() {
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [sidebarOpen, dialog]);
 
-  function navigate(nextView) { setView(nextView); setSidebarOpen(false); }
+  function navigate(nextView) {
+    window.location.hash = nextView;
+    setView(nextView);
+    setSidebarOpen(false);
+  }
   const draftKey = workspace.activeId || 'new';
   function updateDraft(value) { setDrafts(current => ({ ...current, [draftKey]: value })); }
   function newChat() {
@@ -73,9 +100,13 @@ export default function App() {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
+  if (view === 'home') {
+    return <LandingPage theme={theme} onToggleTheme={() => setTheme(theme === 'light' ? 'dark' : 'light')} />;
+  }
+
   return (
     <div className={`app-shell ${sidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
-      <a className="skip-link" href="#main-content">Skip to content</a>
+      <a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); document.getElementById('main-content')?.focus(); }}>Skip to content</a>
       {sidebarOpen && <div className="sidebar-scrim" onClick={() => { setSidebarOpen(false); menuRef.current?.focus(); }} aria-hidden="true" />}
       <Navigation ref={sidebarRef} open={sidebarOpen} collapsed={sidebarCollapsed} view={view}
         conversations={workspace.conversations} activeId={workspace.activeId}
